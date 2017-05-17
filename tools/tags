@@ -1,0 +1,411 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AF	PinCov/PinCov.cpp	98;"	d	file:
+Analyzer	ff_analysis/Analyzer.cpp	/^Analyzer::Analyzer(string correctSuiteF, string mutantListF, $/;"	f	class:Analyzer
+Analyzer	ff_analysis/Analyzer.h	/^class Analyzer {$/;"	c
+Branch	ObjectBranchCoverage.py	/^class Branch:$/;"	c
+CC	test_data/mw_auto/bin/makefile	/^CC=gcc$/;"	m
+CF	PinCov/PinCov.cpp	96;"	d	file:
+CF	PinCov/tests/tmp.c	8;"	d	file:
+CFLAGS	test_data/mw_auto/bin/makefile	/^CFLAGS=-DDEBUG=$(DBG) -w$/;"	m
+CONFIG_ROOT	PinCov/makefile	/^CONFIG_ROOT := $(PIN_ROOT)\/source\/tools\/Config$/;"	m
+CONFIG_ROOT	PinCov/makefile	/^CONFIG_ROOT := ..\/Config$/;"	m
+Conditional	PinCov/PinCov.cpp	/^    Conditional(char type, ADDRINT addr) {$/;"	f	class:Conditional
+Conditional	PinCov/PinCov.cpp	/^class Conditional {$/;"	c	file:
+CsvFile	CsvFile.py	/^class CsvFile(object):$/;"	c
+DBG	test_data/mw_auto/bin/makefile	/^DBG=0$/;"	m
+DEBUG	PinCov/PinCov.cpp	25;"	d	file:
+DOOR_CLOSED	test_data/mw_auto/bin/obsnop.c	/^	char DOOR_CLOSED;$/;"	m	struct:input_t	file:
+ENABLE_CMOVCC	PinCov/PinCov.cpp	27;"	d	file:
+ENABLE_LOGICAL	PinCov/PinCov.cpp	28;"	d	file:
+ENABLE_SETCC	PinCov/PinCov.cpp	26;"	d	file:
+FLAGS	ff_analysis/makefile	/^FLAGS=-std=c++11$/;"	m
+Fini	PinCov/PinCov.cpp	/^VOID Fini(INT32 code, VOID *v)$/;"	f
+Instruction	PinCov/PinCov.cpp	/^VOID Instruction(INS ins, VOID *v)$/;"	f
+KP_0	test_data/mw_auto/bin/obsnop.c	/^	char KP_0; $/;"	m	struct:input_t	file:
+KP_1	test_data/mw_auto/bin/obsnop.c	/^	char KP_1; $/;"	m	struct:input_t	file:
+KP_2	test_data/mw_auto/bin/obsnop.c	/^	char KP_2; $/;"	m	struct:input_t	file:
+KP_3	test_data/mw_auto/bin/obsnop.c	/^	char KP_3; $/;"	m	struct:input_t	file:
+KP_4	test_data/mw_auto/bin/obsnop.c	/^	char KP_4; $/;"	m	struct:input_t	file:
+KP_5	test_data/mw_auto/bin/obsnop.c	/^	char KP_5; $/;"	m	struct:input_t	file:
+KP_6	test_data/mw_auto/bin/obsnop.c	/^	char KP_6; $/;"	m	struct:input_t	file:
+KP_7	test_data/mw_auto/bin/obsnop.c	/^	char KP_7; $/;"	m	struct:input_t	file:
+KP_8	test_data/mw_auto/bin/obsnop.c	/^	char KP_8; $/;"	m	struct:input_t	file:
+KP_9	test_data/mw_auto/bin/obsnop.c	/^	char KP_9; $/;"	m	struct:input_t	file:
+KP_CLEAR	test_data/mw_auto/bin/obsnop.c	/^	char KP_CLEAR; $/;"	m	struct:input_t	file:
+KP_START	test_data/mw_auto/bin/obsnop.c	/^	char KP_START; $/;"	m	struct:input_t	file:
+M103	test_data/mw_auto/bin/obsnop.c	/^   _boolean M103;$/;"	m	struct:__anon1	file:
+M103_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M103_nil;$/;"	m	struct:__anon1	file:
+M107	test_data/mw_auto/bin/obsnop.c	/^   _boolean M107;$/;"	m	struct:__anon1	file:
+M107_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M107_nil;$/;"	m	struct:__anon1	file:
+M111	test_data/mw_auto/bin/obsnop.c	/^   _boolean M111;$/;"	m	struct:__anon1	file:
+M111_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M111_nil;$/;"	m	struct:__anon1	file:
+M115	test_data/mw_auto/bin/obsnop.c	/^   _boolean M115;$/;"	m	struct:__anon1	file:
+M115_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M115_nil;$/;"	m	struct:__anon1	file:
+M119	test_data/mw_auto/bin/obsnop.c	/^   _boolean M119;$/;"	m	struct:__anon1	file:
+M119_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M119_nil;$/;"	m	struct:__anon1	file:
+M123	test_data/mw_auto/bin/obsnop.c	/^   _boolean M123;$/;"	m	struct:__anon1	file:
+M123_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M123_nil;$/;"	m	struct:__anon1	file:
+M127	test_data/mw_auto/bin/obsnop.c	/^   _boolean M127;$/;"	m	struct:__anon1	file:
+M127_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M127_nil;$/;"	m	struct:__anon1	file:
+M131	test_data/mw_auto/bin/obsnop.c	/^   _boolean M131;$/;"	m	struct:__anon1	file:
+M131_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M131_nil;$/;"	m	struct:__anon1	file:
+M135	test_data/mw_auto/bin/obsnop.c	/^   _boolean M135;$/;"	m	struct:__anon1	file:
+M135_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M135_nil;$/;"	m	struct:__anon1	file:
+M136	test_data/mw_auto/bin/obsnop.c	/^   _integer M136;$/;"	m	struct:__anon1	file:
+M136_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M136_nil;$/;"	m	struct:__anon1	file:
+M14	test_data/mw_auto/bin/obsnop.c	/^   _boolean M14;$/;"	m	struct:__anon1	file:
+M143	test_data/mw_auto/bin/obsnop.c	/^   _integer M143;$/;"	m	struct:__anon1	file:
+M143_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M143_nil;$/;"	m	struct:__anon1	file:
+M150	test_data/mw_auto/bin/obsnop.c	/^   _integer M150;$/;"	m	struct:__anon1	file:
+M150_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M150_nil;$/;"	m	struct:__anon1	file:
+M154	test_data/mw_auto/bin/obsnop.c	/^   _integer M154;$/;"	m	struct:__anon1	file:
+M154_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M154_nil;$/;"	m	struct:__anon1	file:
+M19	test_data/mw_auto/bin/obsnop.c	/^   _integer M19;$/;"	m	struct:__anon1	file:
+M19_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M19_nil;$/;"	m	struct:__anon1	file:
+M210	test_data/mw_auto/bin/obsnop.c	/^   _integer M210;$/;"	m	struct:__anon1	file:
+M210_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M210_nil;$/;"	m	struct:__anon1	file:
+M23	test_data/mw_auto/bin/obsnop.c	/^   _boolean M23;$/;"	m	struct:__anon1	file:
+M237	test_data/mw_auto/bin/obsnop.c	/^   _boolean M237;$/;"	m	struct:__anon1	file:
+M237_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M237_nil;$/;"	m	struct:__anon1	file:
+M23_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M23_nil;$/;"	m	struct:__anon1	file:
+M25	test_data/mw_auto/bin/obsnop.c	/^   _boolean M25;$/;"	m	struct:__anon1	file:
+M25_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M25_nil;$/;"	m	struct:__anon1	file:
+M31	test_data/mw_auto/bin/obsnop.c	/^   _integer M31;$/;"	m	struct:__anon1	file:
+M31_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M31_nil;$/;"	m	struct:__anon1	file:
+M48	test_data/mw_auto/bin/obsnop.c	/^   _boolean M48;$/;"	m	struct:__anon1	file:
+M48_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M48_nil;$/;"	m	struct:__anon1	file:
+M61	test_data/mw_auto/bin/obsnop.c	/^   _boolean M61;$/;"	m	struct:__anon1	file:
+M61_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M61_nil;$/;"	m	struct:__anon1	file:
+M62	test_data/mw_auto/bin/obsnop.c	/^   _boolean M62;$/;"	m	struct:__anon1	file:
+M62_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M62_nil;$/;"	m	struct:__anon1	file:
+M99	test_data/mw_auto/bin/obsnop.c	/^   _boolean M99;$/;"	m	struct:__anon1	file:
+M99_nil	test_data/mw_auto/bin/obsnop.c	/^   _boolean M99_nil;$/;"	m	struct:__anon1	file:
+MY_REGISTER_MACRO	PinCov/PinCov.cpp	95;"	d	file:
+NO_OF_TIMES_TO_RUN	test_data/mw_auto/bin/obsnop.c	1319;"	d	file:
+OBJECTS	ff_analysis/makefile	/^OBJECTS = TestSuite.o$/;"	m
+OF	PinCov/PinCov.cpp	102;"	d	file:
+ObcSuiteGenerator	ObcSuiteGenerator.py	/^class ObcSuiteGenerator(object):$/;"	c
+ObjectBranchCoverage	ObjectBranchCoverage.py	/^class ObjectBranchCoverage:$/;"	c
+PF	PinCov/PinCov.cpp	97;"	d	file:
+SF	PinCov/PinCov.cpp	100;"	d	file:
+SRC	test_data/mw_auto/bin/makefile	/^SRC=microwaveCollated.c$/;"	m
+TESTSUITE_H	ff_analysis/TestSuite.h	10;"	d
+TF	PinCov/PinCov.cpp	101;"	d	file:
+TRACE_FNAME	test_data/mw_auto/bin/obsnop.c	1489;"	d	file:
+TestCoverageData	TestCoverageData.py	/^class TestCoverageData(object):$/;"	c
+TestSuite	ff_analysis/TestSuite.cpp	/^TestSuite::TestSuite(string filename)$/;"	f	class:TestSuite
+TestSuite	ff_analysis/TestSuite.cpp	/^TestSuite::TestSuite(string filename, TestSuite* ts) {$/;"	f	class:TestSuite
+TestSuite	ff_analysis/TestSuite.h	/^class TestSuite {$/;"	c
+TestUniversalSuite	UniversalSuite.py	/^class TestUniversalSuite:$/;"	c
+UniversalSuite	UniversalSuite.py	/^class UniversalSuite:$/;"	c
+Usage	PinCov/PinCov.cpp	/^INT32 Usage()$/;"	f
+ZF	PinCov/PinCov.cpp	99;"	d	file:
+_CLEAR_PRESSED	test_data/mw_auto/bin/obsnop.c	/^   _boolean _CLEAR_PRESSED;$/;"	m	struct:__anon1	file:
+_COOKING	test_data/mw_auto/bin/obsnop.c	/^   _boolean _COOKING;$/;"	m	struct:__anon1	file:
+_DOOR_CLOSED	test_data/mw_auto/bin/obsnop.c	/^   _boolean _DOOR_CLOSED;$/;"	m	struct:__anon1	file:
+_EC2C_PREDEF_TYPES	test_data/mw_auto/bin/obsnop.c	5;"	d	file:
+_KP_0	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_0;$/;"	m	struct:__anon1	file:
+_KP_1	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_1;$/;"	m	struct:__anon1	file:
+_KP_2	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_2;$/;"	m	struct:__anon1	file:
+_KP_3	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_3;$/;"	m	struct:__anon1	file:
+_KP_4	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_4;$/;"	m	struct:__anon1	file:
+_KP_5	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_5;$/;"	m	struct:__anon1	file:
+_KP_6	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_6;$/;"	m	struct:__anon1	file:
+_KP_7	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_7;$/;"	m	struct:__anon1	file:
+_KP_8	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_8;$/;"	m	struct:__anon1	file:
+_KP_9	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_9;$/;"	m	struct:__anon1	file:
+_KP_CLEAR	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_CLEAR;$/;"	m	struct:__anon1	file:
+_KP_START	test_data/mw_auto/bin/obsnop.c	/^   _boolean _KP_START;$/;"	m	struct:__anon1	file:
+_LEFT_DIGIT	test_data/mw_auto/bin/obsnop.c	/^   _integer _LEFT_DIGIT;$/;"	m	struct:__anon1	file:
+_MIDDLE_DIGIT	test_data/mw_auto/bin/obsnop.c	/^   _integer _MIDDLE_DIGIT;$/;"	m	struct:__anon1	file:
+_OK	test_data/mw_auto/bin/obsnop.c	/^   _boolean _OK;$/;"	m	struct:__anon1	file:
+_RIGHT_DIGIT	test_data/mw_auto/bin/obsnop.c	/^   _integer _RIGHT_DIGIT;$/;"	m	struct:__anon1	file:
+_SETUP	test_data/mw_auto/bin/obsnop.c	/^   _boolean _SETUP;$/;"	m	struct:__anon1	file:
+_START_PRESSED	test_data/mw_auto/bin/obsnop.c	/^   _boolean _START_PRESSED;$/;"	m	struct:__anon1	file:
+_STEPS_TO_COOK	test_data/mw_auto/bin/obsnop.c	/^   _integer _STEPS_TO_COOK;$/;"	m	struct:__anon1	file:
+_SUSPENDED	test_data/mw_auto/bin/obsnop.c	/^   _boolean _SUSPENDED;$/;"	m	struct:__anon1	file:
+_TYPES	ObjectBranchCoverage.py	/^    _TYPES = ['J', 'S', 'M', 'L']$/;"	v	class:ObjectBranchCoverage
+__coverageDic	TestCoverageData.py	/^    __coverageDic = {}$/;"	v	class:TestCoverageData
+__fileName	TestCoverageData.py	/^    __fileName = ""$/;"	v	class:TestCoverageData
+__init__	CsvFile.py	/^	def __init__(self, arg):$/;"	m	class:CsvFile
+__init__	ObcSuiteGenerator.py	/^    def __init__(self, target, covdir, testdir, obc_types):$/;"	m	class:ObcSuiteGenerator
+__init__	ObjectBranchCoverage.py	/^    def __init__(self, b_type, ip):$/;"	m	class:Branch
+__init__	ObjectBranchCoverage.py	/^    def __init__(self, target_fname, func_list_fname, types='JSML'):$/;"	m	class:ObjectBranchCoverage
+__init__	TestCoverageData.py	/^    def __init__(self, fileName):$/;"	m	class:TestCoverageData
+__init__	UniversalSuite.py	/^    def __init__(self, suites):$/;"	m	class:UniversalSuite
+__lines	CsvFile.py	/^	__lines = []$/;"	v	class:CsvFile
+__numObligations	TestCoverageData.py	/^    __numObligations = 0$/;"	v	class:TestCoverageData
+__repr__	ObjectBranchCoverage.py	/^    def __repr__(self):$/;"	m	class:Branch	file:
+__satisfiableObligations	TestCoverageData.py	/^    __satisfiableObligations = set()$/;"	v	class:TestCoverageData
+__satisfyingTests	TestCoverageData.py	/^    __satisfyingTests = {}$/;"	v	class:TestCoverageData
+__str__	ObjectBranchCoverage.py	/^    def __str__(self):$/;"	m	class:Branch	file:
+__str__	ObjectBranchCoverage.py	/^    def __str__(self):$/;"	m	class:ObjectBranchCoverage	file:
+_boolean	test_data/mw_auto/bin/obsnop.c	/^typedef int _boolean;$/;"	t	file:
+_column_size	UniversalSuite.py	/^    def _column_size(self):$/;"	m	class:UniversalSuite
+_construct_branch_info	ObjectBranchCoverage.py	/^    def _construct_branch_info(self):$/;"	m	class:ObjectBranchCoverage
+_construct_coverage_matrix	ObcSuiteGenerator.py	/^    def _construct_coverage_matrix(self):$/;"	m	class:ObcSuiteGenerator
+_convert_step_to_csvrow	UniversalSuite.py	/^        def _convert_step_to_csvrow(step):$/;"	f	function:UniversalSuite._test_to_string
+_double	test_data/mw_auto/bin/obsnop.c	/^typedef double _double;$/;"	t	file:
+_dump	test_data/mw_auto/bin/makefile	/^define _dump$/;"	m
+_enable	test_data/mw_auto/bin/obsnop.c	/^   _boolean _enable;$/;"	m	struct:__anon1	file:
+_extract_ips_from_dump	ObjectBranchCoverage.py	/^    def _extract_ips_from_dump(self):$/;"	m	class:ObjectBranchCoverage
+_false	test_data/mw_auto/bin/obsnop.c	12;"	d	file:
+_float	test_data/mw_auto/bin/obsnop.c	/^typedef float _float;$/;"	t	file:
+_get_instruction_type	ObjectBranchCoverage.py	/^    def _get_instruction_type(self, nm):$/;"	m	class:ObjectBranchCoverage
+_get_satisfiable_obligations	ObcSuiteGenerator.py	/^    def _get_satisfiable_obligations(self):$/;"	m	class:ObcSuiteGenerator
+_integer	test_data/mw_auto/bin/obsnop.c	/^typedef int _integer;$/;"	t	file:
+_read_function_list	ObjectBranchCoverage.py	/^    def _read_function_list(self):$/;"	m	class:ObjectBranchCoverage
+_real	test_data/mw_auto/bin/obsnop.c	/^typedef double _real;$/;"	t	file:
+_set_header	UniversalSuite.py	/^    def _set_header(self):$/;"	m	class:UniversalSuite
+_string	test_data/mw_auto/bin/obsnop.c	/^typedef char* _string;$/;"	t	file:
+_test_to_string	UniversalSuite.py	/^    def _test_to_string(self, test):$/;"	m	class:UniversalSuite
+_top_EC2C_H_FILE	test_data/mw_auto/bin/obsnop.c	2;"	d	file:
+_top_EC2C_SRC_FILE	test_data/mw_auto/bin/obsnop.c	24;"	d	file:
+_trim_step	UniversalSuite.py	/^        def _trim_step(step):$/;"	f	function:UniversalSuite._test_to_string
+_true	test_data/mw_auto/bin/obsnop.c	13;"	d	file:
+addr	PinCov/PinCov.cpp	/^    ADDRINT addr;$/;"	m	class:Conditional	file:
+allocateMemory	ff_analysis/TestSuite.cpp	/^vector<int>* TestSuite::allocateMemory(string filename, TestSuite* ts) {$/;"	f	class:TestSuite
+allocateMemory	ff_analysis/TestSuite.cpp	/^void TestSuite::allocateMemory(string filename) {$/;"	f	class:TestSuite
+analyze_all	mergeReports.py	/^def analyze_all(sysout_dir):$/;"	f
+analyze_each_system	generateObcStats.py	/^def analyze_each_system(system):$/;"	f
+assign_inputs	test_data/mw_auto/bin/obsnop.c	/^void assign_inputs(top_ctx* ctx, input_t* elem) {$/;"	f
+attach_segfault_handler	ff_analysis/analysis.cpp	/^void attach_segfault_handler() {$/;"	f
+base	measureReducedObc.py	/^base = ''       # the base name (e.g. obsnop)$/;"	v
+basename	generateObcStats.py	/^def basename(path):$/;"	f
+bname	measureReducedObc.py	/^def bname(path):$/;"	f
+bname	mergeReports.py	/^def bname(path):$/;"	f
+bool_lit_to_int	test_data/mw_auto/bin/obsnop.c	/^int bool_lit_to_int(char* boollit) {$/;"	f
+calc_and_print	ObjectBranchCoverage.py	/^def calc_and_print():$/;"	f
+calc_coverage	ObjectBranchCoverage.py	/^    def calc_coverage(self):$/;"	m	class:ObjectBranchCoverage
+chkCmovb	PinCov/PinCov.cpp	/^void chkCmovb(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovbe	PinCov/PinCov.cpp	/^void chkCmovbe(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovl	PinCov/PinCov.cpp	/^void chkCmovl(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovle	PinCov/PinCov.cpp	/^void chkCmovle(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovnb	PinCov/PinCov.cpp	/^void chkCmovnb(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovnbe	PinCov/PinCov.cpp	/^void chkCmovnbe(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovnl	PinCov/PinCov.cpp	/^void chkCmovnl(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovnle	PinCov/PinCov.cpp	/^void chkCmovnle(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovno	PinCov/PinCov.cpp	/^void chkCmovno(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovnp	PinCov/PinCov.cpp	/^void chkCmovnp(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovns	PinCov/PinCov.cpp	/^void chkCmovns(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovnz	PinCov/PinCov.cpp	/^void chkCmovnz(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovo	PinCov/PinCov.cpp	/^void chkCmovo(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovp	PinCov/PinCov.cpp	/^void chkCmovp(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovs	PinCov/PinCov.cpp	/^void chkCmovs(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkCmovz	PinCov/PinCov.cpp	/^void chkCmovz(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkLogical	PinCov/PinCov.cpp	/^void chkLogical(ADDRINT ip, CONTEXT *ctxt) {$/;"	f
+chkSeta	PinCov/PinCov.cpp	/^void chkSeta(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetae	PinCov/PinCov.cpp	/^void chkSetae(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetb	PinCov/PinCov.cpp	/^void chkSetb(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetbe	PinCov/PinCov.cpp	/^void chkSetbe(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetc	PinCov/PinCov.cpp	/^void chkSetc(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSete	PinCov/PinCov.cpp	/^void chkSete(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetg	PinCov/PinCov.cpp	/^void chkSetg(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetge	PinCov/PinCov.cpp	/^void chkSetge(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetl	PinCov/PinCov.cpp	/^void chkSetl(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetle	PinCov/PinCov.cpp	/^void chkSetle(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetna	PinCov/PinCov.cpp	/^void chkSetna(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnae	PinCov/PinCov.cpp	/^void chkSetnae(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnb	PinCov/PinCov.cpp	/^void chkSetnb(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnbe	PinCov/PinCov.cpp	/^void chkSetnbe(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnc	PinCov/PinCov.cpp	/^void chkSetnc(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetne	PinCov/PinCov.cpp	/^void chkSetne(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetng	PinCov/PinCov.cpp	/^void chkSetng(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnge	PinCov/PinCov.cpp	/^void chkSetnge(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnl	PinCov/PinCov.cpp	/^void chkSetnl(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnle	PinCov/PinCov.cpp	/^void chkSetnle(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetno	PinCov/PinCov.cpp	/^void chkSetno(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnp	PinCov/PinCov.cpp	/^void chkSetnp(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetns	PinCov/PinCov.cpp	/^void chkSetns(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetnz	PinCov/PinCov.cpp	/^void chkSetnz(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSeto	PinCov/PinCov.cpp	/^void chkSeto(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetp	PinCov/PinCov.cpp	/^void chkSetp(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetpe	PinCov/PinCov.cpp	/^void chkSetpe(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetpo	PinCov/PinCov.cpp	/^void chkSetpo(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSets	PinCov/PinCov.cpp	/^void chkSets(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+chkSetz	PinCov/PinCov.cpp	/^void chkSetz(ADDRINT ip, CONTEXT * ctxt) {$/;"	f
+client_data	test_data/mw_auto/bin/obsnop.c	/^   void* client_data;$/;"	m	struct:__anon1	file:
+compare	compare_trace.py	/^def compare(oracle, comparee):$/;"	f
+compare_all	compare_trace.py	/^def compare_all(trace_dir, oracle):$/;"	f
+computeCoverageStatistics	TestCoverageData.py	/^    def computeCoverageStatistics(self):$/;"	m	class:TestCoverageData
+conditionMap	PinCov/PinCov.cpp	/^map<ADDRINT, Conditional*> conditionMap;$/;"	v
+convertList	CsvFile.py	/^	def convertList(self, lst):$/;"	m	class:CsvFile
+correctSuite	ff_analysis/Analyzer.h	/^	TestSuite* correctSuite;$/;"	m	class:Analyzer
+countConditional	PinCov/PinCov.cpp	/^VOID countConditional(char type, ADDRINT ip, bool taken) {$/;"	f
+countConditionalJump	PinCov/PinCov.cpp	/^VOID countConditionalJump(ADDRINT ip, VOID * taken) {$/;"	f
+create_trace_file	test_data/mw_auto/bin/obsnop.c	/^FILE* create_trace_file(char* fname) {$/;"	f
+df_to_markdown_table	mergeReports.py	/^def df_to_markdown_table(df, outfile):$/;"	f
+dump	test_data/mw_auto/bin/makefile	/^define dump$/;"	m
+dump_state	test_data/mw_auto/bin/obsnop.c	/^void dump_state(FILE* fp, top_ctx* ctx) {$/;"	f
+each_criterion	measureReducedObc.py	/^def each_criterion(system, criterion):$/;"	f
+elem	test_data/mw_auto/bin/obsnop.c	/^	input_t elem; $/;"	m	struct:input_node_t	file:
+extract_test_case_id	ObcSuiteGenerator.py	/^        def extract_test_case_id(path):$/;"	f	function:ObcSuiteGenerator.write_reduced_suites
+fall	PinCov/PinCov.cpp	/^    void fall() {$/;"	f	class:Conditional
+fallThrough	PinCov/PinCov.cpp	/^    long int fallThrough;$/;"	m	class:Conditional	file:
+generateRandomReducedTestSuite	TestCoverageData.py	/^    def generateRandomReducedTestSuite(self):$/;"	m	class:TestCoverageData
+generateReducedSubsets	TestCoverageData.py	/^    def generateReducedSubsets(self, numSubsets):    $/;"	m	class:TestCoverageData
+generate_random_minimal	ObcSuiteGenerator.py	/^        n_suite, types):$/;"	f
+getColumn	ff_analysis/TestSuite.cpp	/^int TestSuite::getColumn(const string& var) {$/;"	f	class:TestSuite
+getColumn	ff_analysis/TestSuite.cpp	/^string TestSuite::getColumn(const int& col) {$/;"	f	class:TestSuite
+getColumns	ff_analysis/TestSuite.cpp	/^vector<int>* TestSuite::getColumns(const string& line, TestSuite* ts) {$/;"	f	class:TestSuite
+getCoverage	TestCoverageData.py	/^    def getCoverage(self, testSuite):$/;"	m	class:TestCoverageData
+getFlags	PinCov/PinCov.cpp	/^bitset<16> getFlags(CONTEXT * ctxt) {$/;"	f
+getHeader	ff_analysis/TestSuite.cpp	/^void TestSuite::getHeader(const string& line) {$/;"	f	class:TestSuite
+getLines	CsvFile.py	/^	def getLines(self):$/;"	m	class:CsvFile
+getMaxObligations	TestCoverageData.py	/^    def getMaxObligations(self):$/;"	m	class:TestCoverageData
+getMaximumCoverage	TestCoverageData.py	/^    def getMaximumCoverage(self):$/;"	m	class:TestCoverageData
+getMutantList	ff_analysis/Analyzer.cpp	/^vector<string> Analyzer::getMutantList(string originalFname, string filename) {$/;"	f	class:Analyzer
+getMutantList	ff_analysis/analysis_multiMutant.cpp	/^vector<vector<string> >* getMutantList(string filename) {$/;"	f
+getOracleList	ff_analysis/Analyzer.cpp	/^vector<vector<int> >* Analyzer::getOracleList(string filename, TestSuite* ts) {$/;"	f	class:Analyzer
+getOracleList	ff_analysis/analysis_multiMutant.cpp	/^vector<vector<int> >* getOracleList(string filename, TestSuite* ts) {$/;"	f
+getPrefix	ff_analysis/Analyzer.cpp	/^string Analyzer::getPrefix(string s) {$/;"	f	class:Analyzer
+getRawData	TestCoverageData.py	/^    def getRawData(self):$/;"	m	class:TestCoverageData
+getReduced	getReduced.py	/^class getReduced(object):$/;"	c
+getSatisfiableObligations	TestCoverageData.py	/^    def getSatisfiableObligations(self):$/;"	m	class:TestCoverageData
+getSatisfyingTests	TestCoverageData.py	/^    def getSatisfyingTests(self):$/;"	m	class:TestCoverageData
+getSuiteList	ff_analysis/Analyzer.cpp	/^vector<vector<int> >* Analyzer::getSuiteList(string filename) {$/;"	f	class:Analyzer
+getSuiteList	ff_analysis/analysis_multiMutant.cpp	/^vector<vector<int> >*  getSuiteList(string filename) {$/;"	f
+getValue	ff_analysis/TestSuite.cpp	/^float TestSuite::getValue(int test, int step, const string& variable) {$/;"	f	class:TestSuite
+get_cov	mergeReports.py	/^def get_cov(system):$/;"	f
+get_coverage	ObjectBranchCoverage.py	/^    def get_coverage(self):$/;"	m	class:ObjectBranchCoverage
+get_coverage_for_all	measureReducedObc.py	/^def get_coverage_for_all():$/;"	f
+get_coverage_vector	ObjectBranchCoverage.py	/^    def get_coverage_vector(self):$/;"	m	class:ObjectBranchCoverage
+get_criterion	mergeReports.py	/^def get_criterion(path, postfix):$/;"	f
+get_ff_means	mergeReports.py	/^def get_ff_means(system):$/;"	f
+get_filtered_dump	ObjectBranchCoverage.py	/^    def get_filtered_dump(self):$/;"	m	class:ObjectBranchCoverage
+get_n_covered	ObjectBranchCoverage.py	/^    def get_n_covered(self):$/;"	m	class:Branch
+get_new_fname	filterSuite.py	/^def get_new_fname(original_fname):$/;"	f
+get_sat_obligations	ObjectBranchCoverage.py	/^    def get_sat_obligations(self):$/;"	m	class:Branch
+get_sat_obligations	ObjectBranchCoverage.py	/^    def get_sat_obligations(self):$/;"	m	class:ObjectBranchCoverage
+get_stats	ObjectBranchCoverage.py	/^    def get_stats(self):$/;"	m	class:ObjectBranchCoverage
+get_type	ObjectBranchCoverage.py	/^    def get_type(self):$/;"	m	class:Branch
+get_vector	ObjectBranchCoverage.py	/^    def get_vector(self):$/;"	m	class:Branch
+has_fallen	ObjectBranchCoverage.py	/^    def has_fallen(self):$/;"	m	class:Branch
+has_lower_coverage_than	ObjectBranchCoverage.py	/^    def has_lower_coverage_than(self, another):$/;"	m	class:ObjectBranchCoverage
+has_taken	ObjectBranchCoverage.py	/^    def has_taken(self):$/;"	m	class:Branch
+header	UniversalSuite.py	/^header = '[UniversalSuite.py] '$/;"	v
+header	measureReducedObc.py	/^header = '\\033[35m[measureReducedObc.py] \\033[0m'$/;"	v
+initResultMatrix	ff_analysis/Analyzer.cpp	/^void Analyzer::initResultMatrix() {$/;"	f	class:Analyzer
+input_node_t	test_data/mw_auto/bin/obsnop.c	/^typedef struct input_node_t {$/;"	s	file:
+input_node_t	test_data/mw_auto/bin/obsnop.c	/^} input_node_t ;$/;"	t	typeref:struct:input_node_t	file:
+input_t	test_data/mw_auto/bin/obsnop.c	/^typedef struct input_t {$/;"	s	file:
+input_t	test_data/mw_auto/bin/obsnop.c	/^} input_t ; $/;"	t	typeref:struct:input_t	file:
+intToString	ff_analysis/analysis_multiMutant.cpp	/^string intToString(const int num) {$/;"	f
+isEqual	ff_analysis/TestSuite.cpp	/^bool TestSuite::isEqual(TestSuite& ts, const vector<int>& testSuite, const vector<string>& oracle) {$/;"	f	class:TestSuite
+isEqualFast	ff_analysis/TestSuite.cpp	/^bool TestSuite::isEqualFast(TestSuite& ts, const vector<int>& testSuite, const vector<int>& columns) {$/;"	f	class:TestSuite
+isNumber	ff_analysis/TestSuite.cpp	/^bool isNumber(const string& s)$/;"	f
+killMutants	ff_analysis/Analyzer.cpp	/^void Analyzer::killMutants() {$/;"	f	class:Analyzer
+m_header	ff_analysis/TestSuite.h	/^    map<string,int> m_header;$/;"	m	class:TestSuite
+m_numSteps	ff_analysis/TestSuite.h	/^    int m_numSteps;$/;"	m	class:TestSuite
+m_reverseHeader	ff_analysis/TestSuite.h	/^    map<int, string> m_reverseHeader; $/;"	m	class:TestSuite
+m_suite	ff_analysis/TestSuite.h	/^    vector<vector<float> > m_suite;$/;"	m	class:TestSuite
+m_testEndLocations	ff_analysis/TestSuite.h	/^    vector<int> m_testEndLocations;$/;"	m	class:TestSuite
+m_testStartLocations	ff_analysis/TestSuite.h	/^    vector<int> m_testStartLocations;$/;"	m	class:TestSuite
+main	ObcSuiteGenerator.py	/^def main():$/;"	f
+main	ObjectBranchCoverage.py	/^def main():$/;"	f
+main	PinCov/PinCov.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	PinCov/tests/tmp.c	/^int main() {$/;"	f
+main	checkEquivalency.py	/^def main(argv):$/;"	f
+main	compare_trace.py	/^def main():$/;"	f
+main	ff_analysis/analysis.cpp	/^int main(int argc, char **argv)$/;"	f
+main	ff_analysis/analysis_multiMutant.cpp	/^int main(int argc, char **argv)$/;"	f
+main	filterSuite.py	/^def main():$/;"	f
+main	generateObcStats.py	/^def main():$/;"	f
+main	getObcDir.py	/^def main():$/;"	f
+main	getReduced.py	/^	def main():$/;"	m	class:getReduced
+main	measureReducedObc.py	/^def main():$/;"	f
+main	mergeReports.py	/^def main():$/;"	f
+main	test_data/mw_auto/bin/obsnop.c	/^int main(int argc, char** argv){$/;"	f
+mainGenerateReducedSuite	TestCoverageData.py	/^def mainGenerateReducedSuite(inputFile, number, outputFile):$/;"	f
+measure_each_suite	measureReducedObc.py	/^def measure_each_suite(sysname, binary_name, obc_type, suites):$/;"	f
+merge_and_write	ObcSuiteGenerator.py	/^    def merge_and_write(self, selection, outfile):$/;"	m	class:ObcSuiteGenerator
+merge_suites	UniversalSuite.py	/^    def merge_suites(self):$/;"	m	class:UniversalSuite
+mutantCnt	ff_analysis/Analyzer.h	/^	map<string,int> mutantCnt;$/;"	m	class:Analyzer
+mutants	ff_analysis/Analyzer.h	/^	vector<string> mutants;$/;"	m	class:Analyzer
+mutationScoreMap	ff_analysis/Analyzer.h	/^	map<string,map<int, map<int, int> > > mutationScoreMap;$/;"	m	class:Analyzer
+next	test_data/mw_auto/bin/obsnop.c	/^	struct input_node_t *next;$/;"	m	struct:input_node_t	typeref:struct:input_node_t::input_node_t	file:
+next	test_data/mw_auto/bin/obsnop.c	/^	struct test_node_t *next;$/;"	m	struct:test_node_t	typeref:struct:test_node_t::test_node_t	file:
+oracleList	ff_analysis/Analyzer.h	/^	vector<vector<int> >* oracleList;$/;"	m	class:Analyzer
+outfile	PinCov/PinCov.cpp	/^ofstream outfile;$/;"	v
+parallel_job	performEquivalencyCheck	/^parallel_job() {$/;"	f
+populate_tests	test_data/mw_auto/bin/obsnop.c	/^void populate_tests(FILE *fp, test_node_t *first) {$/;"	f
+printSuite	ff_analysis/TestSuite.cpp	/^void TestSuite::printSuite() {$/;"	f	class:TestSuite
+printUsage	TestCoverageData.py	/^def printUsage():$/;"	f
+print_line	runObcExperiment	/^function print_line {$/;"	f
+processLine	ff_analysis/TestSuite.cpp	/^void TestSuite::processLine(int step, const string& line) {$/;"	f	class:TestSuite
+processLine	ff_analysis/TestSuite.cpp	/^void TestSuite::processLine(int step, const string& line, vector<int>* columns) {$/;"	f	class:TestSuite
+processMutant	ff_analysis/analysis_multiMutant.cpp	/^void processMutant(const string& line, vector<string>& mutant) {$/;"	f
+processMutantName	ff_analysis/Analyzer.cpp	/^string Analyzer::processMutantName(string mutFile) {$/;"	f	class:Analyzer
+processOracle	ff_analysis/Analyzer.cpp	/^void Analyzer::processOracle(const string& line, vector<int>& oracle, TestSuite* ts) {$/;"	f	class:Analyzer
+processOracle	ff_analysis/analysis_multiMutant.cpp	/^void processOracle(const string& line, vector<int>& oracle, TestSuite* ts) {$/;"	f
+processSuite	ff_analysis/Analyzer.cpp	/^void Analyzer::processSuite(const string& line, vector<int>& suite) {$/;"	f	class:Analyzer
+processSuite	ff_analysis/analysis_multiMutant.cpp	/^void processSuite(const string& line, vector<int>& suite) {$/;"	f
+readFormulaFile	CsvFile.py	/^	def readFormulaFile(self, fileName):$/;"	m	class:CsvFile
+readFormulaFile	TestCoverageData.py	/^    def readFormulaFile(self, filename):$/;"	m	class:TestCoverageData
+readOpenFormulaFile	TestCoverageData.py	/^    def readOpenFormulaFile(self, f):$/;"	m	class:TestCoverageData
+read_univ_obc_suite	ObcSuiteGenerator.py	/^    def read_univ_obc_suite(self):$/;"	m	class:ObcSuiteGenerator
+reg	PinCov/tests/tmp.c	/^struct reg {$/;"	s	file:
+resultMatrix	ff_analysis/Analyzer.h	/^	int** resultMatrix;$/;"	m	class:Analyzer
+root	measureReducedObc.py	/^root = ''       # the path of the root of output directory$/;"	v
+round	generateFaultFindingSensitivity	/^					function round(x,   ival, aval, fraction)$/;"	f
+scan_input	test_data/mw_auto/bin/obsnop.c	/^void scan_input(char *buffer, input_t *elem) {$/;"	f
+segfault_sigaction	ff_analysis/analysis.cpp	/^void segfault_sigaction(int signal, siginfo_t *si, void *arg)$/;"	f
+select_minimal	ObcSuiteGenerator.py	/^    def select_minimal(self):$/;"	m	class:ObcSuiteGenerator
+select_minimum	ObcSuiteGenerator.py	/^    def select_minimum(self):$/;"	m	class:ObcSuiteGenerator
+setup_class	UniversalSuite.py	/^    def setup_class(self):$/;"	m	class:TestUniversalSuite
+steps	test_data/mw_auto/bin/obsnop.c	/^	input_node_t *steps;$/;"	m	struct:test_node_t	file:
+str	PinCov/PinCov.cpp	/^    string str() {$/;"	f	class:Conditional
+stringToFloat	ff_analysis/TestSuite.cpp	/^float stringToFloat(const string& line) {$/;"	f
+stringToInt	ff_analysis/Analyzer.cpp	/^int Analyzer::stringToInt(const string& line) {$/;"	f	class:Analyzer
+stringToInt	ff_analysis/analysis_multiMutant.cpp	/^int stringToInt(const string& line) {$/;"	f
+suiteList	ff_analysis/Analyzer.h	/^	vector<vector<int> >* suiteList;$/;"	m	class:Analyzer
+sysdir	measureReducedObc.py	/^sysdir = ''     # the name of the systems (input) directory$/;"	v
+take	PinCov/PinCov.cpp	/^    void take() {$/;"	f	class:Conditional
+taken	PinCov/PinCov.cpp	/^    long int taken;$/;"	m	class:Conditional	file:
+teardown_class	UniversalSuite.py	/^    def teardown_class(self):$/;"	m	class:TestUniversalSuite
+test1	PinCov/run_test.sh	/^function test1 {$/;"	f
+test_get_new_fname	filterSuite.py	/^def test_get_new_fname():$/;"	f
+test_infusion_o2	PinCov/run_test.sh	/^function test_infusion_o2 {$/;"	f
+test_merge_suites	UniversalSuite.py	/^    def test_merge_suites(self):$/;"	m	class:TestUniversalSuite
+test_node_t	test_data/mw_auto/bin/obsnop.c	/^typedef struct test_node_t {$/;"	s	file:
+test_node_t	test_data/mw_auto/bin/obsnop.c	/^} test_node_t;$/;"	t	typeref:struct:test_node_t	file:
+test_write_tests_separately	UniversalSuite.py	/^    def test_write_tests_separately(self):$/;"	m	class:TestUniversalSuite
+test_write_universal_suite	UniversalSuite.py	/^    def test_write_universal_suite(self):$/;"	m	class:TestUniversalSuite
+top_I_DOOR_CLOSED	test_data/mw_auto/bin/obsnop.c	/^void top_I_DOOR_CLOSED(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_0	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_0(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_1	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_1(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_2	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_2(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_3	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_3(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_4	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_4(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_5	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_5(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_6	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_6(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_7	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_7(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_8	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_8(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_9	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_9(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_CLEAR	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_CLEAR(top_ctx* ctx, _boolean V){$/;"	f
+top_I_KP_START	test_data/mw_auto/bin/obsnop.c	/^void top_I_KP_START(top_ctx* ctx, _boolean V){$/;"	f
+top_copy_ctx	test_data/mw_auto/bin/obsnop.c	/^void top_copy_ctx(top_ctx* dest, top_ctx* src){$/;"	f
+top_ctx	test_data/mw_auto/bin/obsnop.c	/^} top_ctx;$/;"	t	typeref:struct:__anon1	file:
+top_new_ctx	test_data/mw_auto/bin/obsnop.c	/^top_ctx* top_new_ctx(void* cdata){$/;"	f
+top_reset	test_data/mw_auto/bin/obsnop.c	/^void top_reset(top_ctx* ctx){$/;"	f
+top_reset_input	test_data/mw_auto/bin/obsnop.c	/^static void top_reset_input(top_ctx* ctx){$/;"	f	file:
+top_step	test_data/mw_auto/bin/obsnop.c	/^void top_step(top_ctx* ctx){$/;"	f
+treatCmov	PinCov/PinCov.cpp	/^void treatCmov(INS ins) {$/;"	f
+treatSetcc	PinCov/PinCov.cpp	/^void treatSetcc(INS ins) {$/;"	f
+type	PinCov/PinCov.cpp	/^    char type;$/;"	m	class:Conditional	file:
+update	ObjectBranchCoverage.py	/^    def update(self, taken, fallen):$/;"	m	class:Branch
+update_cov_from_pincov	ObjectBranchCoverage.py	/^    def update_cov_from_pincov(self, pincov):$/;"	m	class:ObjectBranchCoverage
+verify	ObcSuiteGenerator.py	/^        def verify(selection):$/;"	f	function:ObcSuiteGenerator.select_minimal
+word	PinCov/tests/tmp.c	/^    int word[10];$/;"	m	struct:reg	file:
+writeCsvFile	CsvFile.py	/^	def writeCsvFile(self, outputFile):$/;"	m	class:CsvFile
+writeResult	ff_analysis/Analyzer.cpp	/^void Analyzer::writeResult(string outFname) {$/;"	f	class:Analyzer
+write_reduced_suites	ObcSuiteGenerator.py	/^    def write_reduced_suites(self, selections, outfile):$/;"	m	class:ObcSuiteGenerator
+write_tests_separately	UniversalSuite.py	/^    def write_tests_separately(self, outdir, basename):$/;"	m	class:UniversalSuite
+write_universal_suite	UniversalSuite.py	/^    def write_universal_suite(self, filename):$/;"	m	class:UniversalSuite
+~Analyzer	ff_analysis/Analyzer.cpp	/^Analyzer::~Analyzer() {$/;"	f	class:Analyzer
+~TestSuite	ff_analysis/TestSuite.cpp	/^TestSuite::~TestSuite() {$/;"	f	class:TestSuite

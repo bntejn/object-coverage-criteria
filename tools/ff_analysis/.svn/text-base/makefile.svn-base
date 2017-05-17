@@ -1,0 +1,22 @@
+#List of my objects...
+OBJECTS = TestSuite.o
+
+default : all
+
+all: analysis
+
+#the dependencies and compile instructions....
+analysis:  TestSuite.o analysis.cpp
+	g++  TestSuite.o analysis.cpp -o analysis
+
+analysis-multiMutant:  TestSuite.o analysis_multiMutant.cpp
+	g++  TestSuite.o analysis_multiMutant.cpp -o analysis_multiMutant
+
+TestSuite.o:  TestSuite.h TestSuite.cpp
+	g++  -c TestSuite.cpp
+
+#Clean up stuff 
+clean:
+	-@rm core > /dev/null 2>&1
+	-@rm analysis > /dev/null 2>&1
+	-@rm ${OBJECTS} > /dev/null 2>&1

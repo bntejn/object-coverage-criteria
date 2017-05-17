@@ -1,0 +1,88 @@
+#!/bin/bash
+#
+# measureObc
+#
+# Read all the test suites in the suite directory and merge them to a single
+# universal test suite while removing the duplicates. 
+# Then run all the splitted test cases on each version of binary to obtain OBC 
+# coverage for each (single) test case.
+#
+#   $1: system dir
+#   $2: out dir
+#
+# @author: Taejoon Byun <taejoon@umn.edu>
+#
+# first: Jan 25 2017
+# last : Mar 8 2017
+
+source config.sh $1 $2
+
+header="\033[0;35m[measureObc]\033[0m"
+
+if [ "$#" -ne 2 ]; then
+    echo -e "$header Invalid number of arguments"
+    echo "  \$1: system dir"
+    echo "  \$2: out dir"
+    exit
+fi
+
+systems=`ls $1`
+sysroot=`basename $1`
+toolroot=`pwd`
+
+mkdir $2/obc 2> /dev/null
+mkdir $2/obc/$sysroot 2> /dev/null
+
+max_parallel=$((config_n_cores * 2))
+delay_secs=0.5
+
+for sys in $systems; do
+    mkdir $2/obc/$sysroot/$sys 2> /dev/null
+    mkdir $2/obc/$sysroot/$sys/bin 2> /dev/null
+    mkdir $2/obc/$sysroot/$sys/cov 2> /dev/null
+
+    # copy the source and makefile
+    echo -e "$header copying sources from $1/$sys"
+    src_bname=`ls $1/$sys | grep .c$`
+    flist_bname=`ls $1/$sys | grep .flist$`
+    cp $1/$sys/$src_bname $2/obc/$sysroot/$sys/bin/
+    cp $1/$sys/$flist_bname $2/obc/$sysroot/$sys/bin/
+    makefile=$2/obc/$sysroot/$sys/bin/makefile
+    cp $1/$sys/"makefile" $makefile
+
+    # make run, and cov for each bin & each test
+    cd $2/obc/$sysroot/$sys/bin
+    enable_debug=0
+    if [ "$config_debug" == "true" ]; then
+        enable_debug=1
+    fi
+    make all SRC=$src_bname DBG=$enable_debug CC=$config_compiler
+    bins=`ls | grep -v "\." | grep -v "make"`
+    tests=`ls ../../../../suites/$sysroot/$sys/splitted/*.csv` 
+    for bin in $bins; do
+        mkdir ../cov/$bin 2> /dev/null
+        n_tests=`echo $tests | wc -w`
+        echo -e "$header running $n_tests test cases on $bin ... "
+        i=0
+        for t in $tests; do
+            i=$((i+1))
+            cov_fname="../cov/$bin/`basename $t .csv`.pincov"
+            if [ "$config_debug" == "true" ]; then
+                pin -t $toolroot/PinCov.so -o $cov_fname -- ./$bin $t &
+            else
+                pin -t $toolroot/PinCov.so -o $cov_fname -- ./$bin $t > /dev/null &
+            fi
+            while [ `jobs | wc -l` -gt $max_parallel ]; do
+                echo -ne "$\r$i out of $n_tests "
+                sleep $delay_secs
+            done
+            #sleep 0.1
+        done
+        wait
+        printf "\n"
+    done
+    cd $toolroot
+
+done
+exit
+

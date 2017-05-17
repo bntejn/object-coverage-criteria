@@ -1,0 +1,131 @@
+#!/bin/bash
+
+# Run FF experiment
+
+# Gregory Gay
+# Modified by Taejoon Byun
+# last : Mar 29 2017
+
+# Input arguments
+#   $1 = non-inlined system folder
+#   $2 = output directory
+#   $3 = number of mutants
+#   $4 = number of test suites
+# Other optional arguments (passed through config)
+#   - $config_generate_mutants: generate mutants
+#   - $config_generate_tests: generate tests
+
+if [ "$#" -ne 4 ]; then
+    echo "  \$1 = non-inlined system folder"
+    echo "  \$2 = output directory"
+    echo "  \$3 = number of mutants"
+    echo "  \$4 = number of test suites"
+    exit
+fi
+
+header="\033[0;34m[runObcExperiment]\033[0m"
+log=$2"/log.txt"
+niSystems=`ls $1`
+niSysRoot=`basename $1`
+
+function print_line {
+    printf "%0.s-" {1..80}
+    printf "\n"
+}
+
+rm $log
+touch $log
+start_dt=`date "+%F %T %Z"`
+
+echo -e "$header Started at: $start_dt" | tee -a $log
+
+print_line
+echo -e "$header Clearing $1 and $2" | tee -a $log
+# clear previous results
+./clearInputDir $1
+./clearOutputDir $1 $2
+
+if [ "$config_generate_tests" == "true" ]; then 
+    # Generate obligations and tests
+    print_line
+    printf "$header generateTests $1 $2\n" | tee -a $log
+    ./generateTests $1 $2 | tee -a $log
+else
+    mkdir $2/suites 2> /dev/null
+    mkdir $2/suites/$niSysRoot 2> /dev/null
+    systems=`ls $1`
+    for sys in $systems; do
+        mkdir $2/suites/$niSysRoot/$sys 2> /dev/null
+        #mkdir $1/$sys/obligations/
+    done
+fi 
+
+print_line
+printf "$header generateUnivSuite $1 $2\n" | tee -a $log
+./generateUnivSuite $1 $2 | tee -a $log
+
+# Generate coverage matrices
+
+for sys in $niSystems; do
+	mkdir $2/suites/$niSysRoot/$sys/covMatrices 2> /dev/null
+#
+	# Copy normal suites to covMatrices folder
+    normalSuites=`ls "$2/suites/$niSysRoot/$sys" | grep "csv" | grep -v "obc"`
+    for s in $normalSuites; do
+        cp $2/suites/$niSysRoot/$sys/$s $2/suites/$niSysRoot/$sys/covMatrices/
+    done
+done
+
+#
+#	# Copy inlined to noninlined and vice-versa
+#	#cp $2/suites/$niSysRoot/$sys/*".csv" $2/suites/$iSysRoot/$sys/covMatrices/
+#done
+
+# TODO: this used to generate some sort of trace.. 
+print_line
+printf "$header generateCovMatrix $1 $2\n" | tee -a $log
+./generateCovMatrix $1 $2 2>&1 | tee -a $log
+
+print_line
+printf "$header measureObc $1 $2\n" | tee -a $log
+./measureObc $1 $2 | tee -a $log
+
+# Generate oracle listing
+print_line
+printf "$header generateOracleListing $1\n" | tee -a $log
+./generateOracleListing $1 | tee -a $log
+
+if [ "$config_generate_mutants" == "true" ]; then
+    # Generate mutants and remove equivalent mutants
+    print_line
+    printf "$header generateMutants $1 $3\n" | tee -a $log
+    ./generateMutants $1 $3 | tee -a $log
+    print_line
+    printf "$header generateEquivalentMutants $1\n" | tee -a $log
+    ./generateEquivalentMutants $1 | tee -a $log
+fi
+
+# Generate traces for each test suite * each mutant
+print_line
+printf "$header generateTraces $1 $2\n" | tee -a $log
+./generateTraces $1 $2 | tee -a $log
+
+# generate a list of reduced test suites
+./generateReducedSuites $1 $2 $4 | tee -a $log
+
+# Generate fault-finding reports
+print_line
+printf "$header generateReport $1 $2\n" | tee -a $log
+./generateReport $1 $2 | tee -a $log
+
+print_line
+printf "$header python boxplot.py $2\n" | tee -a $log
+python boxplot.py $2 | tee -a $log
+
+print_line
+printf "$header python stats.py $2\n" | tee -a $log
+python stats.py $2 > $2/stats.md
+
+start_dt=`date "+%F %T %Z"`
+echo -e "$header Finished at: $start_dt" | tee -a $log
+

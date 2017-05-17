@@ -1,0 +1,788 @@
+[0;34m[runObcExperiment][0m Started at: 2017-05-04 21:57:35 CDT
+[0;34m[runObcExperiment][0m Clearing ../systems/microwave250 and ../outs/microwave250-ccomp
+[0;34m[runObcExperiment][0m generateUnivSuite ../systems/microwave250 ../outs/microwave250-ccomp
+rm: cannot remove '../outs/microwave250-ccomp/suites/microwave250/mw_auto//splitted/universal.csv': No such file or directory
+[0;35m[generateUnivSuite][0m Number of test cases before merge: 1410
+[UniversalSuite.py] Merging 4 suites
+[UniversalSuite.py] Writing merged suite to ../outs/microwave250-ccomp/suites/microwave250/mw_auto//obsnop.obc_tests.csv
+[UniversalSuite.py] Writing merged suite to ../outs/microwave250-ccomp/suites/microwave250/mw_auto//splitted/universal.csv
+[UniversalSuite.py] Splitting tests to ../outs/microwave250-ccomp/suites/microwave250/mw_auto//splitted
+[0;35m[generateUnivSuite][0m Merged to 267 test cases and saved to ../outs/microwave250-ccomp/suites/microwave250/mw_auto//obsnop.obc_tests.csv
+rm: cannot remove '../outs/microwave250-ccomp/suites/microwave250/mw_manual//splitted/universal.csv': No such file or directory
+[0;35m[generateUnivSuite][0m Number of test cases before merge: 1410
+[UniversalSuite.py] Merging 4 suites
+[UniversalSuite.py] Writing merged suite to ../outs/microwave250-ccomp/suites/microwave250/mw_manual//obsnop.obc_tests.csv
+[UniversalSuite.py] Writing merged suite to ../outs/microwave250-ccomp/suites/microwave250/mw_manual//splitted/universal.csv
+[UniversalSuite.py] Splitting tests to ../outs/microwave250-ccomp/suites/microwave250/mw_manual//splitted
+[0;35m[generateUnivSuite][0m Merged to 267 test cases and saved to ../outs/microwave250-ccomp/suites/microwave250/mw_manual//obsnop.obc_tests.csv
+[0;34m[runObcExperiment][0m generateCovMatrix ../systems/microwave250 ../outs/microwave250-ccomp
+[0;35m[generateCovMatrix][0m coverage mcdc for system mw_auto
+	Suites: obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m writing oracle listing to obsnop.mcdc_obligations.lus.oracle.csv
+[0;35m[generateCovMatrix][0m Generating traces for suite obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m generating coverage matrix to obsnop.mcdc_obligations.lus_obsnop.mcdc_tests.csvcoverage.csv
+[0;35m[generateCovMatrix][0m coverage mcdc for system mw_manual
+	Suites: obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m writing oracle listing to obsnop.mcdc_obligations.lus.oracle.csv
+[0;35m[generateCovMatrix][0m Generating traces for suite obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m generating coverage matrix to obsnop.mcdc_obligations.lus_obsnop.mcdc_tests.csvcoverage.csv
+[0;34m[runObcExperiment][0m measureObc ../systems/microwave250 ../outs/microwave250-ccomp
+[0;35m[measureObc][0m copying sources from ../systems/microwave250/mw_auto
+ccomp obsnop.c -DDEBUG=0 -w -o o0 -O0 -DTRACE_FNAME=\"o0.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o o1 -O1 -DTRACE_FNAME=\"o1.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o o2 -O2 -DTRACE_FNAME=\"o2.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o o3 -O3 -DTRACE_FNAME=\"o3.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o os -Os -DTRACE_FNAME=\"os.trace.csv\"
+touch makefile
+[0;35m[measureObc][0m running 268 test cases on o0 ... 
+$9 out of 268 $9 out of 268 $18 out of 268 $19 out of 268 $28 out of 268 $28 out of 268 $37 out of 268 $37 out of 268 $46 out of 268 $46 out of 268 $55 out of 268 $56 out of 268 $65 out of 268 $65 out of 268 $74 out of 268 $74 out of 268 $83 out of 268 $83 out of 268 $92 out of 268 $92 out of 268 $101 out of 268 $103 out of 268 $112 out of 268 $113 out of 268 $122 out of 268 $122 out of 268 $131 out of 268 $131 out of 268 $140 out of 268 $142 out of 268 $151 out of 268 $151 out of 268 $160 out of 268 $160 out of 268 $169 out of 268 $169 out of 268 $178 out of 268 $178 out of 268 $187 out of 268 $187 out of 268 $196 out of 268 $196 out of 268 $205 out of 268 $206 out of 268 $215 out of 268 $215 out of 268 $224 out of 268 $224 out of 268 $233 out of 268 $233 out of 268 $242 out of 268 $244 out of 268 $253 out of 268 $253 out of 268 $262 out of 268 $262 out of 268 
+[0;35m[measureObc][0m running 268 test cases on o1 ... 
+$9 out of 268 $10 out of 268 $19 out of 268 $19 out of 268 $28 out of 268 $28 out of 268 $37 out of 268 $37 out of 268 $46 out of 268 $46 out of 268 $55 out of 268 $55 out of 268 $64 out of 268 $64 out of 268 $73 out of 268 $73 out of 268 $82 out of 268 $82 out of 268 $91 out of 268 $91 out of 268 $100 out of 268 $100 out of 268 $109 out of 268 $109 out of 268 $118 out of 268 $118 out of 268 $127 out of 268 $127 out of 268 $136 out of 268 $136 out of 268 $145 out of 268 $145 out of 268 $154 out of 268 $154 out of 268 $163 out of 268 $164 out of 268 $173 out of 268 $173 out of 268 $182 out of 268 $182 out of 268 $191 out of 268 $191 out of 268 $200 out of 268 $201 out of 268 $210 out of 268 $210 out of 268 $219 out of 268 $221 out of 268 $230 out of 268 $230 out of 268 $239 out of 268 $239 out of 268 $248 out of 268 $248 out of 268 $257 out of 268 $258 out of 268 $267 out of 268 $267 out of 268 
+[0;35m[measureObc][0m running 268 test cases on o2 ... 
+$9 out of 268 $9 out of 268 $18 out of 268 $18 out of 268 $27 out of 268 $28 out of 268 $37 out of 268 $37 out of 268 $46 out of 268 $47 out of 268 $56 out of 268 $56 out of 268 $65 out of 268 $65 out of 268 $74 out of 268 $74 out of 268 $83 out of 268 $83 out of 268 $92 out of 268 $92 out of 268 $101 out of 268 $101 out of 268 $110 out of 268 $110 out of 268 $119 out of 268 $119 out of 268 $128 out of 268 $130 out of 268 $139 out of 268 $139 out of 268 $148 out of 268 $148 out of 268 $157 out of 268 $157 out of 268 $166 out of 268 $166 out of 268 $175 out of 268 $175 out of 268 $184 out of 268 $184 out of 268 $193 out of 268 $193 out of 268 $202 out of 268 $202 out of 268 $211 out of 268 $212 out of 268 $221 out of 268 $223 out of 268 $232 out of 268 $234 out of 268 $243 out of 268 $245 out of 268 $254 out of 268 $254 out of 268 $263 out of 268 $263 out of 268 
+[0;35m[measureObc][0m running 268 test cases on o3 ... 
+$9 out of 268 $9 out of 268 $18 out of 268 $18 out of 268 $27 out of 268 $27 out of 268 $36 out of 268 $36 out of 268 $45 out of 268 $45 out of 268 $54 out of 268 $54 out of 268 $63 out of 268 $63 out of 268 $72 out of 268 $73 out of 268 $82 out of 268 $86 out of 268 $95 out of 268 $97 out of 268 $106 out of 268 $108 out of 268 $117 out of 268 $119 out of 268 $128 out of 268 $128 out of 268 $137 out of 268 $138 out of 268 $147 out of 268 $147 out of 268 $156 out of 268 $156 out of 268 $165 out of 268 $165 out of 268 $174 out of 268 $175 out of 268 $184 out of 268 $184 out of 268 $193 out of 268 $193 out of 268 $202 out of 268 $202 out of 268 $211 out of 268 $211 out of 268 $220 out of 268 $220 out of 268 $229 out of 268 $232 out of 268 $241 out of 268 $242 out of 268 $251 out of 268 $253 out of 268 $262 out of 268 $264 out of 268 
+[0;35m[measureObc][0m running 268 test cases on os ... 
+$9 out of 268 $9 out of 268 $18 out of 268 $18 out of 268 $27 out of 268 $27 out of 268 $36 out of 268 $37 out of 268 $46 out of 268 $46 out of 268 $55 out of 268 $55 out of 268 $64 out of 268 $66 out of 268 $75 out of 268 $75 out of 268 $84 out of 268 $84 out of 268 $93 out of 268 $93 out of 268 $102 out of 268 $102 out of 268 $111 out of 268 $111 out of 268 $120 out of 268 $120 out of 268 $129 out of 268 $129 out of 268 $138 out of 268 $138 out of 268 $147 out of 268 $147 out of 268 $156 out of 268 $156 out of 268 $165 out of 268 $169 out of 268 $178 out of 268 $178 out of 268 $187 out of 268 $187 out of 268 $196 out of 268 $196 out of 268 $205 out of 268 $210 out of 268 $219 out of 268 $220 out of 268 $229 out of 268 $230 out of 268 $239 out of 268 $239 out of 268 $248 out of 268 $248 out of 268 $257 out of 268 $257 out of 268 $266 out of 268 $266 out of 268 
+[0;35m[measureObc][0m copying sources from ../systems/microwave250/mw_manual
+ccomp obsnop.c -DDEBUG=0 -w -o o0 -O0 -DTRACE_FNAME=\"o0.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o o1 -O1 -DTRACE_FNAME=\"o1.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o o2 -O2 -DTRACE_FNAME=\"o2.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o o3 -O3 -DTRACE_FNAME=\"o3.trace.csv\"
+touch makefile
+ccomp obsnop.c -DDEBUG=0 -w -o os -Os -DTRACE_FNAME=\"os.trace.csv\"
+touch makefile
+[0;35m[measureObc][0m running 268 test cases on o0 ... 
+$9 out of 268 $17 out of 268 $26 out of 268 $34 out of 268 $42 out of 268 $44 out of 268 $53 out of 268 $53 out of 268 $62 out of 268 $71 out of 268 $80 out of 268 $89 out of 268 $98 out of 268 $107 out of 268 $115 out of 268 $123 out of 268 $132 out of 268 $140 out of 268 $149 out of 268 $158 out of 268 $166 out of 268 $175 out of 268 $181 out of 268 $190 out of 268 $192 out of 268 $201 out of 268 $202 out of 268 $211 out of 268 $214 out of 268 $223 out of 268 $224 out of 268 $233 out of 268 $242 out of 268 $251 out of 268 $255 out of 268 $264 out of 268 $264 out of 268 
+[0;35m[measureObc][0m running 268 test cases on o1 ... 
+$9 out of 268 $18 out of 268 $27 out of 268 $35 out of 268 $37 out of 268 $46 out of 268 $47 out of 268 $56 out of 268 $65 out of 268 $74 out of 268 $79 out of 268 $88 out of 268 $89 out of 268 $98 out of 268 $100 out of 268 $109 out of 268 $117 out of 268 $126 out of 268 $134 out of 268 $143 out of 268 $152 out of 268 $161 out of 268 $161 out of 268 $170 out of 268 $176 out of 268 $185 out of 268 $194 out of 268 $202 out of 268 $211 out of 268 $214 out of 268 $223 out of 268 $229 out of 268 $238 out of 268 $247 out of 268 $256 out of 268 $265 out of 268 
+[0;35m[measureObc][0m running 268 test cases on o2 ... 
+$9 out of 268 $18 out of 268 $26 out of 268 $35 out of 268 $43 out of 268 $52 out of 268 $61 out of 268 $70 out of 268 $72 out of 268 $81 out of 268 $90 out of 268 $98 out of 268 $107 out of 268 $116 out of 268 $124 out of 268 $133 out of 268 $142 out of 268 $151 out of 268 $160 out of 268 $169 out of 268 $178 out of 268 $186 out of 268 $195 out of 268 $203 out of 268 $212 out of 268 $221 out of 268 $230 out of 268 $239 out of 268 $248 out of 268 $257 out of 268 $266 out of 268 $268 out of 268 
+[0;35m[measureObc][0m running 268 test cases on o3 ... 
+$9 out of 268 $9 out of 268 $18 out of 268 $18 out of 268 $27 out of 268 $29 out of 268 $38 out of 268 $47 out of 268 $56 out of 268 $65 out of 268 $65 out of 268 $74 out of 268 $74 out of 268 $83 out of 268 $83 out of 268 $92 out of 268 $93 out of 268 $102 out of 268 $102 out of 268 $111 out of 268 $112 out of 268 $121 out of 268 $121 out of 268 $130 out of 268 $131 out of 268 $140 out of 268 $140 out of 268 $149 out of 268 $150 out of 268 $159 out of 268 $168 out of 268 $177 out of 268 $186 out of 268 $191 out of 268 $200 out of 268 $209 out of 268 $218 out of 268 $227 out of 268 $236 out of 268 $243 out of 268 $252 out of 268 $261 out of 268 
+[0;35m[measureObc][0m running 268 test cases on os ... 
+$9 out of 268 $18 out of 268 $19 out of 268 $28 out of 268 $28 out of 268 $37 out of 268 $38 out of 268 $47 out of 268 $49 out of 268 $58 out of 268 $67 out of 268 $73 out of 268 $82 out of 268 $91 out of 268 $99 out of 268 $108 out of 268 $116 out of 268 $125 out of 268 $130 out of 268 $139 out of 268 $148 out of 268 $157 out of 268 $165 out of 268 $174 out of 268 $182 out of 268 $191 out of 268 $200 out of 268 $209 out of 268 $218 out of 268 $227 out of 268 $236 out of 268 $244 out of 268 $253 out of 268 $262 out of 268 $266 out of 268 
+[0;34m[runObcExperiment][0m generateOracleListing ../systems/microwave250
+----------
+mw_auto
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_auto/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_auto/obsnop.maximum_oracle.csv
+----------
+mw_manual
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_manual/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_manual/obsnop.maximum_oracle.csv
+[0;34m[runObcExperiment][0m generateTraces ../systems/microwave250 ../outs/microwave250-ccomp
+[0;35m[generateTraces][0m ./generateOracleListing ../systems/microwave250
+----------
+mw_auto
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_auto/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_auto/obsnop.maximum_oracle.csv
+----------
+mw_manual
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_manual/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/microwave250/mw_manual/obsnop.maximum_oracle.csv
+[0;35m[generateTraces][0m Running the universal suite on mw_auto
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated104__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated107__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Relational
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Relational
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated132__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Relational
+	obsnop.mutated140__Delay
+	obsnop.mutated141__Delay
+	obsnop.mutated142__Delay
+	obsnop.mutated143__Delay
+	obsnop.mutated144__Delay
+	obsnop.mutated145__Delay
+	obsnop.mutated146__Delay
+	obsnop.mutated147__Delay
+	obsnop.mutated148__Delay
+	obsnop.mutated149__Delay
+	obsnop.mutated14__Boolean
+	obsnop.mutated150__Delay
+	obsnop.mutated151__Delay
+	obsnop.mutated152__Delay
+	obsnop.mutated153__Delay
+	obsnop.mutated154__Delay
+	obsnop.mutated155__Delay
+	obsnop.mutated156__Delay
+	obsnop.mutated157__Delay
+	obsnop.mutated158__Delay
+	obsnop.mutated159__Delay
+	obsnop.mutated15__Boolean
+	obsnop.mutated160__Delay
+	obsnop.mutated161__Delay
+	obsnop.mutated162__Delay
+	obsnop.mutated163__Delay
+	obsnop.mutated164__Delay
+	obsnop.mutated165__Delay
+	obsnop.mutated166__Delay
+	obsnop.mutated167__Delay
+	obsnop.mutated168__Delay
+	obsnop.mutated169__Delay
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__Delay
+	obsnop.mutated171__Delay
+	obsnop.mutated172__Delay
+	obsnop.mutated173__Delay
+	obsnop.mutated174__Delay
+	obsnop.mutated175__Delay
+	obsnop.mutated176__Delay
+	obsnop.mutated177__Delay
+	obsnop.mutated178__Delay
+	obsnop.mutated179__Delay
+	obsnop.mutated17__Boolean
+	obsnop.mutated180__Const
+	obsnop.mutated181__Const
+	obsnop.mutated182__Const
+	obsnop.mutated183__Const
+	obsnop.mutated184__Const
+	obsnop.mutated185__Const
+	obsnop.mutated186__Const
+	obsnop.mutated187__Const
+	obsnop.mutated188__Const
+	obsnop.mutated189__Const
+	obsnop.mutated18__Boolean
+	obsnop.mutated190__Const
+	obsnop.mutated191__Const
+	obsnop.mutated192__Const
+	obsnop.mutated193__Const
+	obsnop.mutated194__Const
+	obsnop.mutated195__Const
+	obsnop.mutated196__Const
+	obsnop.mutated197__Const
+	obsnop.mutated198__Const
+	obsnop.mutated199__Const
+	obsnop.mutated19__Boolean
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated200__Const
+	obsnop.mutated201__Const
+	obsnop.mutated202__Const
+	obsnop.mutated203__Const
+	obsnop.mutated204__Const
+	obsnop.mutated205__Const
+	obsnop.mutated206__Const
+	obsnop.mutated207__Const
+	obsnop.mutated208__Const
+	obsnop.mutated209__Const
+	obsnop.mutated20__Boolean
+	obsnop.mutated210__Const
+	obsnop.mutated211__Const
+	obsnop.mutated212__VarReplace
+	obsnop.mutated213__VarReplace
+	obsnop.mutated214__VarReplace
+	obsnop.mutated215__VarReplace
+	obsnop.mutated216__VarReplace
+	obsnop.mutated217__VarReplace
+	obsnop.mutated218__VarReplace
+	obsnop.mutated219__VarReplace
+	obsnop.mutated21__Boolean
+	obsnop.mutated220__VarReplace
+	obsnop.mutated221__VarReplace
+	obsnop.mutated222__VarReplace
+	obsnop.mutated223__VarReplace
+	obsnop.mutated224__VarReplace
+	obsnop.mutated225__VarReplace
+	obsnop.mutated226__VarReplace
+	obsnop.mutated227__VarReplace
+	obsnop.mutated228__VarReplace
+	obsnop.mutated229__VarReplace
+	obsnop.mutated22__Boolean
+	obsnop.mutated230__VarReplace
+	obsnop.mutated231__VarReplace
+	obsnop.mutated232__VarReplace
+	obsnop.mutated233__VarReplace
+	obsnop.mutated234__VarReplace
+	obsnop.mutated235__VarReplace
+	obsnop.mutated236__VarReplace
+	obsnop.mutated237__VarReplace
+	obsnop.mutated238__VarReplace
+	obsnop.mutated239__VarReplace
+	obsnop.mutated23__Not
+	obsnop.mutated240__VarReplace
+	obsnop.mutated241__VarReplace
+	obsnop.mutated242__VarReplace
+	obsnop.mutated243__VarReplace
+	obsnop.mutated244__VarReplace
+	obsnop.mutated245__VarReplace
+	obsnop.mutated246__VarReplace
+	obsnop.mutated247__VarReplace
+	obsnop.mutated248__VarReplace
+	obsnop.mutated249__VarReplace
+	obsnop.mutated24__Not
+	obsnop.mutated250__VarReplace
+	obsnop.mutated251__VarReplace
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated4__Arithmetic
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated59__Not
+	obsnop.mutated5__Relational
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated64__Not
+	obsnop.mutated65__Not
+	obsnop.mutated66__Not
+	obsnop.mutated67__Not
+	obsnop.mutated68__Not
+	obsnop.mutated69__Not
+	obsnop.mutated6__Relational
+	obsnop.mutated70__Not
+	obsnop.mutated71__Not
+	obsnop.mutated72__Not
+	obsnop.mutated73__Not
+	obsnop.mutated74__Not
+	obsnop.mutated75__Not
+	obsnop.mutated76__Not
+	obsnop.mutated77__Not
+	obsnop.mutated78__Not
+	obsnop.mutated79__Not
+	obsnop.mutated7__Relational
+	obsnop.mutated80__Not
+	obsnop.mutated81__Not
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated85__Delay
+	obsnop.mutated86__Delay
+	obsnop.mutated87__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated8__Relational
+	obsnop.mutated90__Delay
+	obsnop.mutated91__Delay
+	obsnop.mutated92__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+[0;35m[generateTraces][0m Running the universal suite on mw_manual
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated104__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated107__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Relational
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Relational
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated132__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Relational
+	obsnop.mutated140__Delay
+	obsnop.mutated141__Delay
+	obsnop.mutated142__Delay
+	obsnop.mutated143__Delay
+	obsnop.mutated144__Delay
+	obsnop.mutated145__Delay
+	obsnop.mutated146__Delay
+	obsnop.mutated147__Delay
+	obsnop.mutated148__Delay
+	obsnop.mutated149__Delay
+	obsnop.mutated14__Boolean
+	obsnop.mutated150__Delay
+	obsnop.mutated151__Delay
+	obsnop.mutated152__Delay
+	obsnop.mutated153__Delay
+	obsnop.mutated154__Delay
+	obsnop.mutated155__Delay
+	obsnop.mutated156__Delay
+	obsnop.mutated157__Delay
+	obsnop.mutated158__Delay
+	obsnop.mutated159__Delay
+	obsnop.mutated15__Boolean
+	obsnop.mutated160__Delay
+	obsnop.mutated161__Delay
+	obsnop.mutated162__Delay
+	obsnop.mutated163__Delay
+	obsnop.mutated164__Delay
+	obsnop.mutated165__Delay
+	obsnop.mutated166__Delay
+	obsnop.mutated167__Delay
+	obsnop.mutated168__Delay
+	obsnop.mutated169__Delay
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__Delay
+	obsnop.mutated171__Delay
+	obsnop.mutated172__Delay
+	obsnop.mutated173__Delay
+	obsnop.mutated174__Delay
+	obsnop.mutated175__Delay
+	obsnop.mutated176__Delay
+	obsnop.mutated177__Delay
+	obsnop.mutated178__Delay
+	obsnop.mutated179__Delay
+	obsnop.mutated17__Boolean
+	obsnop.mutated180__Const
+	obsnop.mutated181__Const
+	obsnop.mutated182__Const
+	obsnop.mutated183__Const
+	obsnop.mutated184__Const
+	obsnop.mutated185__Const
+	obsnop.mutated186__Const
+	obsnop.mutated187__Const
+	obsnop.mutated188__Const
+	obsnop.mutated189__Const
+	obsnop.mutated18__Boolean
+	obsnop.mutated190__Const
+	obsnop.mutated191__Const
+	obsnop.mutated192__Const
+	obsnop.mutated193__Const
+	obsnop.mutated194__Const
+	obsnop.mutated195__Const
+	obsnop.mutated196__Const
+	obsnop.mutated197__Const
+	obsnop.mutated198__Const
+	obsnop.mutated199__Const
+	obsnop.mutated19__Boolean
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated200__Const
+	obsnop.mutated201__Const
+	obsnop.mutated202__Const
+	obsnop.mutated203__Const
+	obsnop.mutated204__Const
+	obsnop.mutated205__Const
+	obsnop.mutated206__Const
+	obsnop.mutated207__Const
+	obsnop.mutated208__Const
+	obsnop.mutated209__Const
+	obsnop.mutated20__Boolean
+	obsnop.mutated210__Const
+	obsnop.mutated211__Const
+	obsnop.mutated212__VarReplace
+	obsnop.mutated213__VarReplace
+	obsnop.mutated214__VarReplace
+	obsnop.mutated215__VarReplace
+	obsnop.mutated216__VarReplace
+	obsnop.mutated217__VarReplace
+	obsnop.mutated218__VarReplace
+	obsnop.mutated219__VarReplace
+	obsnop.mutated21__Boolean
+	obsnop.mutated220__VarReplace
+	obsnop.mutated221__VarReplace
+	obsnop.mutated222__VarReplace
+	obsnop.mutated223__VarReplace
+	obsnop.mutated224__VarReplace
+	obsnop.mutated225__VarReplace
+	obsnop.mutated226__VarReplace
+	obsnop.mutated227__VarReplace
+	obsnop.mutated228__VarReplace
+	obsnop.mutated229__VarReplace
+	obsnop.mutated22__Boolean
+	obsnop.mutated230__VarReplace
+	obsnop.mutated231__VarReplace
+	obsnop.mutated232__VarReplace
+	obsnop.mutated233__VarReplace
+	obsnop.mutated234__VarReplace
+	obsnop.mutated235__VarReplace
+	obsnop.mutated236__VarReplace
+	obsnop.mutated237__VarReplace
+	obsnop.mutated238__VarReplace
+	obsnop.mutated239__VarReplace
+	obsnop.mutated23__Not
+	obsnop.mutated240__VarReplace
+	obsnop.mutated241__VarReplace
+	obsnop.mutated242__VarReplace
+	obsnop.mutated243__VarReplace
+	obsnop.mutated244__VarReplace
+	obsnop.mutated245__VarReplace
+	obsnop.mutated246__VarReplace
+	obsnop.mutated247__VarReplace
+	obsnop.mutated248__VarReplace
+	obsnop.mutated249__VarReplace
+	obsnop.mutated24__Not
+	obsnop.mutated250__VarReplace
+	obsnop.mutated251__VarReplace
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated4__Arithmetic
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated59__Not
+	obsnop.mutated5__Relational
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated64__Not
+	obsnop.mutated65__Not
+	obsnop.mutated66__Not
+	obsnop.mutated67__Not
+	obsnop.mutated68__Not
+	obsnop.mutated69__Not
+	obsnop.mutated6__Relational
+	obsnop.mutated70__Not
+	obsnop.mutated71__Not
+	obsnop.mutated72__Not
+	obsnop.mutated73__Not
+	obsnop.mutated74__Not
+	obsnop.mutated75__Not
+	obsnop.mutated76__Not
+	obsnop.mutated77__Not
+	obsnop.mutated78__Not
+	obsnop.mutated79__Not
+	obsnop.mutated7__Relational
+	obsnop.mutated80__Not
+	obsnop.mutated81__Not
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated85__Delay
+	obsnop.mutated86__Delay
+	obsnop.mutated87__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated8__Relational
+	obsnop.mutated90__Delay
+	obsnop.mutated91__Delay
+	obsnop.mutated92__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+[0;35m[generateReducedSuites][0m Reducing mcdc suite for mw_auto
+[0;35m[generateReducedSuites][0m Reducing obc suite for mw_auto
+	bin: o0, type: J
+	bin: o0, type: JSMB
+	bin: o1, type: J
+	bin: o1, type: JSMB
+	bin: o2, type: J
+	bin: o2, type: JSMB
+	bin: o3, type: J
+	bin: o3, type: JSMB
+	bin: os, type: J
+	bin: os, type: JSMB
+[0;35m[generateReducedSuites][0m Reducing mcdc suite for mw_manual
+[0;35m[generateReducedSuites][0m Reducing obc suite for mw_manual
+	bin: o0, type: J
+	bin: o0, type: JSMB
+	bin: o1, type: J
+	bin: o1, type: JSMB
+	bin: o2, type: J
+	bin: o2, type: JSMB
+	bin: o3, type: J
+	bin: o3, type: JSMB
+	bin: os, type: J
+	bin: os, type: JSMB
+[0;34m[runObcExperiment][0m generateReport ../systems/microwave250 ../outs/microwave250-ccomp
+[0;35m[generateReport][0m Analyzing mcdc
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o0 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o0 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o1 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 18 seconds
+[analysis] Average time per comparison: 0.0009 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o1 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o2 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o3 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 16 seconds
+[analysis] Average time per comparison: 0.0008 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 16 seconds
+[analysis] Average time per comparison: 0.0008 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 16 seconds
+[analysis] Average time per comparison: 0.0008 seconds
+[0;35m[generateReport][0m Analyzing obc - os (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 19 seconds
+[analysis] Average time per comparison: 0.00095 seconds
+[0;35m[generateReport][0m Analyzing obc - os (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing mcdc
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o0 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o0 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o1 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 18 seconds
+[analysis] Average time per comparison: 0.0009 seconds
+[0;35m[generateReport][0m Analyzing obc - o1 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - os (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[0;35m[generateReport][0m Analyzing obc - os (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 17 seconds
+[analysis] Average time per comparison: 0.00085 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 18 seconds
+[analysis] Average time per comparison: 0.0009 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 16 seconds
+[analysis] Average time per comparison: 0.0008 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 16 seconds
+[analysis] Average time per comparison: 0.0008 seconds
+[0;35m[generateReport][0m ./measureReducedObc.py ../systems/microwave250 ../outs/microwave250-ccomp obsnop
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o3_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o3_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o2_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o2_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o1_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o1_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o0_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o0_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o0_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o0_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o1_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o1_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_os_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_os_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o2_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o2_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_os_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_os_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_manual, criterion obsnop.obc_o3_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o3_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o3_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o3_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o2_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o2_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o1_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o1_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o0_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o0_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o0_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o0_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o1_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o1_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_os_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_os_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o2_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o2_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_os_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_os_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system mw_auto, criterion obsnop.obc_o3_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o3_JSMB.cov.csv`
+[0;35m[generateReport][0m ./mergeReports.py ../outs/microwave250-ccomp/results/microwave250
+[0;34m[runObcExperiment][0m python boxplot.py ../outs/microwave250-ccomp
+../outs/microwave250-ccomp/results/microwave250/mw_auto
+min: 9, max: 67
+min: 9, max: 67
+saving a figure to ../outs/microwave250-ccomp/results/microwave250/mw_auto/boxplot1.pdf
+saving a figure to ../outs/microwave250-ccomp/results/microwave250/mw_auto/boxplot2.pdf
+saving a figure to ../outs/microwave250-ccomp/results/microwave250/mw_auto/boxplot3.pdf
+../outs/microwave250-ccomp/results/microwave250/mw_manual
+min: 49, max: 67
+min: 49, max: 67
+saving a figure to ../outs/microwave250-ccomp/results/microwave250/mw_manual/boxplot1.pdf
+saving a figure to ../outs/microwave250-ccomp/results/microwave250/mw_manual/boxplot2.pdf
+saving a figure to ../outs/microwave250-ccomp/results/microwave250/mw_manual/boxplot3.pdf
+[0;34m[runObcExperiment][0m python stats.py ../outs/microwave250-ccomp
+[0;34m[runObcExperiment][0m Finished at: 2017-05-04 22:09:24 CDT

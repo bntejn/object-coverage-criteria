@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Check for equivalent mutants and move them out of mutant folder
+
+# $1 = System folder
+
+if [ "$#" -ne 1 ]; then
+    echo "  \$1 = system folder"
+    exit
+fi
+
+systems=`ls $1`
+
+# for each system
+for sys in $systems; do
+	echo "----------"
+	echo $sys
+
+	mkdir $1/$sys/"/equivalentMutants/"
+
+	# Get base name for system
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+
+	# Perform equivalency check
+	./performEquivalencyCheck $1/$sys/mutants/$base".correct" $1/$sys/mutants/ $1/$sys/metadata/
+
+	# Move equivalent mutants out of main mutant folder
+	toMove=`ls $1/$sys/metadata | grep "eqReport"`
+
+	for target in $toMove; do
+		mutant=`echo $target | rev | cut -c 10- | rev`
+		mv $1/$sys/mutants/$mutant $1/$sys/equivalentMutants/
+	done
+done

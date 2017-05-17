@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Generate mutants for a series of systems
+
+# $1 = System folder
+# $2 = Number of mutants
+
+if [ "$#" -ne 2 ]; then
+    echo "  \$1 = System folder"
+    echo "  \$2 = Number of mutants"
+    exit
+fi
+
+systems=`ls $1`
+header="\033[0;35m[generateMutants]\033[0m"
+
+source config.sh $1 $2
+check_equivalence=$config_check_equivalence
+
+# for each system
+for sys in $systems; do
+    echo -e "$header Generating mutants for $sys"
+	# Get base name for system
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations"`
+    rm -r $1/$sys/mutants 2> /dev/null
+    rm -r $1/$sys/metadata 2> /dev/null
+    rm -r $1/$sys/equivalentMutants 2> /dev/null
+	./seedFaults $1/$sys/$base $2
+
+
+    # Remove equivalent mutants #############################################
+	mkdir $1/$sys/"/equivalentMutants/"
+
+	# Get base name for system
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+
+    if [ $check_equivalence == "true" ]; then
+        # Perform equivalency check
+        echo -e "$header ./performEquivalencyCheck"
+        echo -e "\t$1/$sys/mutants/$base.correct"
+        echo -e "\t$1/$sys/mutants/"
+        echo -e "\t$1/$sys/metadata/"
+        ./performEquivalencyCheck $1/$sys/mutants/$base".correct" $1/$sys/mutants/ $1/$sys/metadata/ 
+    fi
+
+	# Move equivalent mutants out of main mutant folder
+	toMove=`ls $1/$sys/metadata | grep "eqReport"`
+
+	for target in $toMove; do
+		mutant=`echo $target | rev | cut -c 10- | rev`
+		mv $1/$sys/mutants/$mutant $1/$sys/equivalentMutants/
+	done
+done

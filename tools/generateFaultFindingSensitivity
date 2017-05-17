@@ -1,0 +1,181 @@
+#!/bin/bash
+
+# Generate the fault finding reports for the sensitivity experiment
+
+# $1 = non-inlined system folder
+# $2 = inlined system folder
+# $3 = directory to place experiment products
+
+nSystems=`ls $1`
+nSysRoot=`basename $1`
+iSystems=`ls $2`
+iSysRoot=`basename $2`
+
+mTypes="Arithmetic Relational Boolean Not Delay Const NodeCall VarReplace"
+
+mkdir $3/results
+mkdir $3/results/$nSysRoot
+mkdir $3/results/$iSysRoot
+
+# for each system
+echo "prep"
+for sys in $nSystems; do
+	echo "----------"
+	echo $sys	
+	nBase=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+	iBase=`ls $2/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+
+	# Get LCO
+	cat $2/$sys/$iBase".maximum_oracle.csv" >> $1/$sys/$nBase".ff_oracles.csv"
+
+	mkdir $3/results/$nSysRoot/$sys/
+	mkdir $3/results/$iSysRoot/$sys/	
+
+	#Get list of suites
+	nSuites=`ls $3/traces/$nSysRoot/$sys/`
+	iSuites=`ls $3/traces/$iSysRoot/$sys/`
+
+	# Get number of mutants
+	nMutants=`ls $1/$sys/mutants | wc -l`
+	nMutants=$(( $nMutants - 1 ))
+	iMutants=`ls $2/$sys/mutants | wc -l`
+	iMutants=$(( $iMutants - 1 ))
+	
+	if [ $nMutants -gt $iMutants ]; then
+		maxMutants=$iMutants
+	else
+		maxMutants=$nMutants
+	fi
+
+	# For each test suite that we gathered traces for
+	for ns in $nSuites; do
+		#Get mutant list
+		rm $3/traces/$nSysRoot/$sys/$ns/$ns".mutants.csv"
+		muts=`ls $3/traces/$nSysRoot/$sys/$ns | grep "mutated" | wc -l`
+		
+		if [ $muts -gt $maxMutants ]; then
+			# Reduce number of mutants
+
+			# Get ratio of whole for each type
+			for type in $mTypes; do
+				howMany=`ls $3/traces/$nSysRoot/$sys/$ns | grep $type | wc -l`
+				# calculate number to grab for new ratio
+				adjusted=`echo $howMany" "$muts" "$maxMutants | awk '
+					function round(x,   ival, aval, fraction)
+					{
+					   ival = int(x)    # integer part, int() truncates
+
+					   # see if fractional part
+					   if (ival == x)   # no fraction
+					      return ival   # ensure no decimals
+
+					   if (x < 0) {
+					      aval = -x     # absolute value
+					      ival = int(aval)
+					      fraction = aval - ival
+					      if (fraction >= .5)
+					         return int(x) - 1   # -2.5 --> -3
+					      else
+					         return int(x)       # -2.3 --> -2
+					   } else {
+					      fraction = x - ival
+					      if (fraction >= .5)
+					         return ival + 1
+					      else
+					         return ival
+					   }
+					}
+					{print round(($1/$2)*$3);}'`
+				echo $type"="$howMany","$adjusted
+		
+				# copy at random from all possible
+				ls $3/traces/$nSysRoot/$sys/$ns | grep $type | sort -R | head -$adjusted >> $3/traces/$nSysRoot/$sys/$ns/$ns".mutants.csv"	
+			done
+		else
+			ls $3/traces/$nSysRoot/$sys/$ns | grep "mutated" >> $3/traces/$nSysRoot/$sys/$ns/$ns".mutants.csv"
+		fi
+		
+		# Run analysis	
+		
+		# Get name of "correct" trace
+		correct=`ls $3/traces/$nSysRoot/$sys/$ns | grep "correct"`		
+		# Get name of reduced suites file
+		reduced=`echo $ns | rev | cut -c 5- | rev`
+
+		# Make sure that this is a suite we need to run analysis for
+		numMutants=`cat $3/traces/$nSysRoot/$sys/$ns/$ns".mutants.csv" | wc -l`
+
+		if [ "$numMutants" -gt "0" ]; then
+			echo $ns
+			# ./analysis <correct trace> <mutant list> <reduced suites> <oracles> <output file name>
+			./analysis $3/traces/$nSysRoot/$sys/$ns/$correct $3/traces/$nSysRoot/$sys/$ns/$ns".mutants.csv" $3/suites/$nSysRoot/$sys/reduced/$reduced"_reduced.csv" $1/$sys/$nBase".ff_oracles.csv" $3/results/$nSysRoot/$sys/$ns".ff.csv"
+		fi
+	done
+	for is in $iSuites; do
+		#Get mutant list
+		rm $3/traces/$iSysRoot/$sys/$is/$is".mutants.csv"
+		muts=`ls $3/traces/$iSysRoot/$sys/$is | grep "mutated" | wc -l`
+		
+		if [ $muts -gt $maxMutants ]; then
+			# Reduce number of mutants
+
+			# Get ratio of whole for each type
+			for type in $mTypes; do
+				howMany=`ls $3/traces/$iSysRoot/$sys/$is | grep $type | wc -l`
+				# calculate number to grab for new ratio
+				adjusted=`echo $howMany" "$muts" "$maxMutants | awk '
+					function round(x,   ival, aval, fraction)
+					{
+					   ival = int(x)    # integer part, int() truncates
+
+					   # see if fractional part
+					   if (ival == x)   # no fraction
+					      return ival   # ensure no decimals
+
+					   if (x < 0) {
+					      aval = -x     # absolute value
+					      ival = int(aval)
+					      fraction = aval - ival
+					      if (fraction >= .5)
+					         return int(x) - 1   # -2.5 --> -3
+					      else
+					         return int(x)       # -2.3 --> -2
+					   } else {
+					      fraction = x - ival
+					      if (fraction >= .5)
+					         return ival + 1
+					      else
+					         return ival
+					   }
+					}
+					{print round(($1/$2)*$3);}'`
+				echo $type"="$howMany","$adjusted
+		
+				# copy at random from all possible
+				ls $3/traces/$iSysRoot/$sys/$is | grep $type | sort -R | head -$adjusted >> $3/traces/$iSysRoot/$sys/$is/$is".mutants.csv"	
+			done
+		else
+			ls $3/traces/$iSysRoot/$sys/$is | grep "mutated" >> $3/traces/$iSysRoot/$sys/$is/$is".mutants.csv"
+		fi
+		# Run analysis	
+		
+		# Get name of "correct" trace
+		correct=`ls $3/traces/$iSysRoot/$sys/$is | grep "correct"`		
+		# Get name of reduced suites file
+		reduced=`echo $is | rev | cut -c 5- | rev`
+
+		# Make sure that this is a suite we need to run analysis for
+		numMutants=`cat $3/traces/$iSysRoot/$sys/$is/$is".mutants.csv" | wc -l`
+
+		if [ "$numMutants" -gt "0" ]; then
+			echo $is
+			# ./analysis <correct trace> <mutant list> <reduced suites> <oracles> <output file name>
+			./analysis $3/traces/$iSysRoot/$sys/$is/$correct $3/traces/$iSysRoot/$sys/$is/$is".mutants.csv" $3/suites/$iSysRoot/$sys/reduced/$reduced"_reduced.csv" $2/$sys/$iBase".ff_oracles.csv" $3/results/$iSysRoot/$sys/$is".ff.csv"
+		fi
+
+	done
+done	
+
+
+	
+

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+base=`echo $1 | awk 'BEGIN{FS=OFS="/"}{print $NF}' | rev | cut -c 5- | rev`
+
+# Seed faults
+if [ $2 == "max" ]; then
+	# Create all possible mutants
+	sml @SMLload=FaultSeeder.x86-linux $1 -MutantNums >> $base".mutantTypes.csv"
+	fields=`head -1 $base".mutantTypes.csv" | awk 'BEGIN{OFS=FS=","}{print NF;}'`
+	for (( field=1; field <= $fields; field++)); do
+		flag=`head -1 $base".mutantTypes.csv" | cut -d, -f $field`
+		val=`tail -1 $base".mutantTypes.csv" | cut -d, -f $field`
+		echo $flag","$val
+		
+		if [ "$val" -gt "0" ]; then
+			sml @SMLload=FaultSeeder.x86-linux $1 "-"$flag $val
+		fi
+	done
+
+else 
+	sml @SMLload=FaultSeeder.x86-linux $1 -DistributeByRatio $2
+fi
+
+#Move mutants into mutant folder
+partialPath=`echo $1 | awk 'BEGIN{FS=OFS="/"}{$NF=""; print $0}'`
+echo "partial path:"
+echo $partialPath
+
+mkdir $partialPath/metadata
+mkdir $partialPath/mutants
+
+mv $base".correct" $partialPath/mutants
+mv $base* $partialPath/metadata
+mv $partialPath/*mutated* $partialPath/mutants/

@@ -1,0 +1,2 @@
+Pin 3.2 kit 81201
+E:  PinCov.cpp:512: Invalid REG for IARG_REG_VALUE  reg: *invalid*

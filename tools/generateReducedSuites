@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# Generate reduced test suites for FF experiments
+
+# depends on: ./generateCovMatrix ./getReduced.py
+
+# the output is placed in <out>/suites/<sysroot>/{sys}/reduced
+
+# last : Mar 16 2017
+
+# $1 = System folder
+# $2 = where to place produced files
+# $3 = number of test suites
+
+if [ "$#" -ne 3 ]; then
+    echo "\$1 = System folder"
+    echo "\$2 = where to place produced files"
+    echo "\$3 = number of test suites"
+    exit
+fi
+
+source config.sh $1 $2
+
+systems=`ls $1`
+sysroot=`basename $1`
+header='\033[0;35m[generateReducedSuites]\033[0m'
+
+max_parallel=$config_n_cores
+
+# for each system
+for sys in $systems; do
+
+	mkdir $2/suites/$sysroot/$sys/reduced 2> /dev/null
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+
+	# For each criterion
+	for cov in ${config_coverage[@]}; do
+        echo -e "$header Reducing $cov suite for $sys"
+        if [ "$cov" == "obc" ]; then
+            bins=`ls $2/obc/$sysroot/$sys/bin | grep -v "\." | grep -v "make"`
+            for bin in $bins; do
+                for obc_type in ${config_obc_types[@]}; do
+                    echo -e "\tbin: $bin, type: $obc_type"
+                    # ObcSuiteGenerator.py <target> <cov_dir> <testsuite_dir> 
+                    #                      <out_filename> <n_test_suite> <types>
+                    if [ "$config_debug" == "true" ]; then
+                    echo "python ObcSuiteGenerator.py " \
+                        "$2/obc/$sysroot/$sys/bin/$bin " \
+                        "$2/obc/$sysroot/$sys/cov/$bin " \
+                        "$2/suites/$sysroot/$sys/splitted " \
+                        "$2/suites/$sysroot/$sys/reduced/${base}.obc_${bin}_${obc_type}_tests_reduced.csv " \
+                        "$3 " \
+                        "$obc_type"
+                    fi
+                    python ObcSuiteGenerator.py \
+                        $2/obc/$sysroot/$sys/bin/$bin \
+                        $2/obc/$sysroot/$sys/cov/$bin \
+                        $2/suites/$sysroot/$sys/splitted \
+                        $2/suites/$sysroot/$sys/reduced/$base".obc_"$bin"_"$obc_type"_tests_reduced.csv" \
+                        $3 \
+                        $obc_type &
+                    while [ `jobs | wc -l` -ge $max_parallel ]; do
+                        sleep 1
+                    done
+                    sleep 0.5
+                done
+            done
+
+            continue
+        fi
+
+        # Get obligation matrix
+        matrix=$base"."$cov"_obligations.lus_"$base"."$cov"_tests.csv_coverage.csv"
+        # 1) <test coverage data filename>
+        # 2) <csv file to write the output to>
+        # 3) number of test suites
+        python getReduced.py \
+            $1/$sys/obligations/$matrix \
+            $2/suites/$sysroot/$sys/reduced/$base"."$cov"_tests_reduced.csv" \
+            $3
+	done
+done
+exit
+

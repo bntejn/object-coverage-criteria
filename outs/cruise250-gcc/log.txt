@@ -1,0 +1,395 @@
+[0;34m[runObcExperiment][0m Started at: 2017-05-03 17:37:28 CDT
+[0;34m[runObcExperiment][0m Clearing ../systems/cruise250 and ../outs/cruise250-gcc
+[0;34m[runObcExperiment][0m generateUnivSuite ../systems/cruise250 ../outs/cruise250-gcc
+rm: cannot remove '../outs/cruise250-gcc/suites/cruise250/cruisecontrol//splitted/universal.csv': No such file or directory
+[0;35m[generateUnivSuite][0m Number of test cases before merge: 1753
+[UniversalSuite.py] Merging 5 suites
+[UniversalSuite.py] Writing merged suite to ../outs/cruise250-gcc/suites/cruise250/cruisecontrol//cc.obc_tests.csv
+[UniversalSuite.py] Writing merged suite to ../outs/cruise250-gcc/suites/cruise250/cruisecontrol//splitted/universal.csv
+[UniversalSuite.py] Splitting tests to ../outs/cruise250-gcc/suites/cruise250/cruisecontrol//splitted
+[0;35m[generateUnivSuite][0m Merged to 232 test cases and saved to ../outs/cruise250-gcc/suites/cruise250/cruisecontrol//cc.obc_tests.csv
+[0;34m[runObcExperiment][0m generateCovMatrix ../systems/cruise250 ../outs/cruise250-gcc
+[0;35m[generateCovMatrix][0m coverage mcdc for system cruisecontrol
+	Suites: cc.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m writing oracle listing to cc.mcdc_obligations.lus.oracle.csv
+[0;35m[generateCovMatrix][0m Generating traces for suite cc.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m generating coverage matrix to cc.mcdc_obligations.lus_cc.mcdc_tests.csvcoverage.csv
+[0;34m[runObcExperiment][0m measureObc ../systems/cruise250 ../outs/cruise250-gcc
+[0;35m[measureObc][0m copying sources from ../systems/cruise250/cruisecontrol
+gcc cc.c -DDEBUG=0 -w -std=c11 -fno-inline -o o0 -O0
+touch makefile
+gcc cc.c -DDEBUG=0 -w -std=c11 -fno-inline -o o1 -O1 
+touch makefile
+gcc cc.c -DDEBUG=0 -w -std=c11 -fno-inline -o o2 -O2 
+touch makefile
+gcc cc.c -DDEBUG=0 -w -std=c11 -fno-inline -o o3 -O3
+touch makefile
+gcc cc.c -DDEBUG=0 -w -std=c11 -fno-inline -o os -Os
+touch makefile
+[0;35m[measureObc][0m running 233 test cases on o0 ... 
+$9 out of 233 $11 out of 233 $20 out of 233 $20 out of 233 $29 out of 233 $29 out of 233 $38 out of 233 $38 out of 233 $47 out of 233 $47 out of 233 $56 out of 233 $57 out of 233 $66 out of 233 $67 out of 233 $76 out of 233 $76 out of 233 $85 out of 233 $85 out of 233 $94 out of 233 $95 out of 233 $104 out of 233 $104 out of 233 $113 out of 233 $113 out of 233 $122 out of 233 $122 out of 233 $131 out of 233 $131 out of 233 $140 out of 233 $140 out of 233 $149 out of 233 $149 out of 233 $158 out of 233 $158 out of 233 $167 out of 233 $168 out of 233 $177 out of 233 $178 out of 233 $187 out of 233 $187 out of 233 $196 out of 233 $196 out of 233 $205 out of 233 $205 out of 233 $214 out of 233 $214 out of 233 $223 out of 233 $225 out of 233 
+[0;35m[measureObc][0m running 233 test cases on o1 ... 
+$9 out of 233 $12 out of 233 $21 out of 233 $27 out of 233 $36 out of 233 $44 out of 233 $49 out of 233 $58 out of 233 $58 out of 233 $67 out of 233 $68 out of 233 $77 out of 233 $79 out of 233 $88 out of 233 $89 out of 233 $98 out of 233 $105 out of 233 $114 out of 233 $123 out of 233 $130 out of 233 $139 out of 233 $139 out of 233 $148 out of 233 $151 out of 233 $160 out of 233 $161 out of 233 $170 out of 233 $173 out of 233 $182 out of 233 $184 out of 233 $193 out of 233 $202 out of 233 $205 out of 233 $214 out of 233 $215 out of 233 $224 out of 233 $225 out of 233 
+[0;35m[measureObc][0m running 233 test cases on o2 ... 
+$9 out of 233 $9 out of 233 $18 out of 233 $19 out of 233 $28 out of 233 $28 out of 233 $37 out of 233 $37 out of 233 $46 out of 233 $46 out of 233 $55 out of 233 $55 out of 233 $64 out of 233 $64 out of 233 $73 out of 233 $73 out of 233 $82 out of 233 $82 out of 233 $91 out of 233 $91 out of 233 $100 out of 233 $100 out of 233 $109 out of 233 $113 out of 233 $122 out of 233 $129 out of 233 $138 out of 233 $147 out of 233 $149 out of 233 $158 out of 233 $158 out of 233 $167 out of 233 $173 out of 233 $182 out of 233 $186 out of 233 $195 out of 233 $197 out of 233 $206 out of 233 $208 out of 233 $217 out of 233 $220 out of 233 $229 out of 233 
+[0;35m[measureObc][0m running 233 test cases on o3 ... 
+$9 out of 233 $10 out of 233 $19 out of 233 $21 out of 233 $30 out of 233 $30 out of 233 $39 out of 233 $39 out of 233 $48 out of 233 $50 out of 233 $59 out of 233 $59 out of 233 $68 out of 233 $68 out of 233 $77 out of 233 $77 out of 233 $86 out of 233 $87 out of 233 $96 out of 233 $96 out of 233 $105 out of 233 $105 out of 233 $114 out of 233 $121 out of 233 $130 out of 233 $130 out of 233 $139 out of 233 $140 out of 233 $149 out of 233 $149 out of 233 $158 out of 233 $159 out of 233 $168 out of 233 $169 out of 233 $178 out of 233 $180 out of 233 $189 out of 233 $189 out of 233 $198 out of 233 $198 out of 233 $207 out of 233 $208 out of 233 $217 out of 233 $224 out of 233 $233 out of 233 
+[0;35m[measureObc][0m running 233 test cases on os ... 
+$9 out of 233 $10 out of 233 $19 out of 233 $19 out of 233 $28 out of 233 $28 out of 233 $37 out of 233 $42 out of 233 $51 out of 233 $52 out of 233 $61 out of 233 $61 out of 233 $70 out of 233 $70 out of 233 $79 out of 233 $79 out of 233 $88 out of 233 $89 out of 233 $98 out of 233 $98 out of 233 $107 out of 233 $108 out of 233 $117 out of 233 $119 out of 233 $128 out of 233 $134 out of 233 $142 out of 233 $145 out of 233 $154 out of 233 $154 out of 233 $163 out of 233 $163 out of 233 $172 out of 233 $173 out of 233 $182 out of 233 $186 out of 233 $195 out of 233 $204 out of 233 $212 out of 233 $214 out of 233 $223 out of 233 $226 out of 233 
+[0;34m[runObcExperiment][0m generateOracleListing ../systems/cruise250
+----------
+cruisecontrol
+[0;35m[generateOracleListing][0m ../systems/cruise250/cruisecontrol/cc.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/cruise250/cruisecontrol/cc.maximum_oracle.csv
+[0;34m[runObcExperiment][0m generateTraces ../systems/cruise250 ../outs/cruise250-gcc
+[0;35m[generateTraces][0m ./generateOracleListing ../systems/cruise250
+----------
+cruisecontrol
+[0;35m[generateOracleListing][0m ../systems/cruise250/cruisecontrol/cc.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/cruise250/cruisecontrol/cc.maximum_oracle.csv
+[0;35m[generateTraces][0m Running the universal suite on cruisecontrol
+	cc.correct
+	cc.mutated100__Delay
+	cc.mutated101__Delay
+	cc.mutated102__Delay
+	cc.mutated103__Delay
+	cc.mutated104__Delay
+	cc.mutated105__Delay
+	cc.mutated106__Delay
+	cc.mutated107__Delay
+	cc.mutated108__Delay
+	cc.mutated109__Delay
+	cc.mutated10__Relational
+	cc.mutated110__Delay
+	cc.mutated111__Delay
+	cc.mutated112__Delay
+	cc.mutated113__Delay
+	cc.mutated114__Delay
+	cc.mutated115__Delay
+	cc.mutated116__Delay
+	cc.mutated117__Delay
+	cc.mutated118__Delay
+	cc.mutated119__Delay
+	cc.mutated11__Relational
+	cc.mutated120__Delay
+	cc.mutated121__Delay
+	cc.mutated122__Delay
+	cc.mutated123__Delay
+	cc.mutated124__Delay
+	cc.mutated125__Delay
+	cc.mutated126__Delay
+	cc.mutated127__Delay
+	cc.mutated128__Delay
+	cc.mutated129__Delay
+	cc.mutated12__Relational
+	cc.mutated130__Delay
+	cc.mutated131__Delay
+	cc.mutated132__Delay
+	cc.mutated133__Delay
+	cc.mutated134__Delay
+	cc.mutated135__Delay
+	cc.mutated136__Delay
+	cc.mutated137__Delay
+	cc.mutated138__Delay
+	cc.mutated139__Delay
+	cc.mutated13__Relational
+	cc.mutated140__Delay
+	cc.mutated141__Delay
+	cc.mutated142__Delay
+	cc.mutated143__Delay
+	cc.mutated144__Delay
+	cc.mutated145__Delay
+	cc.mutated146__Delay
+	cc.mutated147__Delay
+	cc.mutated148__Delay
+	cc.mutated149__Delay
+	cc.mutated14__Relational
+	cc.mutated150__Delay
+	cc.mutated151__Delay
+	cc.mutated152__Delay
+	cc.mutated153__Delay
+	cc.mutated154__Delay
+	cc.mutated155__Delay
+	cc.mutated156__Delay
+	cc.mutated157__Delay
+	cc.mutated158__Delay
+	cc.mutated159__Delay
+	cc.mutated15__Relational
+	cc.mutated160__Delay
+	cc.mutated161__Delay
+	cc.mutated162__Delay
+	cc.mutated163__Delay
+	cc.mutated164__Delay
+	cc.mutated165__Delay
+	cc.mutated166__Delay
+	cc.mutated167__Delay
+	cc.mutated168__Delay
+	cc.mutated169__Delay
+	cc.mutated16__Relational
+	cc.mutated170__Delay
+	cc.mutated171__Delay
+	cc.mutated172__Delay
+	cc.mutated173__Delay
+	cc.mutated174__Delay
+	cc.mutated175__Delay
+	cc.mutated176__Const
+	cc.mutated177__Const
+	cc.mutated178__Const
+	cc.mutated179__Const
+	cc.mutated17__Relational
+	cc.mutated180__Const
+	cc.mutated181__Const
+	cc.mutated182__Const
+	cc.mutated183__Const
+	cc.mutated184__Const
+	cc.mutated185__Const
+	cc.mutated186__Const
+	cc.mutated187__Const
+	cc.mutated188__Const
+	cc.mutated189__Const
+	cc.mutated18__Relational
+	cc.mutated190__Const
+	cc.mutated191__Const
+	cc.mutated192__Const
+	cc.mutated193__Const
+	cc.mutated194__Const
+	cc.mutated195__Const
+	cc.mutated196__Const
+	cc.mutated197__Const
+	cc.mutated198__Const
+	cc.mutated199__Const
+	cc.mutated19__Boolean
+	cc.mutated1__Arithmetic
+	cc.mutated200__Const
+	cc.mutated201__Const
+	cc.mutated202__Const
+	cc.mutated203__Const
+	cc.mutated204__Const
+	cc.mutated205__Const
+	cc.mutated206__Const
+	cc.mutated207__Const
+	cc.mutated208__Const
+	cc.mutated209__Const
+	cc.mutated20__Boolean
+	cc.mutated210__Const
+	cc.mutated211__VarReplace
+	cc.mutated212__VarReplace
+	cc.mutated213__VarReplace
+	cc.mutated214__VarReplace
+	cc.mutated215__VarReplace
+	cc.mutated216__VarReplace
+	cc.mutated217__VarReplace
+	cc.mutated218__VarReplace
+	cc.mutated219__VarReplace
+	cc.mutated21__Boolean
+	cc.mutated220__VarReplace
+	cc.mutated221__VarReplace
+	cc.mutated222__VarReplace
+	cc.mutated223__VarReplace
+	cc.mutated224__VarReplace
+	cc.mutated225__VarReplace
+	cc.mutated226__VarReplace
+	cc.mutated227__VarReplace
+	cc.mutated228__VarReplace
+	cc.mutated229__VarReplace
+	cc.mutated22__Boolean
+	cc.mutated230__VarReplace
+	cc.mutated231__VarReplace
+	cc.mutated232__VarReplace
+	cc.mutated233__VarReplace
+	cc.mutated234__VarReplace
+	cc.mutated235__VarReplace
+	cc.mutated236__VarReplace
+	cc.mutated237__VarReplace
+	cc.mutated238__VarReplace
+	cc.mutated239__VarReplace
+	cc.mutated23__Boolean
+	cc.mutated240__VarReplace
+	cc.mutated241__VarReplace
+	cc.mutated242__VarReplace
+	cc.mutated243__VarReplace
+	cc.mutated244__VarReplace
+	cc.mutated245__VarReplace
+	cc.mutated246__VarReplace
+	cc.mutated247__VarReplace
+	cc.mutated248__VarReplace
+	cc.mutated249__VarReplace
+	cc.mutated24__Boolean
+	cc.mutated250__VarReplace
+	cc.mutated25__Boolean
+	cc.mutated26__Boolean
+	cc.mutated27__Not
+	cc.mutated28__Not
+	cc.mutated29__Not
+	cc.mutated2__Arithmetic
+	cc.mutated30__Not
+	cc.mutated31__Not
+	cc.mutated32__Not
+	cc.mutated33__Not
+	cc.mutated34__Not
+	cc.mutated35__Not
+	cc.mutated36__Not
+	cc.mutated37__Not
+	cc.mutated38__Not
+	cc.mutated39__Not
+	cc.mutated3__Relational
+	cc.mutated40__Not
+	cc.mutated41__Not
+	cc.mutated42__Not
+	cc.mutated43__Not
+	cc.mutated44__Not
+	cc.mutated45__Not
+	cc.mutated46__Not
+	cc.mutated47__Not
+	cc.mutated48__Not
+	cc.mutated49__Not
+	cc.mutated4__Relational
+	cc.mutated50__Not
+	cc.mutated51__Not
+	cc.mutated52__Not
+	cc.mutated53__Not
+	cc.mutated54__Not
+	cc.mutated55__Not
+	cc.mutated56__Not
+	cc.mutated57__Not
+	cc.mutated58__Not
+	cc.mutated59__Not
+	cc.mutated5__Relational
+	cc.mutated60__Not
+	cc.mutated61__Not
+	cc.mutated62__Not
+	cc.mutated63__Not
+	cc.mutated64__Not
+	cc.mutated65__Not
+	cc.mutated66__Not
+	cc.mutated67__Not
+	cc.mutated68__Not
+	cc.mutated69__Not
+	cc.mutated6__Relational
+	cc.mutated70__Not
+	cc.mutated71__Not
+	cc.mutated72__Not
+	cc.mutated73__Not
+	cc.mutated74__Not
+	cc.mutated75__Not
+	cc.mutated76__Not
+	cc.mutated77__Not
+	cc.mutated78__Not
+	cc.mutated79__Delay
+	cc.mutated7__Relational
+	cc.mutated80__Delay
+	cc.mutated81__Delay
+	cc.mutated82__Delay
+	cc.mutated83__Delay
+	cc.mutated84__Delay
+	cc.mutated85__Delay
+	cc.mutated86__Delay
+	cc.mutated87__Delay
+	cc.mutated88__Delay
+	cc.mutated89__Delay
+	cc.mutated8__Relational
+	cc.mutated90__Delay
+	cc.mutated91__Delay
+	cc.mutated92__Delay
+	cc.mutated93__Delay
+	cc.mutated94__Delay
+	cc.mutated95__Delay
+	cc.mutated96__Delay
+	cc.mutated97__Delay
+	cc.mutated98__Delay
+	cc.mutated99__Delay
+	cc.mutated9__Relational
+[0;35m[generateReducedSuites][0m Reducing mcdc suite for cruisecontrol
+[0;35m[generateReducedSuites][0m Reducing obc suite for cruisecontrol
+	bin: o0, type: J
+	bin: o0, type: JSMB
+	bin: o1, type: J
+	bin: o1, type: JSMB
+	bin: o2, type: J
+	bin: o2, type: JSMB
+	bin: o3, type: J
+	bin: o3, type: JSMB
+	bin: os, type: J
+	bin: os, type: JSMB
+[0;34m[runObcExperiment][0m generateReport ../systems/cruise250 ../outs/cruise250-gcc
+[0;35m[generateReport][0m Analyzing mcdc
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o0 (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o0 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o1 (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 38 seconds
+[analysis] Average time per comparison: 0.00190763 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 37 seconds
+[analysis] Average time per comparison: 0.00185743 seconds
+[0;35m[generateReport][0m Analyzing obc - o1 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 37 seconds
+[analysis] Average time per comparison: 0.00185743 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 37 seconds
+[analysis] Average time per comparison: 0.00185743 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o3 (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 36 seconds
+[analysis] Average time per comparison: 0.00180723 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 36 seconds
+[analysis] Average time per comparison: 0.00180723 seconds
+[0;35m[generateReport][0m Analyzing obc - os (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 36 seconds
+[analysis] Average time per comparison: 0.00180723 seconds
+[0;35m[generateReport][0m Analyzing obc - os (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 37 seconds
+[analysis] Average time per comparison: 0.00185743 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 33 seconds
+[analysis] Average time per comparison: 0.00165663 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 34 seconds
+[analysis] Average time per comparison: 0.00170683 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 34 seconds
+[analysis] Average time per comparison: 0.00170683 seconds
+[0;35m[generateReport][0m ./measureReducedObc.py ../systems/cruise250 ../outs/cruise250-gcc cc
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o2_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o2_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o0_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o0_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o0_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o0_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_os_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_os_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o1_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o1_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o3_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o3_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o3_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o3_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_os_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_os_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o1_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o1_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system cruisecontrol, criterion cc.obc_o2_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `cc.obc_o2_J.cov.csv`
+[0;35m[generateReport][0m ./mergeReports.py ../outs/cruise250-gcc/results/cruise250
+[0;34m[runObcExperiment][0m python boxplot.py ../outs/cruise250-gcc
+../outs/cruise250-gcc/results/cruise250/cruisecontrol
+[0;34m[runObcExperiment][0m python stats.py ../outs/cruise250-gcc
+[0;34m[runObcExperiment][0m Finished at: 2017-05-03 17:45:04 CDT

@@ -1,0 +1,86 @@
+@startuml
+
+package "lustre.jar" {
+    interface coverage
+    interface generate
+    interface simulate
+}
+
+package "mutation" {
+    [generateMutants] -right-> [seedFaults]
+    [seedFaults] -right-> [FaultSeeder.x86-linux]
+    [generateMutants] -up-> [performEquivalencyCheck]
+    [performEquivalencyCheck] -right-> [checkEquivalency.py]
+}
+
+package "generation" {
+    [generateTests] --> coverage
+    [generateTests] --> generate
+    [ObcSuiteGenerator.py]
+    [generateUnivSuite] --> [UniversalSuite.py]
+    [generateReducedSuites] --> [getReduced.py]
+    [getReduced.py] --> [TestCoverageData.py]
+    [getReduced.py] --> [CsvFile.py]
+}
+
+package "execution" {
+    [measureObc] --> [PinCov]
+    [generateCovMatrix] -down-> simulate
+    [generateTraces] --> simulate
+    [generateTraces] --> [generateOracleListing]
+}
+
+
+package "analysis" {
+    [generateReport] --> [ff_analyzer]
+    [generateReport] --> [measureReducedObc.py]
+    [generateReport] --> [mergeReports.py]
+}
+
+component [runObcExperiment] as RUNO
+RUNO -up-> [clearInputDir] : (1)
+RUNO -up-> [clearOutputDir] : (2)
+RUNO --> [generateTests] : (3)
+RUNO --> [generateUnivSuite] : (4)
+RUNO --> [generateCovMatrix] : (5)
+RUNO --> [measureObc] : (6)
+RUNO -up-> [generateMutants] : (7)
+RUNO --> [generateTraces] : (8)
+RUNO --> [generateReducedSuites] : (9)
+RUNO --> [generateReport] : (10)
+
+
+[generateReducedSuites] --> [ObcSuiteGenerator.py]
+
+[measureReducedObc.py] -down-> [ObjectBranchCoverage.py]
+
+[ObcSuiteGenerator.py] -down-> [ObjectBranchCoverage.py]
+[ObcSuiteGenerator.py] --> [UniversalSuite.py]
+
+@enduml
+
+
+
+
+[generateReducedSuites] ..> [measureObc]
+[generateReducedSuites] ..> [generateUnivSuite]
+
+[generateReport] ..> [generateCovMatrix]
+[generateReport] ..> [generateReducedSuites]
+[generateReport] ..> [generateTraces]
+[generateReport] ..> [generateOracleListing]
+
+[measureObc] ..> [generateTests]
+[measureObc] ..> [generateUnivSuite]
+
+[measureReducedObc.py] ..> [generateReducedSuites]
+
+[generateUnivSuite] ..> [generateTests]
+
+[generateCovMatrix] ..> [generateTests]
+
+[generateTraces] ..> [generateMutants]
+[generateTraces] ..> [generateTests]
+[generateTraces] ..> [generateUnivSuite]
+[generateTraces] ..> [generateOracleListing]
+generate ..> coverage

@@ -1,0 +1,395 @@
+[0;34m[runObcExperiment][0m Started at: 2017-05-03 17:12:33 CDT
+[0;34m[runObcExperiment][0m Clearing ../systems/infusion250 and ../outs/infusion250-gcc
+[0;34m[runObcExperiment][0m generateUnivSuite ../systems/infusion250 ../outs/infusion250-gcc
+rm: cannot remove '../outs/infusion250-gcc/suites/infusion250/infusion//splitted/universal.csv': No such file or directory
+[0;35m[generateUnivSuite][0m Number of test cases before merge: 5074
+[UniversalSuite.py] Merging 4 suites
+[UniversalSuite.py] Writing merged suite to ../outs/infusion250-gcc/suites/infusion250/infusion//infusion.obc_tests.csv
+[UniversalSuite.py] Writing merged suite to ../outs/infusion250-gcc/suites/infusion250/infusion//splitted/universal.csv
+[UniversalSuite.py] Splitting tests to ../outs/infusion250-gcc/suites/infusion250/infusion//splitted
+[0;35m[generateUnivSuite][0m Merged to 308 test cases and saved to ../outs/infusion250-gcc/suites/infusion250/infusion//infusion.obc_tests.csv
+[0;34m[runObcExperiment][0m generateCovMatrix ../systems/infusion250 ../outs/infusion250-gcc
+[0;35m[generateCovMatrix][0m coverage mcdc for system infusion
+	Suites: infusion.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m writing oracle listing to infusion.mcdc_obligations.lus.oracle.csv
+[0;35m[generateCovMatrix][0m Generating traces for suite infusion.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m generating coverage matrix to infusion.mcdc_obligations.lus_infusion.mcdc_tests.csvcoverage.csv
+[0;34m[runObcExperiment][0m measureObc ../systems/infusion250 ../outs/infusion250-gcc
+[0;35m[measureObc][0m copying sources from ../systems/infusion250/infusion
+gcc infusion.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o0 -O0
+touch makefile
+gcc infusion.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o1 -O1 
+touch makefile
+gcc infusion.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o2 -O2 
+touch makefile
+gcc infusion.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o3 -O3
+touch makefile
+gcc infusion.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o os -Os
+touch makefile
+[0;35m[measureObc][0m running 309 test cases on o0 ... 
+$9 out of 309 $9 out of 309 $18 out of 309 $18 out of 309 $27 out of 309 $27 out of 309 $36 out of 309 $36 out of 309 $45 out of 309 $45 out of 309 $54 out of 309 $54 out of 309 $63 out of 309 $63 out of 309 $72 out of 309 $72 out of 309 $81 out of 309 $81 out of 309 $90 out of 309 $90 out of 309 $99 out of 309 $99 out of 309 $108 out of 309 $108 out of 309 $117 out of 309 $117 out of 309 $126 out of 309 $126 out of 309 $135 out of 309 $135 out of 309 $144 out of 309 $144 out of 309 $153 out of 309 $153 out of 309 $162 out of 309 $162 out of 309 $171 out of 309 $171 out of 309 $180 out of 309 $180 out of 309 $189 out of 309 $189 out of 309 $198 out of 309 $199 out of 309 $207 out of 309 $208 out of 309 $217 out of 309 $217 out of 309 $226 out of 309 $226 out of 309 $235 out of 309 $235 out of 309 $244 out of 309 $244 out of 309 $253 out of 309 $253 out of 309 $262 out of 309 $262 out of 309 $271 out of 309 $271 out of 309 $280 out of 309 $280 out of 309 $289 out of 309 $289 out of 309 $298 out of 309 $298 out of 309 $307 out of 309 $307 out of 309 
+[0;35m[measureObc][0m running 309 test cases on o1 ... 
+$9 out of 309 $9 out of 309 $18 out of 309 $19 out of 309 $27 out of 309 $28 out of 309 $37 out of 309 $37 out of 309 $46 out of 309 $46 out of 309 $55 out of 309 $55 out of 309 $64 out of 309 $64 out of 309 $73 out of 309 $73 out of 309 $82 out of 309 $82 out of 309 $91 out of 309 $93 out of 309 $102 out of 309 $102 out of 309 $111 out of 309 $111 out of 309 $120 out of 309 $120 out of 309 $129 out of 309 $129 out of 309 $138 out of 309 $138 out of 309 $147 out of 309 $147 out of 309 $156 out of 309 $156 out of 309 $165 out of 309 $166 out of 309 $175 out of 309 $175 out of 309 $184 out of 309 $184 out of 309 $193 out of 309 $193 out of 309 $202 out of 309 $202 out of 309 $211 out of 309 $212 out of 309 $221 out of 309 $221 out of 309 $230 out of 309 $230 out of 309 $239 out of 309 $239 out of 309 $248 out of 309 $248 out of 309 $257 out of 309 $257 out of 309 $266 out of 309 $266 out of 309 $275 out of 309 $275 out of 309 $284 out of 309 $285 out of 309 $294 out of 309 $294 out of 309 $303 out of 309 $303 out of 309 
+[0;35m[measureObc][0m running 309 test cases on o2 ... 
+$9 out of 309 $9 out of 309 $18 out of 309 $18 out of 309 $27 out of 309 $27 out of 309 $36 out of 309 $36 out of 309 $45 out of 309 $46 out of 309 $54 out of 309 $56 out of 309 $63 out of 309 $65 out of 309 $73 out of 309 $74 out of 309 $83 out of 309 $83 out of 309 $92 out of 309 $92 out of 309 $101 out of 309 $101 out of 309 $110 out of 309 $111 out of 309 $119 out of 309 $120 out of 309 $129 out of 309 $129 out of 309 $138 out of 309 $138 out of 309 $147 out of 309 $147 out of 309 $156 out of 309 $156 out of 309 $165 out of 309 $166 out of 309 $174 out of 309 $176 out of 309 $183 out of 309 $185 out of 309 $194 out of 309 $194 out of 309 $203 out of 309 $203 out of 309 $212 out of 309 $213 out of 309 $222 out of 309 $222 out of 309 $231 out of 309 $231 out of 309 $240 out of 309 $240 out of 309 $249 out of 309 $249 out of 309 $258 out of 309 $258 out of 309 $267 out of 309 $267 out of 309 $276 out of 309 $277 out of 309 $286 out of 309 $286 out of 309 $295 out of 309 $295 out of 309 $304 out of 309 $304 out of 309 
+[0;35m[measureObc][0m running 309 test cases on o3 ... 
+$9 out of 309 $9 out of 309 $18 out of 309 $18 out of 309 $27 out of 309 $27 out of 309 $36 out of 309 $36 out of 309 $45 out of 309 $45 out of 309 $54 out of 309 $54 out of 309 $63 out of 309 $63 out of 309 $72 out of 309 $72 out of 309 $81 out of 309 $81 out of 309 $90 out of 309 $90 out of 309 $99 out of 309 $99 out of 309 $108 out of 309 $108 out of 309 $117 out of 309 $117 out of 309 $126 out of 309 $126 out of 309 $135 out of 309 $136 out of 309 $145 out of 309 $146 out of 309 $154 out of 309 $155 out of 309 $163 out of 309 $164 out of 309 $173 out of 309 $173 out of 309 $182 out of 309 $182 out of 309 $191 out of 309 $191 out of 309 $200 out of 309 $200 out of 309 $209 out of 309 $209 out of 309 $218 out of 309 $219 out of 309 $228 out of 309 $228 out of 309 $237 out of 309 $237 out of 309 $246 out of 309 $246 out of 309 $255 out of 309 $255 out of 309 $264 out of 309 $264 out of 309 $273 out of 309 $273 out of 309 $282 out of 309 $282 out of 309 $291 out of 309 $291 out of 309 $300 out of 309 $301 out of 309 $309 out of 309 
+[0;35m[measureObc][0m running 309 test cases on os ... 
+$9 out of 309 $9 out of 309 $18 out of 309 $18 out of 309 $27 out of 309 $27 out of 309 $36 out of 309 $36 out of 309 $45 out of 309 $45 out of 309 $54 out of 309 $55 out of 309 $63 out of 309 $64 out of 309 $72 out of 309 $73 out of 309 $81 out of 309 $82 out of 309 $91 out of 309 $91 out of 309 $100 out of 309 $100 out of 309 $109 out of 309 $109 out of 309 $118 out of 309 $118 out of 309 $127 out of 309 $127 out of 309 $136 out of 309 $136 out of 309 $145 out of 309 $146 out of 309 $155 out of 309 $155 out of 309 $164 out of 309 $164 out of 309 $173 out of 309 $173 out of 309 $182 out of 309 $182 out of 309 $191 out of 309 $191 out of 309 $200 out of 309 $200 out of 309 $209 out of 309 $209 out of 309 $218 out of 309 $218 out of 309 $227 out of 309 $227 out of 309 $236 out of 309 $236 out of 309 $245 out of 309 $246 out of 309 $255 out of 309 $255 out of 309 $264 out of 309 $264 out of 309 $273 out of 309 $273 out of 309 $282 out of 309 $282 out of 309 $291 out of 309 $291 out of 309 $300 out of 309 $300 out of 309 $309 out of 309 $309 out of 309 
+[0;34m[runObcExperiment][0m generateOracleListing ../systems/infusion250
+----------
+infusion
+[0;35m[generateOracleListing][0m ../systems/infusion250/infusion/infusion.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/infusion250/infusion/infusion.maximum_oracle.csv
+[0;34m[runObcExperiment][0m generateTraces ../systems/infusion250 ../outs/infusion250-gcc
+[0;35m[generateTraces][0m ./generateOracleListing ../systems/infusion250
+----------
+infusion
+[0;35m[generateOracleListing][0m ../systems/infusion250/infusion/infusion.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/infusion250/infusion/infusion.maximum_oracle.csv
+[0;35m[generateTraces][0m Running the universal suite on infusion
+	infusion.correct
+	infusion.mutated100__Delay
+	infusion.mutated101__Delay
+	infusion.mutated102__Delay
+	infusion.mutated103__Delay
+	infusion.mutated104__Delay
+	infusion.mutated105__Delay
+	infusion.mutated106__Delay
+	infusion.mutated107__Delay
+	infusion.mutated108__Delay
+	infusion.mutated109__Delay
+	infusion.mutated10__Relational
+	infusion.mutated110__Delay
+	infusion.mutated111__Delay
+	infusion.mutated112__Delay
+	infusion.mutated113__Delay
+	infusion.mutated114__Delay
+	infusion.mutated115__Delay
+	infusion.mutated116__Delay
+	infusion.mutated117__Delay
+	infusion.mutated118__Delay
+	infusion.mutated119__Delay
+	infusion.mutated11__Relational
+	infusion.mutated120__Delay
+	infusion.mutated121__Delay
+	infusion.mutated122__Delay
+	infusion.mutated123__Delay
+	infusion.mutated124__Delay
+	infusion.mutated125__Delay
+	infusion.mutated126__Delay
+	infusion.mutated127__Delay
+	infusion.mutated128__Delay
+	infusion.mutated129__Delay
+	infusion.mutated12__Relational
+	infusion.mutated130__Delay
+	infusion.mutated131__Delay
+	infusion.mutated132__Delay
+	infusion.mutated133__Delay
+	infusion.mutated134__Delay
+	infusion.mutated135__Delay
+	infusion.mutated136__Delay
+	infusion.mutated137__Delay
+	infusion.mutated138__Delay
+	infusion.mutated139__Delay
+	infusion.mutated13__Relational
+	infusion.mutated140__Delay
+	infusion.mutated141__Delay
+	infusion.mutated142__Delay
+	infusion.mutated143__Delay
+	infusion.mutated144__Delay
+	infusion.mutated145__Delay
+	infusion.mutated146__Delay
+	infusion.mutated147__Delay
+	infusion.mutated148__Delay
+	infusion.mutated149__Delay
+	infusion.mutated14__Relational
+	infusion.mutated150__Delay
+	infusion.mutated151__Delay
+	infusion.mutated152__Delay
+	infusion.mutated153__Delay
+	infusion.mutated154__Delay
+	infusion.mutated155__Delay
+	infusion.mutated156__Delay
+	infusion.mutated157__Delay
+	infusion.mutated158__Delay
+	infusion.mutated159__Delay
+	infusion.mutated15__Relational
+	infusion.mutated160__Delay
+	infusion.mutated161__Delay
+	infusion.mutated162__Delay
+	infusion.mutated163__Delay
+	infusion.mutated164__Delay
+	infusion.mutated165__Delay
+	infusion.mutated166__Delay
+	infusion.mutated167__Delay
+	infusion.mutated168__Delay
+	infusion.mutated169__Delay
+	infusion.mutated16__Relational
+	infusion.mutated170__Delay
+	infusion.mutated171__Delay
+	infusion.mutated172__Delay
+	infusion.mutated173__Delay
+	infusion.mutated174__Const
+	infusion.mutated175__Const
+	infusion.mutated176__Const
+	infusion.mutated177__Const
+	infusion.mutated178__Const
+	infusion.mutated179__Const
+	infusion.mutated17__Boolean
+	infusion.mutated180__Const
+	infusion.mutated181__Const
+	infusion.mutated182__Const
+	infusion.mutated183__Const
+	infusion.mutated184__Const
+	infusion.mutated185__Const
+	infusion.mutated186__Const
+	infusion.mutated187__Const
+	infusion.mutated188__Const
+	infusion.mutated189__Const
+	infusion.mutated18__Boolean
+	infusion.mutated190__Const
+	infusion.mutated191__Const
+	infusion.mutated192__Const
+	infusion.mutated193__Const
+	infusion.mutated194__Const
+	infusion.mutated195__Const
+	infusion.mutated196__Const
+	infusion.mutated197__VarReplace
+	infusion.mutated198__VarReplace
+	infusion.mutated199__VarReplace
+	infusion.mutated19__Boolean
+	infusion.mutated1__Relational
+	infusion.mutated200__VarReplace
+	infusion.mutated201__VarReplace
+	infusion.mutated202__VarReplace
+	infusion.mutated203__VarReplace
+	infusion.mutated204__VarReplace
+	infusion.mutated205__VarReplace
+	infusion.mutated206__VarReplace
+	infusion.mutated207__VarReplace
+	infusion.mutated208__VarReplace
+	infusion.mutated209__VarReplace
+	infusion.mutated20__Boolean
+	infusion.mutated210__VarReplace
+	infusion.mutated211__VarReplace
+	infusion.mutated212__VarReplace
+	infusion.mutated213__VarReplace
+	infusion.mutated214__VarReplace
+	infusion.mutated215__VarReplace
+	infusion.mutated216__VarReplace
+	infusion.mutated217__VarReplace
+	infusion.mutated218__VarReplace
+	infusion.mutated219__VarReplace
+	infusion.mutated21__Boolean
+	infusion.mutated220__VarReplace
+	infusion.mutated221__VarReplace
+	infusion.mutated222__VarReplace
+	infusion.mutated223__VarReplace
+	infusion.mutated224__VarReplace
+	infusion.mutated225__VarReplace
+	infusion.mutated226__VarReplace
+	infusion.mutated227__VarReplace
+	infusion.mutated228__VarReplace
+	infusion.mutated229__VarReplace
+	infusion.mutated22__Boolean
+	infusion.mutated230__VarReplace
+	infusion.mutated231__VarReplace
+	infusion.mutated232__VarReplace
+	infusion.mutated233__VarReplace
+	infusion.mutated234__VarReplace
+	infusion.mutated235__VarReplace
+	infusion.mutated236__VarReplace
+	infusion.mutated237__VarReplace
+	infusion.mutated238__VarReplace
+	infusion.mutated239__VarReplace
+	infusion.mutated23__Boolean
+	infusion.mutated240__VarReplace
+	infusion.mutated241__VarReplace
+	infusion.mutated242__VarReplace
+	infusion.mutated243__VarReplace
+	infusion.mutated244__VarReplace
+	infusion.mutated245__VarReplace
+	infusion.mutated246__VarReplace
+	infusion.mutated247__VarReplace
+	infusion.mutated248__VarReplace
+	infusion.mutated249__VarReplace
+	infusion.mutated24__Boolean
+	infusion.mutated250__VarReplace
+	infusion.mutated25__Boolean
+	infusion.mutated26__Boolean
+	infusion.mutated27__Not
+	infusion.mutated28__Not
+	infusion.mutated29__Not
+	infusion.mutated2__Relational
+	infusion.mutated30__Not
+	infusion.mutated31__Not
+	infusion.mutated32__Not
+	infusion.mutated33__Not
+	infusion.mutated34__Not
+	infusion.mutated35__Not
+	infusion.mutated36__Not
+	infusion.mutated37__Not
+	infusion.mutated38__Not
+	infusion.mutated39__Not
+	infusion.mutated3__Relational
+	infusion.mutated40__Not
+	infusion.mutated41__Not
+	infusion.mutated42__Not
+	infusion.mutated43__Not
+	infusion.mutated44__Not
+	infusion.mutated45__Not
+	infusion.mutated46__Not
+	infusion.mutated47__Not
+	infusion.mutated48__Not
+	infusion.mutated49__Not
+	infusion.mutated4__Relational
+	infusion.mutated50__Not
+	infusion.mutated51__Not
+	infusion.mutated52__Not
+	infusion.mutated53__Not
+	infusion.mutated54__Not
+	infusion.mutated55__Not
+	infusion.mutated56__Not
+	infusion.mutated57__Not
+	infusion.mutated58__Not
+	infusion.mutated59__Not
+	infusion.mutated5__Relational
+	infusion.mutated60__Not
+	infusion.mutated61__Not
+	infusion.mutated62__Not
+	infusion.mutated63__Not
+	infusion.mutated64__Not
+	infusion.mutated65__Not
+	infusion.mutated66__Not
+	infusion.mutated67__Not
+	infusion.mutated68__Not
+	infusion.mutated69__Not
+	infusion.mutated6__Relational
+	infusion.mutated70__Not
+	infusion.mutated71__Not
+	infusion.mutated72__Delay
+	infusion.mutated73__Delay
+	infusion.mutated74__Delay
+	infusion.mutated75__Delay
+	infusion.mutated76__Delay
+	infusion.mutated77__Delay
+	infusion.mutated78__Delay
+	infusion.mutated79__Delay
+	infusion.mutated7__Relational
+	infusion.mutated80__Delay
+	infusion.mutated81__Delay
+	infusion.mutated82__Delay
+	infusion.mutated83__Delay
+	infusion.mutated84__Delay
+	infusion.mutated85__Delay
+	infusion.mutated86__Delay
+	infusion.mutated87__Delay
+	infusion.mutated88__Delay
+	infusion.mutated89__Delay
+	infusion.mutated8__Relational
+	infusion.mutated90__Delay
+	infusion.mutated91__Delay
+	infusion.mutated92__Delay
+	infusion.mutated93__Delay
+	infusion.mutated94__Delay
+	infusion.mutated95__Delay
+	infusion.mutated96__Delay
+	infusion.mutated97__Delay
+	infusion.mutated98__Delay
+	infusion.mutated99__Delay
+	infusion.mutated9__Relational
+[0;35m[generateReducedSuites][0m Reducing mcdc suite for infusion
+[0;35m[generateReducedSuites][0m Reducing obc suite for infusion
+	bin: o0, type: J
+	bin: o0, type: JSMB
+	bin: o1, type: J
+	bin: o1, type: JSMB
+	bin: o2, type: J
+	bin: o2, type: JSMB
+	bin: o3, type: J
+	bin: o3, type: JSMB
+	bin: os, type: J
+	bin: os, type: JSMB
+[0;34m[runObcExperiment][0m generateReport ../systems/infusion250 ../outs/infusion250-gcc
+[0;35m[generateReport][0m Analyzing mcdc
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o0 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o0 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o1 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 210 seconds
+[analysis] Average time per comparison: 0.0105 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 214 seconds
+[analysis] Average time per comparison: 0.0107 seconds
+[0;35m[generateReport][0m Analyzing obc - o1 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o2 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 227 seconds
+[analysis] Average time per comparison: 0.01135 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 237 seconds
+[analysis] Average time per comparison: 0.01185 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (J)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 212 seconds
+[analysis] Average time per comparison: 0.0106 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 220 seconds
+[analysis] Average time per comparison: 0.011 seconds
+[0;35m[generateReport][0m Analyzing obc - os (J)
+[analysis] Beginning analysis...
+[analysis] Time to run: 210 seconds
+[analysis] Average time per comparison: 0.0105 seconds
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - os (JSMB)
+[analysis] 250 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 216 seconds
+[analysis] Average time per comparison: 0.0108 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 208 seconds
+[analysis] Average time per comparison: 0.0104 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 210 seconds
+[analysis] Average time per comparison: 0.0105 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 217 seconds
+[analysis] Average time per comparison: 0.01085 seconds
+[0;35m[generateReport][0m ./measureReducedObc.py ../systems/infusion250 ../outs/infusion250-gcc infusion
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_os_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_os_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o0_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o0_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o2_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o2_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_os_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_os_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o1_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o1_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o1_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o1_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o0_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o0_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o3_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o3_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o2_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o2_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system infusion, criterion infusion.obc_o3_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `infusion.obc_o3_JSMB.cov.csv`
+[0;35m[generateReport][0m ./mergeReports.py ../outs/infusion250-gcc/results/infusion250
+[0;34m[runObcExperiment][0m python boxplot.py ../outs/infusion250-gcc
+../outs/infusion250-gcc/results/infusion250/infusion
+[0;34m[runObcExperiment][0m python stats.py ../outs/infusion250-gcc
+[0;34m[runObcExperiment][0m Finished at: 2017-05-03 17:33:34 CDT

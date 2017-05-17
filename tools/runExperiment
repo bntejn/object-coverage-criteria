@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# Run FF experiment
+
+# Gregory Gay
+# Modified by Taejoon Byun
+
+# $1 = non-inlined system folder
+# $2 = inlined system folder
+# $3 = number of mutants
+# $4 = number of reduced test suites
+# $5 = output directory
+
+GENERATE=0
+
+if [ "$#" -ne 5 ]; then
+    echo "  \$1 = non-inlined system folder"
+    echo "  \$2 = inlined system folder"
+    echo "  \$3 = number of mutants"
+    echo "  \$4 = number of reduced test suites"
+    echo "  \$5 = output directory"
+    exit
+fi
+
+log=$5"/log.txt"
+
+if [ $GENERATE -eq 1 ]; then 
+    # Generate obligations and tests
+    printf "=================================================\n" | tee $log
+    printf "[top] generateTests $1 $5\n" | tee $log
+    ./generateTests $1 $5 >> $log
+    #./generateTests $2 $5
+fi
+
+# Generate coverage matrices
+niSystems=`ls $1`
+niSysRoot=`basename $1`
+#iSysRoot=`basename $2`
+
+for sys in $niSystems; do
+	mkdir $5/suites/$niSysRoot/$sys/covMatrices
+	#mkdir $5/suites/$iSysRoot/$sys/covMatrices
+
+	# Copy normal suites to covMatrices folder
+	cp $5/suites/$niSysRoot/$sys/*".csv" $5/suites/$niSysRoot/$sys/covMatrices/
+	#cp $5/suites/$iSysRoot/$sys/*".csv" $5/suites/$iSysRoot/$sys/covMatrices/
+
+	# Copy inlined to noninlined and vice-versa
+	#cp $5/suites/$niSysRoot/$sys/*".csv" $5/suites/$iSysRoot/$sys/covMatrices/
+	#cp $5/suites/$iSysRoot/$sys/*".csv" $5/suites/$niSysRoot/$sys/covMatrices/
+done
+
+printf "=================================================\n" | tee $log
+printf "[top] generateCovMatrix $1 $5\n" | tee $log
+./generateCovMatrix $1 $5 2>&1 >> $log
+#./generateCovMatrix $2 $5
+
+# TODO ??
+# Generate oracle listing
+printf "=================================================\n" | tee $log
+printf "[top] generateOracleListing $1\n" | tee $log
+./generateOracleListing $1 >> $log
+#./generateOracleListing $2
+
+# Generate mutants and remove equivalent mutants
+printf "=================================================\n" | tee $log
+printf "[top] generateMutants $1 $3\n" | tee $log
+./generateMutants $1 $3 >> $log
+printf "=================================================\n" | tee $log
+printf "[top] generateEquivalentMutants $1\n" | tee $log
+./generateEquivalentMutants $1 >> $log
+#./generateMutants $2 $3
+#./generateEquivalentMutants $2
+
+# Generate traces for each test suite * each mutant
+printf "=================================================\n" | tee $log
+printf "[top] generateTraces $1 $5\n" | tee $log
+./generateTraces $1 $5 >> $log
+#./generateTraces $2 $5
+
+# TODO rm
+# Generate reduced test suites
+printf "=================================================\n" | tee $log
+printf "[top] generateReducedSuites $1 $4 $5\n" | tee $log
+./generateReducedSuites $1 $4 $5 >> $log
+#./generateReducedSuites $2 $4 $5
+
+# TODO m
+# Generate fault-finding reports
+printf "=================================================\n" | tee $log
+printf "[top] generateFaultFinding $1 $5\n" | tee $log
+./generateFaultFinding $1 $5 >> $log
+#./generateFaultFinding $2 $5
+

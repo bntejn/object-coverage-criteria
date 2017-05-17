@@ -1,0 +1,1065 @@
+[0;34m[runObcExperiment][0m Started at: 2017-03-03 17:36:48 CST
+--------------------------------------------------------------------------------
+[0;34m[runObcExperiment][0m Clearing ../systems/sys145 and ../outs/out145-conditional
+--------------------------------------------------------------------------------
+[0;34m[runObcExperiment][0m generateUnivSuite ../systems/sys145 ../outs/out145-conditional
+[0;35m[generateUnivSuite][0m Number of test cases before merge: 970
+[UniversalSuite.py] Merging 3 suites
+[UniversalSuite.py] Writing merged suite to ../outs/out145-conditional/suites/sys145/mw_auto//obsnop.obc_tests.csv
+[UniversalSuite.py] Writing merged suite to ../outs/out145-conditional/suites/sys145/mw_auto//splitted/universal.csv
+[UniversalSuite.py] Splitting tests to ../outs/out145-conditional/suites/sys145/mw_auto//splitted
+[0;35m[generateUnivSuite][0m Merged to 137 test cases and saved to ../outs/out145-conditional/suites/sys145/mw_auto//obsnop.obc_tests.csv
+[0;35m[generateUnivSuite][0m Number of test cases before merge: 970
+[UniversalSuite.py] Merging 3 suites
+[UniversalSuite.py] Writing merged suite to ../outs/out145-conditional/suites/sys145/mw_manual//obsnop.obc_tests.csv
+[UniversalSuite.py] Writing merged suite to ../outs/out145-conditional/suites/sys145/mw_manual//splitted/universal.csv
+[UniversalSuite.py] Splitting tests to ../outs/out145-conditional/suites/sys145/mw_manual//splitted
+[0;35m[generateUnivSuite][0m Merged to 137 test cases and saved to ../outs/out145-conditional/suites/sys145/mw_manual//obsnop.obc_tests.csv
+--------------------------------------------------------------------------------
+[0;34m[runObcExperiment][0m generateCovMatrix ../systems/sys145 ../outs/out145-conditional
+[0;35m[generateCovMatrix][0m coverage mcdc for system mw_auto
+	Suites: obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m writing oracle listing to obsnop.mcdc_obligations.lus.oracle.csv
+[0;35m[generateCovMatrix][0m Generating traces for suite obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m generating coverage matrix to obsnop.mcdc_obligations.lus_obsnop.mcdc_tests.csvcoverage.csv
+[0;35m[generateCovMatrix][0m coverage mcdc for system mw_manual
+	Suites: obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m writing oracle listing to obsnop.mcdc_obligations.lus.oracle.csv
+[0;35m[generateCovMatrix][0m Generating traces for suite obsnop.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m generating coverage matrix to obsnop.mcdc_obligations.lus_obsnop.mcdc_tests.csvcoverage.csv
+--------------------------------------------------------------------------------
+[0;34m[runObcExperiment][0m measureObc ../systems/sys145 ../outs/out145-conditional
+[measureObc] copying sources from ../systems/sys145/mw_auto
+gcc obsnop.c -DDEBUG=1 -w -o o0 -O0 -DTRACE_FNAME=\"o0.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o o1 -O1 -DTRACE_FNAME=\"o1.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o o2 -O2 -DTRACE_FNAME=\"o2.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o o3 -O3 -DTRACE_FNAME=\"o3.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o os -Os -DTRACE_FNAME=\"os.trace.csv\"
+touch makefile
+[measureObc] running 138 test cases on o0 ... 
+
+[measureObc] running 138 test cases on o1 ... 
+
+[measureObc] running 138 test cases on o2 ... 
+
+[measureObc] running 138 test cases on o3 ... 
+
+[measureObc] running 138 test cases on os ... 
+
+[measureObc] copying sources from ../systems/sys145/mw_manual
+gcc obsnop.c -DDEBUG=1 -w -o o0 -O0 -DTRACE_FNAME=\"o0.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o o1 -O1 -DTRACE_FNAME=\"o1.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o o2 -O2 -DTRACE_FNAME=\"o2.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o o3 -O3 -DTRACE_FNAME=\"o3.trace.csv\"
+touch makefile
+gcc obsnop.c -DDEBUG=1 -w -o os -Os -DTRACE_FNAME=\"os.trace.csv\"
+touch makefile
+[measureObc] running 138 test cases on o0 ... 
+
+[measureObc] running 138 test cases on o1 ... 
+
+[measureObc] running 138 test cases on o2 ... 
+
+[measureObc] running 138 test cases on o3 ... 
+
+[measureObc] running 138 test cases on os ... 
+
+--------------------------------------------------------------------------------
+[0;34m[runObcExperiment][0m generateOracleListing ../systems/sys145
+----------
+mw_auto
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_auto/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_auto/obsnop.maximum_oracle.csv
+----------
+mw_manual
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_manual/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_manual/obsnop.maximum_oracle.csv
+--------------------------------------------------------------------------------
+[0;34m[runObcExperiment][0m generateTraces ../systems/sys145 ../outs/out145-conditional
+[0;35m[generateTraces][0m ./generateOracleListing ../systems/sys145
+----------
+mw_auto
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_auto/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_auto/obsnop.maximum_oracle.csv
+----------
+mw_manual
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_manual/obsnop.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/sys145/mw_manual/obsnop.maximum_oracle.csv
+[0;35m[generateTraces][0m Running  on mw_auto
+----------
+obsnop.mcdc_tests.csv
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Boolean
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Boolean
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Boolean
+	obsnop.mutated145__Const
+	obsnop.mutated146__Const
+	obsnop.mutated147__Const
+	obsnop.mutated148__Const
+	obsnop.mutated151__Const
+	obsnop.mutated154__Const
+	obsnop.mutated156__Const
+	obsnop.mutated157__Const
+	obsnop.mutated158__Const
+	obsnop.mutated15__Boolean
+	obsnop.mutated164__Const
+	obsnop.mutated167__Const
+	obsnop.mutated168__Const
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__VarReplace
+	obsnop.mutated171__VarReplace
+	obsnop.mutated172__VarReplace
+	obsnop.mutated174__VarReplace
+	obsnop.mutated175__VarReplace
+	obsnop.mutated176__VarReplace
+	obsnop.mutated179__VarReplace
+	obsnop.mutated17__Boolean
+	obsnop.mutated184__VarReplace
+	obsnop.mutated185__VarReplace
+	obsnop.mutated186__VarReplace
+	obsnop.mutated188__VarReplace
+	obsnop.mutated189__VarReplace
+	obsnop.mutated18__Not
+	obsnop.mutated190__VarReplace
+	obsnop.mutated191__VarReplace
+	obsnop.mutated192__VarReplace
+	obsnop.mutated193__VarReplace
+	obsnop.mutated194__VarReplace
+	obsnop.mutated196__VarReplace
+	obsnop.mutated197__VarReplace
+	obsnop.mutated198__VarReplace
+	obsnop.mutated199__VarReplace
+	obsnop.mutated19__Not
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated20__Not
+	obsnop.mutated21__Not
+	obsnop.mutated22__Not
+	obsnop.mutated23__Not
+	obsnop.mutated24__Not
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated74__Delay
+	obsnop.mutated75__Delay
+	obsnop.mutated76__Delay
+	obsnop.mutated77__Delay
+	obsnop.mutated78__Delay
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated90__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+----------
+obsnop.obc_tests.csv
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Boolean
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Boolean
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Boolean
+	obsnop.mutated145__Const
+	obsnop.mutated146__Const
+	obsnop.mutated147__Const
+	obsnop.mutated148__Const
+	obsnop.mutated151__Const
+	obsnop.mutated154__Const
+	obsnop.mutated156__Const
+	obsnop.mutated157__Const
+	obsnop.mutated158__Const
+	obsnop.mutated15__Boolean
+	obsnop.mutated164__Const
+	obsnop.mutated167__Const
+	obsnop.mutated168__Const
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__VarReplace
+	obsnop.mutated171__VarReplace
+	obsnop.mutated172__VarReplace
+	obsnop.mutated174__VarReplace
+	obsnop.mutated175__VarReplace
+	obsnop.mutated176__VarReplace
+	obsnop.mutated179__VarReplace
+	obsnop.mutated17__Boolean
+	obsnop.mutated184__VarReplace
+	obsnop.mutated185__VarReplace
+	obsnop.mutated186__VarReplace
+	obsnop.mutated188__VarReplace
+	obsnop.mutated189__VarReplace
+	obsnop.mutated18__Not
+	obsnop.mutated190__VarReplace
+	obsnop.mutated191__VarReplace
+	obsnop.mutated192__VarReplace
+	obsnop.mutated193__VarReplace
+	obsnop.mutated194__VarReplace
+	obsnop.mutated196__VarReplace
+	obsnop.mutated197__VarReplace
+	obsnop.mutated198__VarReplace
+	obsnop.mutated199__VarReplace
+	obsnop.mutated19__Not
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated20__Not
+	obsnop.mutated21__Not
+	obsnop.mutated22__Not
+	obsnop.mutated23__Not
+	obsnop.mutated24__Not
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated74__Delay
+	obsnop.mutated75__Delay
+	obsnop.mutated76__Delay
+	obsnop.mutated77__Delay
+	obsnop.mutated78__Delay
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated90__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+----------
+obsnop.omcdc_tests.csv
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Boolean
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Boolean
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Boolean
+	obsnop.mutated145__Const
+	obsnop.mutated146__Const
+	obsnop.mutated147__Const
+	obsnop.mutated148__Const
+	obsnop.mutated151__Const
+	obsnop.mutated154__Const
+	obsnop.mutated156__Const
+	obsnop.mutated157__Const
+	obsnop.mutated158__Const
+	obsnop.mutated15__Boolean
+	obsnop.mutated164__Const
+	obsnop.mutated167__Const
+	obsnop.mutated168__Const
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__VarReplace
+	obsnop.mutated171__VarReplace
+	obsnop.mutated172__VarReplace
+	obsnop.mutated174__VarReplace
+	obsnop.mutated175__VarReplace
+	obsnop.mutated176__VarReplace
+	obsnop.mutated179__VarReplace
+	obsnop.mutated17__Boolean
+	obsnop.mutated184__VarReplace
+	obsnop.mutated185__VarReplace
+	obsnop.mutated186__VarReplace
+	obsnop.mutated188__VarReplace
+	obsnop.mutated189__VarReplace
+	obsnop.mutated18__Not
+	obsnop.mutated190__VarReplace
+	obsnop.mutated191__VarReplace
+	obsnop.mutated192__VarReplace
+	obsnop.mutated193__VarReplace
+	obsnop.mutated194__VarReplace
+	obsnop.mutated196__VarReplace
+	obsnop.mutated197__VarReplace
+	obsnop.mutated198__VarReplace
+	obsnop.mutated199__VarReplace
+	obsnop.mutated19__Not
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated20__Not
+	obsnop.mutated21__Not
+	obsnop.mutated22__Not
+	obsnop.mutated23__Not
+	obsnop.mutated24__Not
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated74__Delay
+	obsnop.mutated75__Delay
+	obsnop.mutated76__Delay
+	obsnop.mutated77__Delay
+	obsnop.mutated78__Delay
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated90__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+[0;35m[generateTraces][0m Running obsnop.omcdc_tests.csv on mw_manual
+----------
+obsnop.mcdc_tests.csv
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Boolean
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Boolean
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Boolean
+	obsnop.mutated145__Const
+	obsnop.mutated146__Const
+	obsnop.mutated147__Const
+	obsnop.mutated148__Const
+	obsnop.mutated151__Const
+	obsnop.mutated154__Const
+	obsnop.mutated156__Const
+	obsnop.mutated157__Const
+	obsnop.mutated158__Const
+	obsnop.mutated15__Boolean
+	obsnop.mutated164__Const
+	obsnop.mutated167__Const
+	obsnop.mutated168__Const
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__VarReplace
+	obsnop.mutated171__VarReplace
+	obsnop.mutated172__VarReplace
+	obsnop.mutated174__VarReplace
+	obsnop.mutated175__VarReplace
+	obsnop.mutated176__VarReplace
+	obsnop.mutated179__VarReplace
+	obsnop.mutated17__Boolean
+	obsnop.mutated184__VarReplace
+	obsnop.mutated185__VarReplace
+	obsnop.mutated186__VarReplace
+	obsnop.mutated188__VarReplace
+	obsnop.mutated189__VarReplace
+	obsnop.mutated18__Not
+	obsnop.mutated190__VarReplace
+	obsnop.mutated191__VarReplace
+	obsnop.mutated192__VarReplace
+	obsnop.mutated193__VarReplace
+	obsnop.mutated194__VarReplace
+	obsnop.mutated196__VarReplace
+	obsnop.mutated197__VarReplace
+	obsnop.mutated198__VarReplace
+	obsnop.mutated199__VarReplace
+	obsnop.mutated19__Not
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated20__Not
+	obsnop.mutated21__Not
+	obsnop.mutated22__Not
+	obsnop.mutated23__Not
+	obsnop.mutated24__Not
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated74__Delay
+	obsnop.mutated75__Delay
+	obsnop.mutated76__Delay
+	obsnop.mutated77__Delay
+	obsnop.mutated78__Delay
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated90__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+----------
+obsnop.obc_tests.csv
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Boolean
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Boolean
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Boolean
+	obsnop.mutated145__Const
+	obsnop.mutated146__Const
+	obsnop.mutated147__Const
+	obsnop.mutated148__Const
+	obsnop.mutated151__Const
+	obsnop.mutated154__Const
+	obsnop.mutated156__Const
+	obsnop.mutated157__Const
+	obsnop.mutated158__Const
+	obsnop.mutated15__Boolean
+	obsnop.mutated164__Const
+	obsnop.mutated167__Const
+	obsnop.mutated168__Const
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__VarReplace
+	obsnop.mutated171__VarReplace
+	obsnop.mutated172__VarReplace
+	obsnop.mutated174__VarReplace
+	obsnop.mutated175__VarReplace
+	obsnop.mutated176__VarReplace
+	obsnop.mutated179__VarReplace
+	obsnop.mutated17__Boolean
+	obsnop.mutated184__VarReplace
+	obsnop.mutated185__VarReplace
+	obsnop.mutated186__VarReplace
+	obsnop.mutated188__VarReplace
+	obsnop.mutated189__VarReplace
+	obsnop.mutated18__Not
+	obsnop.mutated190__VarReplace
+	obsnop.mutated191__VarReplace
+	obsnop.mutated192__VarReplace
+	obsnop.mutated193__VarReplace
+	obsnop.mutated194__VarReplace
+	obsnop.mutated196__VarReplace
+	obsnop.mutated197__VarReplace
+	obsnop.mutated198__VarReplace
+	obsnop.mutated199__VarReplace
+	obsnop.mutated19__Not
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated20__Not
+	obsnop.mutated21__Not
+	obsnop.mutated22__Not
+	obsnop.mutated23__Not
+	obsnop.mutated24__Not
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated74__Delay
+	obsnop.mutated75__Delay
+	obsnop.mutated76__Delay
+	obsnop.mutated77__Delay
+	obsnop.mutated78__Delay
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated90__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+----------
+obsnop.omcdc_tests.csv
+	obsnop.correct
+	obsnop.mutated100__Delay
+	obsnop.mutated101__Delay
+	obsnop.mutated102__Delay
+	obsnop.mutated103__Delay
+	obsnop.mutated105__Delay
+	obsnop.mutated106__Delay
+	obsnop.mutated108__Delay
+	obsnop.mutated109__Delay
+	obsnop.mutated10__Relational
+	obsnop.mutated110__Delay
+	obsnop.mutated111__Delay
+	obsnop.mutated112__Delay
+	obsnop.mutated113__Delay
+	obsnop.mutated114__Delay
+	obsnop.mutated115__Delay
+	obsnop.mutated116__Delay
+	obsnop.mutated117__Delay
+	obsnop.mutated118__Delay
+	obsnop.mutated119__Delay
+	obsnop.mutated11__Boolean
+	obsnop.mutated120__Delay
+	obsnop.mutated121__Delay
+	obsnop.mutated122__Delay
+	obsnop.mutated123__Delay
+	obsnop.mutated124__Delay
+	obsnop.mutated125__Delay
+	obsnop.mutated126__Delay
+	obsnop.mutated127__Delay
+	obsnop.mutated128__Delay
+	obsnop.mutated129__Delay
+	obsnop.mutated12__Boolean
+	obsnop.mutated130__Delay
+	obsnop.mutated131__Delay
+	obsnop.mutated133__Delay
+	obsnop.mutated134__Delay
+	obsnop.mutated135__Delay
+	obsnop.mutated136__Delay
+	obsnop.mutated137__Delay
+	obsnop.mutated138__Delay
+	obsnop.mutated139__Delay
+	obsnop.mutated13__Boolean
+	obsnop.mutated145__Const
+	obsnop.mutated146__Const
+	obsnop.mutated147__Const
+	obsnop.mutated148__Const
+	obsnop.mutated151__Const
+	obsnop.mutated154__Const
+	obsnop.mutated156__Const
+	obsnop.mutated157__Const
+	obsnop.mutated158__Const
+	obsnop.mutated15__Boolean
+	obsnop.mutated164__Const
+	obsnop.mutated167__Const
+	obsnop.mutated168__Const
+	obsnop.mutated16__Boolean
+	obsnop.mutated170__VarReplace
+	obsnop.mutated171__VarReplace
+	obsnop.mutated172__VarReplace
+	obsnop.mutated174__VarReplace
+	obsnop.mutated175__VarReplace
+	obsnop.mutated176__VarReplace
+	obsnop.mutated179__VarReplace
+	obsnop.mutated17__Boolean
+	obsnop.mutated184__VarReplace
+	obsnop.mutated185__VarReplace
+	obsnop.mutated186__VarReplace
+	obsnop.mutated188__VarReplace
+	obsnop.mutated189__VarReplace
+	obsnop.mutated18__Not
+	obsnop.mutated190__VarReplace
+	obsnop.mutated191__VarReplace
+	obsnop.mutated192__VarReplace
+	obsnop.mutated193__VarReplace
+	obsnop.mutated194__VarReplace
+	obsnop.mutated196__VarReplace
+	obsnop.mutated197__VarReplace
+	obsnop.mutated198__VarReplace
+	obsnop.mutated199__VarReplace
+	obsnop.mutated19__Not
+	obsnop.mutated1__Arithmetic
+	obsnop.mutated20__Not
+	obsnop.mutated21__Not
+	obsnop.mutated22__Not
+	obsnop.mutated23__Not
+	obsnop.mutated24__Not
+	obsnop.mutated25__Not
+	obsnop.mutated26__Not
+	obsnop.mutated27__Not
+	obsnop.mutated28__Not
+	obsnop.mutated29__Not
+	obsnop.mutated2__Arithmetic
+	obsnop.mutated30__Not
+	obsnop.mutated31__Not
+	obsnop.mutated32__Not
+	obsnop.mutated33__Not
+	obsnop.mutated34__Not
+	obsnop.mutated35__Not
+	obsnop.mutated36__Not
+	obsnop.mutated37__Not
+	obsnop.mutated38__Not
+	obsnop.mutated39__Not
+	obsnop.mutated3__Arithmetic
+	obsnop.mutated40__Not
+	obsnop.mutated41__Not
+	obsnop.mutated42__Not
+	obsnop.mutated43__Not
+	obsnop.mutated44__Not
+	obsnop.mutated45__Not
+	obsnop.mutated46__Not
+	obsnop.mutated47__Not
+	obsnop.mutated48__Not
+	obsnop.mutated49__Not
+	obsnop.mutated50__Not
+	obsnop.mutated51__Not
+	obsnop.mutated52__Not
+	obsnop.mutated53__Not
+	obsnop.mutated54__Not
+	obsnop.mutated55__Not
+	obsnop.mutated56__Not
+	obsnop.mutated57__Not
+	obsnop.mutated58__Not
+	obsnop.mutated60__Not
+	obsnop.mutated61__Not
+	obsnop.mutated62__Not
+	obsnop.mutated63__Not
+	obsnop.mutated74__Delay
+	obsnop.mutated75__Delay
+	obsnop.mutated76__Delay
+	obsnop.mutated77__Delay
+	obsnop.mutated78__Delay
+	obsnop.mutated82__Delay
+	obsnop.mutated83__Delay
+	obsnop.mutated84__Delay
+	obsnop.mutated88__Delay
+	obsnop.mutated89__Delay
+	obsnop.mutated90__Delay
+	obsnop.mutated93__Delay
+	obsnop.mutated94__Delay
+	obsnop.mutated95__Delay
+	obsnop.mutated96__Delay
+	obsnop.mutated97__Delay
+	obsnop.mutated98__Delay
+	obsnop.mutated99__Delay
+	obsnop.mutated9__Relational
+[0;35m[generateReducedSuites][0m Reducing obc suite for mw_auto
+[0;35m[generateReducedSuites][0m Reducing mcdc suite for mw_auto
+[0;35m[generateReducedSuites][0m Reducing obc suite for mw_manual
+[0;35m[generateReducedSuites][0m Reducing mcdc suite for mw_manual
+--------------------------------------------------------------------------------
+[0;34m[runObcExperiment][0m generateReport ../systems/sys145 ../outs/out145-conditional
+----------
+mw_auto
+obsnop.mcdc_tests.csv obsnop.obc_tests.csv obsnop.omcdc_tests.csv
+[0;35m[generateReport][0m Analyzing obsnop.mcdc_tests.csv
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 13 seconds
+[analysis] Average time per comparison: 0.00230496 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o0 (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o1 (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o2 (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o3 (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - os (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.omcdc_tests.csv
+----------
+mw_manual
+obsnop.mcdc_tests.csv obsnop.obc_tests.csv obsnop.omcdc_tests.csv
+[0;35m[generateReport][0m Analyzing obsnop.mcdc_tests.csv
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 13 seconds
+[analysis] Average time per comparison: 0.00230496 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o0 (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o1 (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o2 (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 5 seconds
+[analysis] Average time per comparison: 0.000886525 seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - o3 (OBC)
+[analysis] 141 mutants, 0 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 3 seconds
+[analysis] Average time per comparison: inf seconds
+[0;35m[generateReport][0m Analyzing obsnop.obc_tests.csv - os (OBC)
+[analysis] 141 mutants, 20 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 4 seconds
+[analysis] Average time per comparison: 0.00070922 seconds
+[0;35m[generateReport][0m Analyzing obsnop.omcdc_tests.csv
+[0;35m[generateReport][0m ./measureReducedObc.py ../systems/sys145 ../outs/out145-conditional obsnop
+[35m[measureReducedObc.py] [0mFor system mw_manual
+	`obsnop.obc_os_tests_reduced.csv`
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_os.cov.csv`
+	`obsnop.obc_o0_tests_reduced.csv`
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o0.cov.csv`
+	`obsnop.obc_o1_tests_reduced.csv`
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o1.cov.csv`
+	`obsnop.obc_o2_tests_reduced.csv`
+[35m[measureReducedObc.py] [0mWriting coverage to `obsnop.obc_o2.cov.csv`
+	`obsnop.obc_o3_tests_reduced.csv`
+[0;35m[generateReport][0m ./mergeReports.py ../outs/out145-conditional/results/sys145
+[0;34m[runObcExperiment][0m Finished at: 2017-03-03 18:02:03 CST

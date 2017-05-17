@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="/Users/taejoon/Dropbox/settings/buttondown.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#coverage-measurement-toolchain">Coverage Measurement Toolchain</a><ul>
+<li><a href="#architecture">Architecture</a><ul>
+<li><a href="#architecture-diagram">Architecture Diagram</a></li>
+<li><a href="#data-dependency">Data Dependency</a></li>
+<li><a href="#sequence-of-processing">Sequence of processing</a></li>
+</ul></li>
+<li><a href="#directory-structure">Directory Structure</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="coverage-measurement-toolchain">Coverage Measurement Toolchain</h1>
+<blockquote>
+<p>written by Taejoon Byun <a href="mailto:taejoon@umn.edu">taejoon@umn.edu</a></p>
+<p>first: Feb 9 2017<br />
+last : Feb 10 2017</p>
+</blockquote>
+<h2 id="architecture">Architecture</h2>
+<p><strong>runObcExperiment</strong> is the top level script that runs an OBC fault-finding experiment. It is architectured as a pipeline that starts from the original source code, does various processing in sequence, and finally produces a fault-finding report of different coverage criteria.</p>
+<h3 id="architecture-diagram">Architecture Diagram</h3>
+<div class="figure">
+<img src="architecture.png" alt="architecture.png" />
+<p class="caption">architecture.png</p>
+</div>
+<h3 id="data-dependency">Data Dependency</h3>
+<div class="figure">
+<img src="dependency.png" alt="dependency.png" />
+<p class="caption">dependency.png</p>
+</div>
+<h3 id="sequence-of-processing">Sequence of processing</h3>
+<ol style="list-style-type: decimal">
+<li><code>clearInputDir</code></li>
+<li><code>clearOutputDir</code></li>
+<li><code>generateTests</code></li>
+<li><code>generateUnivSuite</code></li>
+<li><code>generateCovMatrix</code></li>
+<li><code>measureObc</code></li>
+<li><code>enerateOracleListing</code></li>
+<li><code>generateMutants</code></li>
+<li><code>generateTraces</code></li>
+<li><code>generateReducedSuites</code></li>
+<li><code>generateFaultFinding</code></li>
+<li><code>measureReducedObc.py</code></li>
+</ol>
+<h2 id="directory-structure">Directory Structure</h2>
+<ul>
+<li><code>&lt;sysroot&gt;/</code>
+<ul>
+<li><code>&lt;sys&gt;/</code>
+<ul>
+<li><code>&lt;base&gt;.lus</code> (in)</li>
+<li><code>makefile</code> (in)</li>
+<li><code>&lt;base&gt;.flist</code> (in)</li>
+<li><code>&lt;base&gt;.c</code> (out)</li>
+<li><code>mutants/</code>
+<ul>
+<li><code>{mutant}</code></li>
+</ul></li>
+<li><code>equivalentMutants/</code>
+<ul>
+<li><code>...</code></li>
+</ul></li>
+<li><code>metadata/</code>
+<ul>
+<li><code>...</code></li>
+</ul></li>
+<li><code>obligations/</code></li>
+<li><code>&lt;base&gt;.ff_oracles.csv</code></li>
+<li><code>&lt;base&gt;.maximum_oracle.csv</code></li>
+<li><code>&lt;base&gt;.output_oracle.csv</code></li>
+</ul></li>
+</ul></li>
+<li><code>&lt;out&gt;/</code>
+<ul>
+<li><code>suites/&lt;sysroot&gt;/{sys}/</code>
+<ul>
+<li><code>covMatrices/</code> # the test suites here are copied from the parent directory
+<ul>
+<li><code>&lt;base&gt;.{criterion}_tests.csv</code></li>
+</ul></li>
+<li><code>reduced/</code> # The csv in this dir seems to list the ids of the test cases in the reduced suites to keep (a minimal) while achieving the same coverage
+<ul>
+<li><code>&lt;base&gt;.{criterion}_tests_reduced.csv</code></li>
+</ul></li>
+<li><code>separated/</code>
+<ul>
+<li><code>&lt;base&gt;_tc_{n}.csv</code></li>
+</ul></li>
+<li><code>&lt;base&gt;.{criterion}_tests.csv</code></li>
+</ul></li>
+<li><code>traces/&lt;sysroot&gt;/{sys}/</code>
+<ul>
+<li><code>&lt;base&gt;.{criterion}_tests.csv/</code>
+<ul>
+<li><code>obligationCoverage/</code>
+<ul>
+<li><code>&lt;base&gt;.{criterion}_obligations.lus_trace.csv</code></li>
+</ul></li>
+<li><code>&lt;base&gt;.{mutant}_trace.csv</code></li>
+<li><code>&lt;base&gt;.correct_trace.csv</code></li>
+<li><code>&lt;base&gt;.&lt;criterion&gt;_tests.csv.mutants.csv</code> # mutant list</li>
+</ul></li>
+</ul></li>
+<li><code>results/&lt;sysroot&gt;/{sys}/</code>
+<ul>
+<li><code>&lt;base&gt;.{criteria}_tests.csv.ff.csv</code></li>
+</ul></li>
+<li><code>obc/&lt;sysroot&gt;/{sys}/</code>
+<ul>
+<li><code>bin/</code>
+<ul>
+<li><code>&lt;base&gt;.c</code></li>
+<li><code>&lt;base&gt;.flist</code></li>
+<li><code>makefile</code></li>
+<li><code>{version}</code></li>
+</ul></li>
+<li><code>cov/</code>
+<ul>
+<li><code>{version}/</code>
+<ul>
+<li><code>&lt;basename&gt;_universal.pincov</code></li>
+<li><code>&lt;basename&gt;_tc_{i}.pincov</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</body>
+</html>

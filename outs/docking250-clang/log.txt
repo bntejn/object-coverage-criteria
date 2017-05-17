@@ -1,0 +1,394 @@
+[0;34m[runObcExperiment][0m Started at: 2017-05-03 20:41:51 CDT
+[0;34m[runObcExperiment][0m Clearing ../systems/docking250 and ../outs/docking250-clang
+[0;34m[runObcExperiment][0m generateUnivSuite ../systems/docking250 ../outs/docking250-clang
+rm: cannot remove '../outs/docking250-clang/suites/docking250/docking//splitted/universal.csv': No such file or directory
+[0;35m[generateUnivSuite][0m Number of test cases before merge: 7503
+[UniversalSuite.py] Merging 4 suites
+[UniversalSuite.py] Writing merged suite to ../outs/docking250-clang/suites/docking250/docking//docking.obc_tests.csv
+[UniversalSuite.py] Writing merged suite to ../outs/docking250-clang/suites/docking250/docking//splitted/universal.csv
+[UniversalSuite.py] Splitting tests to ../outs/docking250-clang/suites/docking250/docking//splitted
+[0;35m[generateUnivSuite][0m Merged to 345 test cases and saved to ../outs/docking250-clang/suites/docking250/docking//docking.obc_tests.csv
+[0;34m[runObcExperiment][0m generateCovMatrix ../systems/docking250 ../outs/docking250-clang
+[0;35m[generateCovMatrix][0m coverage mcdc for system docking
+	Suites: docking.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m writing oracle listing to docking.mcdc_obligations.lus.oracle.csv
+[0;35m[generateCovMatrix][0m Generating traces for suite docking.mcdc_tests.csv
+[0;35m[generateCovMatrix][0m generating coverage matrix to docking.mcdc_obligations.lus_docking.mcdc_tests.csvcoverage.csv
+[0;34m[runObcExperiment][0m measureObc ../systems/docking250 ../outs/docking250-clang
+[0;35m[measureObc][0m copying sources from ../systems/docking250/docking
+clang docking.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o0 -O0
+touch makefile
+clang docking.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o1 -O1 
+touch makefile
+clang docking.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o2 -O2 
+touch makefile
+clang docking.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o o3 -O3
+touch makefile
+clang docking.c -DDEBUG=0 -w -std=c11 -fno-inline                                   -o os -Os
+touch makefile
+[0;35m[measureObc][0m running 346 test cases on o0 ... 
+$9 out of 346 $9 out of 346 $11 out of 346 $18 out of 346 $19 out of 346 $21 out of 346 $28 out of 346 $29 out of 346 $30 out of 346 $38 out of 346 $38 out of 346 $40 out of 346 $47 out of 346 $49 out of 346 $49 out of 346 $58 out of 346 $58 out of 346 $58 out of 346 $67 out of 346 $67 out of 346 $68 out of 346 $76 out of 346 $76 out of 346 $77 out of 346 $85 out of 346 $86 out of 346 $86 out of 346 $94 out of 346 $95 out of 346 $96 out of 346 $103 out of 346 $105 out of 346 $105 out of 346 $112 out of 346 $114 out of 346 $114 out of 346 $122 out of 346 $123 out of 346 $123 out of 346 $132 out of 346 $132 out of 346 $132 out of 346 $141 out of 346 $141 out of 346 $142 out of 346 $150 out of 346 $151 out of 346 $152 out of 346 $160 out of 346 $161 out of 346 $163 out of 346 $170 out of 346 $170 out of 346 $173 out of 346 $179 out of 346 $182 out of 346 $184 out of 346 $188 out of 346 $193 out of 346 $196 out of 346 $198 out of 346 $205 out of 346 $205 out of 346 $207 out of 346 $214 out of 346 $215 out of 346 $217 out of 346 $224 out of 346 $226 out of 346 $227 out of 346 $235 out of 346 $235 out of 346 $236 out of 346 $244 out of 346 $244 out of 346 $249 out of 346 $253 out of 346 $258 out of 346 $260 out of 346 $262 out of 346 $269 out of 346 $270 out of 346 $273 out of 346 $279 out of 346 $279 out of 346 $286 out of 346 $288 out of 346 $289 out of 346 $296 out of 346 $298 out of 346 $300 out of 346 $307 out of 346 $307 out of 346 $312 out of 346 $316 out of 346 $316 out of 346 $324 out of 346 $325 out of 346 $325 out of 346 $333 out of 346 $334 out of 346 $335 out of 346 $342 out of 346 $344 out of 346 $346 out of 346 
+[0;35m[measureObc][0m running 346 test cases on o1 ... 
+$9 out of 346 $9 out of 346 $17 out of 346 $18 out of 346 $22 out of 346 $28 out of 346 $31 out of 346 $37 out of 346 $41 out of 346 $42 out of 346 $50 out of 346 $51 out of 346 $58 out of 346 $59 out of 346 $67 out of 346 $67 out of 346 $75 out of 346 $76 out of 346 $77 out of 346 $86 out of 346 $86 out of 346 $86 out of 346 $95 out of 346 $95 out of 346 $96 out of 346 $104 out of 346 $105 out of 346 $106 out of 346 $114 out of 346 $115 out of 346 $115 out of 346 $124 out of 346 $124 out of 346 $124 out of 346 $133 out of 346 $133 out of 346 $135 out of 346 $142 out of 346 $144 out of 346 $146 out of 346 $155 out of 346 $155 out of 346 $164 out of 346 $164 out of 346 $168 out of 346 $175 out of 346 $177 out of 346 $183 out of 346 $186 out of 346 $192 out of 346 $195 out of 346 $200 out of 346 $202 out of 346 $209 out of 346 $211 out of 346 $216 out of 346 $219 out of 346 $225 out of 346 $228 out of 346 $234 out of 346 $235 out of 346 $243 out of 346 $243 out of 346 $247 out of 346 $255 out of 346 $256 out of 346 $264 out of 346 $265 out of 346 $265 out of 346 $274 out of 346 $274 out of 346 $278 out of 346 $286 out of 346 $287 out of 346 $288 out of 346 $296 out of 346 $297 out of 346 $305 out of 346 $305 out of 346 $307 out of 346 $314 out of 346 $316 out of 346 $318 out of 346 $325 out of 346 $327 out of 346 $332 out of 346 $335 out of 346 $341 out of 346 $344 out of 346 
+[0;35m[measureObc][0m running 346 test cases on o2 ... 
+$9 out of 346 $9 out of 346 $18 out of 346 $18 out of 346 $21 out of 346 $27 out of 346 $30 out of 346 $35 out of 346 $39 out of 346 $44 out of 346 $48 out of 346 $53 out of 346 $57 out of 346 $62 out of 346 $65 out of 346 $71 out of 346 $72 out of 346 $77 out of 346 $81 out of 346 $86 out of 346 $90 out of 346 $95 out of 346 $99 out of 346 $104 out of 346 $108 out of 346 $113 out of 346 $117 out of 346 $119 out of 346 $126 out of 346 $128 out of 346 $135 out of 346 $137 out of 346 $141 out of 346 $147 out of 346 $150 out of 346 $156 out of 346 $160 out of 346 $164 out of 346 $169 out of 346 $173 out of 346 $178 out of 346 $182 out of 346 $188 out of 346 $191 out of 346 $197 out of 346 $197 out of 346 $203 out of 346 $206 out of 346 $212 out of 346 $215 out of 346 $220 out of 346 $222 out of 346 $229 out of 346 $231 out of 346 $238 out of 346 $240 out of 346 $241 out of 346 $250 out of 346 $250 out of 346 $257 out of 346 $259 out of 346 $266 out of 346 $268 out of 346 $274 out of 346 $275 out of 346 $281 out of 346 $284 out of 346 $290 out of 346 $293 out of 346 $295 out of 346 $303 out of 346 $304 out of 346 $312 out of 346 $312 out of 346 $313 out of 346 $321 out of 346 $322 out of 346 $330 out of 346 $331 out of 346 $332 out of 346 $341 out of 346 $341 out of 346 $344 out of 346 
+[0;35m[measureObc][0m running 346 test cases on o3 ... 
+$9 out of 346 $9 out of 346 $18 out of 346 $18 out of 346 $19 out of 346 $28 out of 346 $28 out of 346 $29 out of 346 $38 out of 346 $38 out of 346 $47 out of 346 $47 out of 346 $49 out of 346 $58 out of 346 $58 out of 346 $58 out of 346 $67 out of 346 $67 out of 346 $69 out of 346 $76 out of 346 $78 out of 346 $82 out of 346 $86 out of 346 $91 out of 346 $95 out of 346 $100 out of 346 $104 out of 346 $109 out of 346 $111 out of 346 $118 out of 346 $120 out of 346 $127 out of 346 $129 out of 346 $134 out of 346 $138 out of 346 $143 out of 346 $147 out of 346 $152 out of 346 $156 out of 346 $161 out of 346 $165 out of 346 $169 out of 346 $174 out of 346 $178 out of 346 $182 out of 346 $189 out of 346 $191 out of 346 $193 out of 346 $200 out of 346 $202 out of 346 $209 out of 346 $211 out of 346 $214 out of 346 $220 out of 346 $223 out of 346 $229 out of 346 $231 out of 346 $238 out of 346 $240 out of 346 $246 out of 346 $248 out of 346 $254 out of 346 $256 out of 346 $263 out of 346 $265 out of 346 $272 out of 346 $274 out of 346 $278 out of 346 $283 out of 346 $287 out of 346 $292 out of 346 $295 out of 346 $301 out of 346 $304 out of 346 $312 out of 346 $313 out of 346 $315 out of 346 $324 out of 346 $324 out of 346 $328 out of 346 $337 out of 346 $337 out of 346 $341 out of 346 
+[0;35m[measureObc][0m running 346 test cases on os ... 
+$9 out of 346 $9 out of 346 $18 out of 346 $18 out of 346 $20 out of 346 $29 out of 346 $29 out of 346 $29 out of 346 $38 out of 346 $38 out of 346 $40 out of 346 $48 out of 346 $49 out of 346 $57 out of 346 $57 out of 346 $60 out of 346 $68 out of 346 $69 out of 346 $77 out of 346 $78 out of 346 $83 out of 346 $86 out of 346 $92 out of 346 $94 out of 346 $100 out of 346 $102 out of 346 $108 out of 346 $111 out of 346 $117 out of 346 $119 out of 346 $126 out of 346 $128 out of 346 $130 out of 346 $138 out of 346 $139 out of 346 $143 out of 346 $151 out of 346 $152 out of 346 $160 out of 346 $161 out of 346 $166 out of 346 $170 out of 346 $175 out of 346 $179 out of 346 $183 out of 346 $188 out of 346 $192 out of 346 $197 out of 346 $199 out of 346 $205 out of 346 $207 out of 346 $215 out of 346 $216 out of 346 $218 out of 346 $226 out of 346 $227 out of 346 $235 out of 346 $235 out of 346 $240 out of 346 $245 out of 346 $249 out of 346 $257 out of 346 $258 out of 346 $259 out of 346 $267 out of 346 $268 out of 346 $276 out of 346 $276 out of 346 $281 out of 346 $286 out of 346 $290 out of 346 $293 out of 346 $302 out of 346 $303 out of 346 $306 out of 346 $312 out of 346 $315 out of 346 $321 out of 346 $324 out of 346 $325 out of 346 $333 out of 346 $334 out of 346 $340 out of 346 $344 out of 346 
+[0;34m[runObcExperiment][0m generateOracleListing ../systems/docking250
+----------
+docking
+[0;35m[generateOracleListing][0m ../systems/docking250/docking/docking.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/docking250/docking/docking.maximum_oracle.csv
+[0;34m[runObcExperiment][0m generateTraces ../systems/docking250 ../outs/docking250-clang
+[0;35m[generateTraces][0m ./generateOracleListing ../systems/docking250
+----------
+docking
+[0;35m[generateOracleListing][0m ../systems/docking250/docking/docking.output_oracle.csv
+[0;35m[generateOracleListing][0m ../systems/docking250/docking/docking.maximum_oracle.csv
+[0;35m[generateTraces][0m Running the universal suite on docking
+	docking.correct
+	docking.mutated100__Delay
+	docking.mutated101__Delay
+	docking.mutated102__Delay
+	docking.mutated103__Delay
+	docking.mutated104__Delay
+	docking.mutated105__Delay
+	docking.mutated106__Delay
+	docking.mutated107__Delay
+	docking.mutated108__Delay
+	docking.mutated109__Delay
+	docking.mutated10__Relational
+	docking.mutated110__Delay
+	docking.mutated111__Delay
+	docking.mutated112__Delay
+	docking.mutated113__Delay
+	docking.mutated114__Delay
+	docking.mutated115__Delay
+	docking.mutated116__Delay
+	docking.mutated117__Delay
+	docking.mutated118__Delay
+	docking.mutated119__Delay
+	docking.mutated11__Relational
+	docking.mutated120__Delay
+	docking.mutated121__Delay
+	docking.mutated122__Delay
+	docking.mutated123__Delay
+	docking.mutated124__Delay
+	docking.mutated125__Delay
+	docking.mutated126__Delay
+	docking.mutated127__Delay
+	docking.mutated128__Delay
+	docking.mutated129__Delay
+	docking.mutated12__Relational
+	docking.mutated130__Delay
+	docking.mutated131__Delay
+	docking.mutated132__Delay
+	docking.mutated133__Delay
+	docking.mutated134__Delay
+	docking.mutated135__Delay
+	docking.mutated136__Delay
+	docking.mutated137__Delay
+	docking.mutated138__Delay
+	docking.mutated139__Delay
+	docking.mutated13__Relational
+	docking.mutated140__Delay
+	docking.mutated141__Delay
+	docking.mutated142__Delay
+	docking.mutated143__Delay
+	docking.mutated144__Delay
+	docking.mutated145__Delay
+	docking.mutated146__Delay
+	docking.mutated147__Delay
+	docking.mutated148__Delay
+	docking.mutated149__Delay
+	docking.mutated14__Relational
+	docking.mutated150__Delay
+	docking.mutated151__Delay
+	docking.mutated152__Delay
+	docking.mutated153__Delay
+	docking.mutated154__Delay
+	docking.mutated155__Delay
+	docking.mutated156__Delay
+	docking.mutated157__Delay
+	docking.mutated158__Delay
+	docking.mutated159__Delay
+	docking.mutated15__Relational
+	docking.mutated160__Delay
+	docking.mutated161__Delay
+	docking.mutated162__Delay
+	docking.mutated163__Delay
+	docking.mutated164__Delay
+	docking.mutated165__Delay
+	docking.mutated166__Delay
+	docking.mutated167__Delay
+	docking.mutated168__Delay
+	docking.mutated169__Delay
+	docking.mutated16__Relational
+	docking.mutated170__Delay
+	docking.mutated171__Delay
+	docking.mutated172__Delay
+	docking.mutated173__Delay
+	docking.mutated174__Const
+	docking.mutated175__Const
+	docking.mutated176__Const
+	docking.mutated177__Const
+	docking.mutated178__Const
+	docking.mutated179__Const
+	docking.mutated17__Relational
+	docking.mutated180__Const
+	docking.mutated181__Const
+	docking.mutated182__Const
+	docking.mutated183__Const
+	docking.mutated184__Const
+	docking.mutated185__Const
+	docking.mutated186__Const
+	docking.mutated187__Const
+	docking.mutated188__Const
+	docking.mutated189__Const
+	docking.mutated18__Relational
+	docking.mutated190__Const
+	docking.mutated191__Const
+	docking.mutated192__Const
+	docking.mutated193__Const
+	docking.mutated194__Const
+	docking.mutated195__Const
+	docking.mutated196__Const
+	docking.mutated197__Const
+	docking.mutated198__Const
+	docking.mutated199__Const
+	docking.mutated19__Relational
+	docking.mutated1__Relational
+	docking.mutated200__VarReplace
+	docking.mutated201__VarReplace
+	docking.mutated202__VarReplace
+	docking.mutated203__VarReplace
+	docking.mutated204__VarReplace
+	docking.mutated205__VarReplace
+	docking.mutated206__VarReplace
+	docking.mutated207__VarReplace
+	docking.mutated208__VarReplace
+	docking.mutated209__VarReplace
+	docking.mutated20__Relational
+	docking.mutated210__VarReplace
+	docking.mutated211__VarReplace
+	docking.mutated212__VarReplace
+	docking.mutated213__VarReplace
+	docking.mutated214__VarReplace
+	docking.mutated215__VarReplace
+	docking.mutated216__VarReplace
+	docking.mutated217__VarReplace
+	docking.mutated218__VarReplace
+	docking.mutated219__VarReplace
+	docking.mutated21__Relational
+	docking.mutated220__VarReplace
+	docking.mutated221__VarReplace
+	docking.mutated222__VarReplace
+	docking.mutated223__VarReplace
+	docking.mutated224__VarReplace
+	docking.mutated225__VarReplace
+	docking.mutated226__VarReplace
+	docking.mutated227__VarReplace
+	docking.mutated228__VarReplace
+	docking.mutated229__VarReplace
+	docking.mutated22__Boolean
+	docking.mutated230__VarReplace
+	docking.mutated231__VarReplace
+	docking.mutated232__VarReplace
+	docking.mutated233__VarReplace
+	docking.mutated234__VarReplace
+	docking.mutated235__VarReplace
+	docking.mutated236__VarReplace
+	docking.mutated237__VarReplace
+	docking.mutated238__VarReplace
+	docking.mutated239__VarReplace
+	docking.mutated23__Boolean
+	docking.mutated240__VarReplace
+	docking.mutated241__VarReplace
+	docking.mutated242__VarReplace
+	docking.mutated243__VarReplace
+	docking.mutated244__VarReplace
+	docking.mutated245__VarReplace
+	docking.mutated246__VarReplace
+	docking.mutated247__VarReplace
+	docking.mutated248__VarReplace
+	docking.mutated249__VarReplace
+	docking.mutated24__Boolean
+	docking.mutated25__Boolean
+	docking.mutated26__Boolean
+	docking.mutated27__Boolean
+	docking.mutated28__Boolean
+	docking.mutated29__Boolean
+	docking.mutated2__Relational
+	docking.mutated30__Boolean
+	docking.mutated31__Not
+	docking.mutated32__Not
+	docking.mutated33__Not
+	docking.mutated34__Not
+	docking.mutated35__Not
+	docking.mutated36__Not
+	docking.mutated37__Not
+	docking.mutated38__Not
+	docking.mutated39__Not
+	docking.mutated3__Relational
+	docking.mutated40__Not
+	docking.mutated41__Not
+	docking.mutated42__Not
+	docking.mutated43__Not
+	docking.mutated44__Not
+	docking.mutated45__Not
+	docking.mutated46__Not
+	docking.mutated47__Not
+	docking.mutated48__Not
+	docking.mutated49__Not
+	docking.mutated4__Relational
+	docking.mutated50__Not
+	docking.mutated51__Not
+	docking.mutated52__Not
+	docking.mutated53__Not
+	docking.mutated54__Not
+	docking.mutated55__Not
+	docking.mutated56__Not
+	docking.mutated57__Not
+	docking.mutated58__Not
+	docking.mutated59__Not
+	docking.mutated5__Relational
+	docking.mutated60__Not
+	docking.mutated61__Not
+	docking.mutated62__Not
+	docking.mutated63__Not
+	docking.mutated64__Not
+	docking.mutated65__Not
+	docking.mutated66__Not
+	docking.mutated67__Not
+	docking.mutated68__Not
+	docking.mutated69__Not
+	docking.mutated6__Relational
+	docking.mutated70__Not
+	docking.mutated71__Not
+	docking.mutated72__Not
+	docking.mutated73__Not
+	docking.mutated74__Delay
+	docking.mutated75__Delay
+	docking.mutated76__Delay
+	docking.mutated77__Delay
+	docking.mutated78__Delay
+	docking.mutated79__Delay
+	docking.mutated7__Relational
+	docking.mutated80__Delay
+	docking.mutated81__Delay
+	docking.mutated82__Delay
+	docking.mutated83__Delay
+	docking.mutated84__Delay
+	docking.mutated85__Delay
+	docking.mutated86__Delay
+	docking.mutated87__Delay
+	docking.mutated88__Delay
+	docking.mutated89__Delay
+	docking.mutated8__Relational
+	docking.mutated90__Delay
+	docking.mutated91__Delay
+	docking.mutated92__Delay
+	docking.mutated93__Delay
+	docking.mutated94__Delay
+	docking.mutated95__Delay
+	docking.mutated96__Delay
+	docking.mutated97__Delay
+	docking.mutated98__Delay
+	docking.mutated99__Delay
+	docking.mutated9__Relational
+[0;35m[generateReducedSuites][0m Reducing mcdc suite for docking
+[0;35m[generateReducedSuites][0m Reducing obc suite for docking
+	bin: o0, type: J
+	bin: o0, type: JSMB
+	bin: o1, type: J
+	bin: o1, type: JSMB
+	bin: o2, type: J
+	bin: o2, type: JSMB
+	bin: o3, type: J
+	bin: o3, type: JSMB
+	bin: os, type: J
+	bin: os, type: JSMB
+[0;34m[runObcExperiment][0m generateReport ../systems/docking250 ../outs/docking250-clang
+[0;35m[generateReport][0m Analyzing mcdc
+[0;35m[generateReport][0m Analyzing obc - o0 (J)
+[0;35m[generateReport][0m Analyzing obc - o0 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[0;35m[generateReport][0m Analyzing obc - o1 (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 574 seconds
+[analysis] Average time per comparison: 0.0288153 seconds
+[0;35m[generateReport][0m Analyzing obc - o1 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 600 seconds
+[analysis] Average time per comparison: 0.0301205 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (J)
+[analysis] Beginning analysis...
+[analysis] Time to run: 604 seconds
+[analysis] Average time per comparison: 0.0303213 seconds
+[0;35m[generateReport][0m Analyzing obc - o2 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 639 seconds
+[analysis] Average time per comparison: 0.0320783 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 566 seconds
+[analysis] Average time per comparison: 0.0284137 seconds
+[0;35m[generateReport][0m Analyzing obc - o3 (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 553 seconds
+[analysis] Average time per comparison: 0.027761 seconds
+[0;35m[generateReport][0m Analyzing obc - os (J)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 562 seconds
+[analysis] Average time per comparison: 0.0282129 seconds
+[0;35m[generateReport][0m Analyzing obc - os (JSMB)
+[analysis] 249 mutants, 40 test suites, 2 oracles
+[analysis] Beginning analysis...
+[analysis] Time to run: 583 seconds
+[analysis] Average time per comparison: 0.0292671 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 552 seconds
+[analysis] Average time per comparison: 0.0277108 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 551 seconds
+[analysis] Average time per comparison: 0.0276606 seconds
+[analysis] Beginning analysis...
+[analysis] Time to run: 586 seconds
+[analysis] Average time per comparison: 0.0294177 seconds
+[0;35m[generateReport][0m ./measureReducedObc.py ../systems/docking250 ../outs/docking250-clang docking
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o1_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o1_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o3_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o3_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o2_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o2_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o2_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o2_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o0_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o0_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_os_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_os_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_os_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_os_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o1_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o1_JSMB.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o3_J_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o3_J.cov.csv`
+[35m[measureReducedObc.py] [0mFor system docking, criterion docking.obc_o0_JSMB_tests_reduced.csv
+[35m[measureReducedObc.py] [0mWriting coverage to `docking.obc_o0_JSMB.cov.csv`
+[0;35m[generateReport][0m ./mergeReports.py ../outs/docking250-clang/results/docking250
+[0;34m[runObcExperiment][0m python boxplot.py ../outs/docking250-clang
+../outs/docking250-clang/results/docking250/docking
+[0;34m[runObcExperiment][0m python stats.py ../outs/docking250-clang
+[0;34m[runObcExperiment][0m Finished at: 2017-05-03 21:30:59 CDT

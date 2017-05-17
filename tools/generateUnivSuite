@@ -1,0 +1,60 @@
+#!/bin/bash
+#
+# generateObcShite.sh 
+#
+# Generate OBC test suites for each binary
+#
+#   $1: system dir
+#   $2: out dir
+#
+# @author: Taejoon Byun <taejoon@umn.edu>
+#
+# first: Jan 27 2017
+# last : Feb 4 2017
+
+header="\033[0;35m[generateUnivSuite]\033[0m"
+
+if [ "$#" -ne 2 ]; then
+    echo -e "$header Invalid number of arguments"
+    echo "  \$1: system dir"
+    echo "  \$2: out dir"
+    exit
+fi
+
+systems=`ls $1`
+sysroot=`basename $1`
+
+for sys in $systems; do
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+    testdir=$2/suites/$sysroot/$sys/
+    splitted_dir=$testdir/splitted
+    outfile=$testdir/$base".obc_tests.csv"
+    univ=$testdir/splitted/"universal.csv"
+
+    # delete the existing obc / univ suites
+    rm $outfile $univ 2>&1 > /dev/null
+
+    # count the # of test cases before merging
+    suites=`ls $2/suites/$sysroot/$sys/*.csv | grep -v "obc"`
+    n_tc=0
+    for s in $suites; do
+        ((n_tc += `grep -c "^$" $s`))
+    done
+    echo -e "$header Number of test cases before merge: $n_tc"
+
+    mkdir $splitted_dir 2> /dev/null
+    python - <<END
+from UniversalSuite import UniversalSuite
+import glob
+suite = UniversalSuite(glob.glob('$testdir'+'/*_tests.csv'))
+suite.merge_suites()
+suite.write_universal_suite('$outfile')
+suite.write_universal_suite('$univ')
+suite.write_tests_separately('$splitted_dir', '$base')
+END
+    len=`grep -c "^$" $outfile`
+    ((len++))
+    echo -e "$header Merged to $len test cases and saved to $outfile"
+done
+exit
+

@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# $1 = System folder
+
+if [ "$#" -ne 1 ]; then
+    echo "  \$1 = System folder"
+    exit
+fi
+
+header="\033[0;35m[generateOracleListing]\033[0m"
+
+systems=`ls $1`
+
+# for each system
+for sys in $systems; do
+	echo "----------"
+	echo $sys	
+
+	# Get base name for system
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations"`
+	rootName=`echo $base | rev | cut -c 5- | rev` 
+
+	cat $1/$sys/$base | awk '
+		BEGIN{ 
+			oracle[0]=0
+            outIndex=0
+            localIndex=0
+		}
+		{
+			# Grab oracle variables
+			if($0 ~ /:/){
+				oracle[++oracle[0]]=$0;
+			}
+		}
+		END{
+			# Build output-only and maximum oracle
+			max="";
+			outOnly="";
+			outputs=0;
+			endOutputs=0;
+
+			for(i=1;i<=oracle[0];i++){
+				# Start tracking output variables
+				if(oracle[i] ~ /returns/){
+					outputs=1;
+				}
+
+				# If the line contains a close paren, we should stop collecting outputs after this one
+				if((outputs==1) && (oracle[i] ~ /[)]/)){
+					endOutputs=1;
+				}
+
+				# Remove extra characters
+				oracle[i] =substr(oracle[i],0,index(oracle[i],":")-1);
+				if(oracle[i] ~ /[(]/){
+					oracle[i] =substr(oracle[i],index(oracle[i],"(")+1,length(oracle[i]));
+				}
+
+				gsub(/[ \t]/,"",oracle[i]);	
+				max=max oracle[i] ",";
+				if(outputs==1){
+					outOnly=outOnly oracle[i] ",";
+					if(endOutputs==1){
+						outputs=0;
+					}
+				}
+			}
+			print substr(max,0,length(max)-1);
+			print substr(outOnly,0,length(outOnly)-1);
+		}' > $1/$sys/$rootName".ff_oracles.csv"
+
+        echo -e "$header $1/$sys/$rootName"".output_oracle.csv"
+		cat $1/$sys/$rootName".ff_oracles.csv" | tail -1 > $1/$sys/$rootName".output_oracle.csv"
+        echo -e "$header $1/$sys/$rootName"".maximum_oracle.csv"
+		cat $1/$sys/$rootName".ff_oracles.csv" | head -1 > $1/$sys/$rootName".maximum_oracle.csv"
+done

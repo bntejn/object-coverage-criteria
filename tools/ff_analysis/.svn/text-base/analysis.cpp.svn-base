@@ -1,0 +1,284 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <sstream>
+#include "TestSuite.h"
+
+using namespace std;
+
+int stringToInt(const string& line) {
+ istringstream buffer(line);
+ int i;
+ buffer>>i;
+ return i;
+}
+
+void processSuite(const string& line, vector<int>& suite) {
+	string cur;
+	for (int i = 0; i < line.size(); i++) {
+		if (line[i] == ',') {
+			suite.push_back(stringToInt(cur));
+			cur = "";
+		} else if (line[i] != ' ' && line[i] != '\n' && line[i] != '\r') {
+			cur += line[i];
+		}
+	}
+	
+	//ending
+	if (cur != "") {
+		suite.push_back(stringToInt(cur));
+	}
+}
+
+vector<vector<int> >*  getSuiteList(string filename) {
+	vector<vector<int> >* suiteList = new vector<vector<int> >();
+
+	ifstream inFile(filename.c_str());
+
+	string line;
+	if (inFile.is_open()) {
+  	while (!inFile.eof() ) {
+			getline (inFile,line);
+			vector<int> curSuite;
+			if (line != "") {
+				processSuite(line, curSuite);
+				suiteList->push_back(curSuite);
+			}
+		}
+		
+		inFile.close();
+	} else {
+    cerr << "Unable to open file "<<filename<<endl;
+    exit(1);  
+	}
+	
+	return suiteList;
+}
+
+void processOracle(const string& line, vector<int>& oracle, TestSuite* ts) {
+	string cur;
+	for (int i = 0; i < line.size(); i++) {
+		if (line[i] == ',') {
+			oracle.push_back(ts->getColumn(cur));
+			cur = "";
+		} else if (line[i] != ' ' && line[i] != '\n' && line[i] != '\r') {
+			cur += line[i];
+		}
+	}
+	
+	//ending
+	if (cur != "") {
+		oracle.push_back(ts->getColumn(cur));
+	}
+}
+
+vector<vector<int> >* getOracleList(string filename, TestSuite* ts) {
+	vector<vector<int> >* oracleList = new vector<vector<int> >();
+
+	ifstream inFile(filename.c_str());
+
+	string line;
+	if (inFile.is_open()) {
+  	while (!inFile.eof() ) {
+			getline (inFile,line);
+			vector<int> curOracle;
+			if (line != "") {
+				processOracle(line, curOracle, ts);
+				oracleList->push_back(curOracle);
+			}
+		}
+		
+		inFile.close();
+	} else {
+    cerr << "Unable to open file "<<filename<<endl;
+    exit(1);  
+	}
+	
+	return oracleList;
+}
+
+string getPrefix(string s) {
+	string pre = "";
+	int end = s.rfind("/");
+	for (int i = 0; i < end; i++) {
+		pre += s[i];
+	}
+	return pre;
+}
+
+vector<string> getMutantList(string originalFilename, string filename) {
+	string prefix = getPrefix(originalFilename);
+
+	ifstream inFile(filename.c_str());	
+	vector<string> mutList;
+
+	string line;
+	if (inFile.is_open()) {
+  	while (!inFile.eof() ) {
+			getline (inFile,line);
+			if (line != "") {
+				string m = prefix;
+				m+="/";
+				m+=line;
+				mutList.push_back(m);
+			}
+		}
+		
+		inFile.close();
+	} else {
+    cerr << "Unable to open file "<<filename<<endl;
+    exit(1);  
+	}
+	
+	return mutList;
+}
+
+string processMutantName(string mutFile) {
+	int lastDot = mutFile.find_last_of('.');
+	int lastUnder = mutFile.find_last_of('_');
+
+	string mutantName = "";
+	while (lastUnder < lastDot) {
+		mutantName += mutFile[lastUnder];
+		lastUnder+=1;
+	}
+
+	return mutantName;
+}
+
+/*
+Arguments: 
+  1 - the original test suite
+  2 - the mutant list file
+  3 - the suite list file
+  4 - the oracle list file
+  5 - output filename*/
+int main(int argc, char **argv)
+{
+	cout<<"Beginning analysis...\n";
+
+	TestSuite* original = new TestSuite(argv[1]);
+
+	vector<string> mutants = getMutantList(argv[1], argv[2]);
+	vector<vector<int> >* suiteList = getSuiteList(argv[3]);
+	vector<vector<int> >* oracleList = getOracleList(argv[4], original);
+	
+	cout<<mutants.size()<<" mutants, "<<suiteList->size()<<" test suites, "<<oracleList->size()<<" oracles"<<endl;
+
+	time_t before = time(NULL);	
+
+	int** results = new int*[suiteList->size()];
+	for (int i = 0; i < suiteList->size(); i++) {
+		results[i] = new int[oracleList->size()];
+		for (int j = 0; j < oracleList->size(); j++) {
+			results[i][j] = 0;
+		}
+	}
+
+	// [mutant type][suite num][oracle num] = # of mutants caught
+	map<string,map<int, map<int, int> > > caughtMutants;
+	//[mutant type] = # of mutants seen
+	map<string,int> maxMutants;
+	
+	for (int i = 0; i < mutants.size(); i++) {
+		string mutantName = processMutantName(mutants[i]);
+		if (maxMutants.count(mutantName) == 1){
+			maxMutants[mutantName] += 1;
+		} else {
+			maxMutants[mutantName] = 1;
+			for (int i = 0; i < suiteList->size(); i++) {					
+					for (int j = 0; j < oracleList->size(); j++) {
+						caughtMutants[mutantName][i][j] = 0;
+					}
+				}
+		}
+
+		//time_t mutBefore = time(NULL);
+		//cout<<"Running mutant: "<<mutants[i]<<endl;
+		TestSuite mutant(mutants[i], original);
+		for (int j = 0; j < suiteList->size(); j++) {
+			for (int k = 0; k < oracleList->size(); k++) {
+				if (!(original->isEqualFast(mutant, (*suiteList)[j], (*oracleList)[k]))) {
+					results[j][k]++;
+					caughtMutants[mutantName][j][k]++;
+				} 
+			}
+		}
+
+
+		//time_t mutAfter = time(NULL);
+		//cout<<"Time for mutant: "<<difftime(mutAfter, mutBefore)<<" seconds\n";			
+	}
+	
+	time_t after = time(NULL);
+	cout<<"Time to run: "<<difftime(after, before)<<" seconds\n";	
+	cout<<"Average time per comparison: "<<(difftime(after,before) / (suiteList->size() * oracleList->size() * mutants.size()))<<" seconds\n";
+
+	cout<<"Going...\n";
+		
+	ofstream outFile;
+	outFile.open (argv[5]);
+
+	for (int i = 0; i < oracleList->size(); i++) {
+		outFile<<" ,";
+		if ((*oracleList)[i].size() > 1) {
+		  	outFile<<(*oracleList)[i].size();
+		} else {
+			outFile<<original->getColumn((*oracleList)[i][0]);
+		}
+	}
+	outFile<<endl;
+
+	for (int i = 0; i < suiteList->size(); i++) {
+		outFile<<(*suiteList)[i].size();
+		for (int j = 0; j < oracleList->size(); j++) {
+			outFile<<",";
+			outFile<<results[i][j];
+		}
+		outFile<<endl;
+	}
+	outFile.close();
+
+	string stringBase = string(argv[5]);
+	map<string, int>::iterator maxIt;
+	for (maxIt=maxMutants.begin() ; maxIt != maxMutants.end(); maxIt++) {
+		string name = (*maxIt).first;
+		int maxMuts = (*maxIt).second;
+		string outputName = stringBase + "_" + name + ".txt";
+		
+		ofstream outFile;
+		outFile.open (outputName.c_str());
+		
+		for (int i = 0; i < oracleList->size(); i++) {
+			outFile<<" ,";
+			if ((*oracleList)[i].size() > 1) {
+			  	outFile<<(*oracleList)[i].size();
+			} else {
+				outFile<<original->getColumn((*oracleList)[i][0]);
+			}
+		}
+		outFile<<endl;
+
+		for (int i = 0; i < suiteList->size(); i++) {
+			outFile<<(*suiteList)[i].size();
+			for (int j = 0; j < oracleList->size(); j++) {
+				outFile<<",";
+				outFile<<(float(caughtMutants[name][i][j]) / float(maxMuts) * 100.0);
+			}
+			outFile<<endl;
+		}
+		outFile.close();
+
+	}
+
+
+	delete original;
+	delete suiteList;
+	delete oracleList;
+
+	return 0;
+}
+

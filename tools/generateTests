@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Generate mutants for a series of systems
+
+# depends on: ./coverage ./lustre.jar
+
+# $1 = System folder
+# $2 = where to place produced files
+
+if [ "$#" -ne 2 ]; then
+    echo "  \$1 = System folder"
+    echo "  \$2 = where to place produced files"
+    exit
+fi
+
+source config.sh $1 $2
+config_coverage=("omcdc")
+
+systems=`ls $1`
+sysRoot=`basename $1`
+header="[generateTests]"
+
+echo "$header metrics: ${config_coverage[@]}"
+
+mkdir $2/suites 2> /dev/null
+mkdir $2/suites/$sysRoot 2> /dev/null
+
+# for each system
+for sys in $systems; do
+
+	# Get base name for system
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+    echo "base: $base"
+
+	mkdir $2/suites/$sysRoot/$sys 2> /dev/null
+	mkdir $1/$sys/obligations/ 2> /dev/null
+
+	# For each obligation type
+	for cov in ${config_coverage[@]}; do
+        echo "$header Generating $cov tests for $sys"
+        echo $config_jvm_memory
+		java -Xmx${config_jvm_memory} -jar lustre.jar -coverage $cov -no_cse $1/$sys/$base".lus"
+		mv $1/$sys/$base"."$cov".lus" $1/$sys"/obligations/"$base"."$cov"_obligations.lus"
+		java -Xmx${config_jvm_memory} -jar lustre.jar -no_cse -generate default \
+            $1/$sys"/obligations/"$base"."$cov"_obligations.lus" \
+            $2/suites/$sysRoot/$sys/$base"."$cov"_tests.csv"
+	done
+done

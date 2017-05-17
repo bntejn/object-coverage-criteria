@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+# $1 = non-inlined system folder
+# $2 = output directory
+
+GENERATE=0
+
+if [ "$#" -ne 2 ]; then
+    echo "  \$1 = non-inlined system folder"
+    echo "  \$2 = output directory"
+    exit
+fi
+
+log=$2"/log.txt"
+system=`ls $1`
+sysroot=`basename $1`
+
+for sys in $system; do
+    rm -r $2/obc 2> /dev/null
+    rm -r $2/traces 2> /dev/null
+    rm -r $2/results 2> /dev/null
+    rm -r $2/suites/$sysroot/$sys/reduced 2> /dev/null
+    rm -r $2/suites/$sysroot/$sys/splitted 2> /dev/null
+done

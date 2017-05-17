@@ -1,0 +1,114 @@
+#!/bin/bash
+
+# Gregory Gay
+
+# Modified by Taejoon Byun (Feb 2 2017)
+# last: Apr 24 2017
+
+# Script to check for equivalent mutants (in parallel)
+
+# $1 = oracle model
+# $2 = directory where mutants are contained
+# $3 = where to store result files
+
+if [ "$#" -ne 3 ]; then
+    echo "\$1 = oracle model"
+    echo "\$2 = directory where mutants are contained"
+    echo "\$3 = where to store result files"
+    exit
+fi
+
+source config.sh $1 $2
+
+header="\033[0;35m[performEquivalencyCheck]\033[0m"
+mutants=`ls $2 | grep -v "correct"`
+
+max_parallel=$((config_n_cores / 2))
+timeout=$config_mc_timeout
+
+arg1=$1     # correct model
+arg2=$2     # mutants directory
+arg3=$3     # metadata directory
+
+
+parallel_job() {
+    m=$1    # the first argument to this function, mutant name
+    echo -e "$header checking $m"
+    combined=/tmp/$m"_combined.lus"
+	echo -e "$header python checkEquivalency.py -c $arg1 -m $arg2/$m -p $combined"
+	python checkEquivalency.py -c $arg1 -m $arg2"/"$m -p $combined
+    if [ $config_debug == "true" ]; then
+        java -Xss18m -Xmx${config_jvm_memory} -jar jkind.jar -jkind -solver z3 $combined \
+            -timeout $timeout | tee $arg3/$m".eqReport"
+    else
+        java -Xss18m -Xmx${config_jvm_memory} -jar jkind.jar -jkind -solver z3 $combined \
+            -timeout $timeout | tee $arg3/$m".eqReport" >> /dev/null
+        rm $combined
+    fi
+
+    # INVALID means different, VALID means "the same mutant"!
+	result=`cat $arg3/$m".eqReport" | grep VALID | grep -v INVALID`
+    error=`cat $arg3/$m".eqReport" | grep Error`
+
+    if [ "$error" != "" ]; then
+        echo -e "$header error in $m"
+    fi
+
+    # remove report if want to keep. Keep the report to remove.
+    # equivalent -> VALID -> some result: remove. keep the report
+	if [ "$result" != "" ]; then
+		echo -e "\tRemoving equivalent mutant $m"
+		echo -e "\t$result"
+        # keep the report to remove this mutant
+	else
+        # unknown: can't determine. equivalent for certain number of steps. remove
+		result2=`cat $arg3/$m".eqReport" | grep UNKNOWN`
+		if [ "$result2" != "" ]; then
+			echo -e "\tMC timeout while running $m"
+			echo -e "\t$result2"
+        else
+            echo -e "\tKeep $m"
+            # Extract a test case (added on Apr 24 2017)
+            gawk -f extractTestCase.awk -v F=$arg3/$m.eqReport -v I=$inputs >> "$arg3/../$baseName.mutation_tests.csv"
+            echo "" >> "$arg3/../$baseName.mutation_tests.csv"
+            # remove the report to keep the report
+            rm $arg3/$m".eqReport"
+		fi
+    fi
+}
+
+# mutation test generation
+baseName=`ls $arg2 | grep "correct" | rev | cut -c 9- | rev`
+rm "$arg3/../$baseName.mutation_tests.csv"
+outputO=`cat $arg3/../*"output_oracle.csv" | cut -d"," -f 1`
+inputs=`cat $arg3/../*"maximum_oracle.csv" | awk -v O=$outputO '
+    {
+        split($0,parts,",");
+        len=0;
+        for(p in parts){
+            len++;
+        }
+        out="";
+        for(var=1;var<=len;var++){
+            if(parts[var]==O){
+                break;
+            }else{
+                out=out parts[var] ",";
+            }
+        }
+        print substr(out,0,length(out)-1);
+    }'`
+
+echo $inputs >> "$arg3/../$baseName.mutation_tests.csv"
+
+
+for m in $mutants; do
+    parallel_job "$m" &
+    sleep 1
+    while [ `jobs | wc -l` -ge $max_parallel ]; do
+        sleep 2
+    done
+done
+
+wait
+

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Gregory Gay
+# Script to check for equivalent mutants
+# $1 = oracle model
+# $2 = directory where mutants are contained
+# $3 = where to store result files
+
+if [ "$#" -ne 3 ]; then
+    echo "\$1 = oracle model"
+    echo "\$2 = directory where mutants are contained"
+    echo "\$3 = where to store result files"
+    exit
+fi
+    
+
+mutants=`ls $2` # | grep -v "correct"`
+
+for m in $mutants; do
+	python checkEquivalency.py -c $1 -m $2"/"$m
+	java -Xmx4096m -jar jkind.jar -jkind -solver z3 combined.lus >> $3/$m".eqReport"
+
+	result=`cat $3/$m".eqReport" | grep VALID | grep -v INVALID`
+	
+	if [ "$result" != "" ]; then
+		echo $m
+		echo $result
+	else
+		result2=`cat $3/$m".eqReport" | grep UNKNOWN`
+		if [ "$result2" != "" ]; then
+			echo $m
+			echo $result2
+		fi
+		rm $3/$m".eqReport"
+	fi	
+
+done
+

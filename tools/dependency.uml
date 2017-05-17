@@ -1,0 +1,50 @@
+@startuml
+
+package "lustre.jar" {
+    interface coverage
+    interface generate
+}
+
+package "mutation" {
+    [generateMutants]
+}
+
+package "generation" {
+    [generateTests] 
+    [generateTests] 
+    [generateUnivSuite] 
+    [generateReducedSuites]
+}
+
+package "execution" {
+    [measureObc] 
+    [generateCovMatrix] 
+    [generateTraces] 
+}
+
+package "analysis " {
+    [generateReport]
+}
+
+[generateReducedSuites] ..> [measureObc]
+[generateReducedSuites] ..> [generateUnivSuite]
+
+[generateReport] ..> [generateCovMatrix]
+[generateReport] ..> [generateReducedSuites]
+[generateReport] ..> [generateTraces]
+
+[measureObc] ..> [generateTests]
+[measureObc] ..> [generateUnivSuite]
+
+[generateUnivSuite] ..> [generateTests]
+
+[generateCovMatrix] ..> [generateTests]
+
+[generateTraces] ..> [generateMutants]
+[generateTraces] ..> [generateTests]
+[generateTraces] ..> [generateUnivSuite]
+generate ..> coverage
+[generateTests] ..> generate
+
+@enduml
+

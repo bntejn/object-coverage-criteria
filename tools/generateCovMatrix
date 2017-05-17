@@ -1,0 +1,115 @@
+#!/bin/bash
+
+# Generate traces for all mutants
+
+# depends on: lustre.jar getObligationMatrix.awk
+
+# last : Mar 14 2017
+
+# $1 = systems folder
+# $2 = where to place produced files
+
+if [ "$#" -ne 2 ]; then
+    echo "  \$1 = systems folder"
+    echo "  \$2 = where to place produced files"
+    exit
+fi
+
+source config.sh $1 $2
+
+header="\033[0;35m[generateCovMatrix]\033[0m"
+systems=`ls $1`
+sysRoot=`basename $1`
+
+mkdir $2/traces 2> /dev/null
+mkdir $2/traces/$sysRoot 2> /dev/null
+
+# for each system
+for sys in $systems; do
+	
+    base_prefix=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+	# coverage types
+	for cov in ${config_coverage[@]}; do
+        if [ "$cov" == "obc" ]; then
+            continue
+        fi
+        echo -e "$header coverage $cov for system $sys"
+
+		base=`ls $1/$sys/obligations/ | grep "\.$cov" | grep -v "oracle" | grep -v "coverage" | grep -v "trace"`
+        oracleFname=$1/$sys/obligations/$base".oracle.csv"
+        #echo -e "\tbase: $base"
+        #echo -e "\toracleFname: $oracleFname"
+
+		suites=`ls $2/suites/$sysRoot/$sys/covMatrices | grep "csv" | grep "\.$cov"`
+        echo -e "\tSuites: $suites"
+		mkdir $2/traces/$sysRoot/$sys 2> /dev/null
+
+        # Generate oracle (listing) for trace
+        # TODO: merge this part to `generateOracleListing`?
+        echo -e "$header writing oracle listing to $base"".oracle.csv"
+		cat $1/$sys/obligations/$base | awk -v Cov=$cov '
+			BEGIN{ 
+				oracle[0]=0;
+			}
+			{
+				# Grab oracle variables
+				if($0 ~ /:/){
+                    if(Cov == "omcdc" || (Cov == "obranch" || (Cov == "ocondition" || Cov == "odecision"))) {
+                        if($0 ~ /property/) {
+                            oracle[++oracle[0]]=$0;
+                        }
+                    } else {
+                        if($0 ~ toupper(Cov)){
+                            oracle[++oracle[0]]=$0;
+                        }
+                    }
+				}
+			}
+			END{
+				# Build output-only and maximum oracle
+				max="";
+
+				for(i=1;i<=oracle[0];i++){
+					# Remove extra characters
+					oracle[i] =substr(oracle[i],0,index(oracle[i],":")-1);
+					if(oracle[i] ~ /[(]/){
+						oracle[i] =substr(oracle[i],index(oracle[i],"(")+1,length(oracle[i]));
+					}
+
+					gsub(/[ \t]/,"",oracle[i]);	
+					max=max oracle[i] ",";
+				}
+				print substr(max,0,length(max)-1);
+			}' > $oracleFname
+
+		# For each test suite related to that coverage type (i.e., inlined/noninlined)
+		for suite in $suites; do
+			mkdir $2/traces/$sysRoot/$sys/$suite 2> /dev/null
+			mkdir $2/traces/$sysRoot/$sys/$suite/obligationCoverage 2> /dev/null
+	
+			# Generate trace
+            echo -e "$header Generating traces for suite `basename $suite`"
+            #echo -e "\tbase  : $1/$sys/obligations/$base"
+            #echo -e "\tsuite : $2/suites/$sysRoot/$sys/covMatrices/$suite"
+            #echo -e "\toracle: $1/$sys/obligations/$base"".oracle.csv"
+            if [ "$config_universal_suite" == "true" ]; then
+                suite_path="$2/suites/$sysRoot/$sys/$base_prefix.obc_tests.csv"
+            else
+                suite_path="$2/suites/$sysRoot/$sys/covMatrices/$suite"
+            fi
+			java -Xmx${config_jvm_memory} -jar lustre.jar -no_cse -simulate complete \
+                $1/$sys/obligations/$base $suite_path \
+                $1/$sys/obligations/$base".oracle.csv" >> /dev/null # (oracle listing)
+			file=`echo $base | rev | cut -c 5- | rev`
+			mv $1/$sys/obligations/$file".trace.csv" $2/traces/$sysRoot/$sys/$suite/obligationCoverage/$base"_trace.csv"
+
+			# Generate coverage matrix
+			obligations=`head -1 $2/traces/$sysRoot/$sys/$suite/obligationCoverage/$base"_trace.csv" | sed 's/[^,]//g' | wc -c`
+            echo -e "$header generating coverage matrix to $base""_$suite""coverage.csv"
+			gawk -f getObligationMatrix.awk \
+                -v Obligations=$obligations \
+                -v F=$2/traces/$sysRoot/$sys/$suite/obligationCoverage/$base"_trace.csv" \
+                > $1/$sys/obligations/$base"_"$suite"_coverage.csv"
+		done
+	done
+done

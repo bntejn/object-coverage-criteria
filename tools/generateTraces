@@ -1,0 +1,78 @@
+#!/bin/bash
+#
+# Generate traces for all mutants
+#
+# $1 = systems folder
+# $2 = out dir
+#
+# last : Mar 14 2017
+
+if [ "$#" -ne 2 ]; then
+    echo "\$1 = system folder"
+    echo "\$2 = output folder"
+    exit
+fi
+
+source config.sh $1 $2
+
+systems=`ls $1`
+sysRoot=`basename $1` 
+
+header='\033[0;35m[generateTraces]\033[0m'
+
+echo -e "$header ./generateOracleListing $1"
+./generateOracleListing $1
+
+mkdir $2/traces 2> /dev/null
+mkdir $2/traces/$sysRoot 2> /dev/null
+
+# for each system
+for sys in $systems; do
+
+	suites=`ls $2/suites/$sysRoot/$sys | grep "csv"`
+	mkdir $2/traces/$sysRoot/$sys 2> /dev/null
+
+	# Get base name for system
+	base=`ls $1/$sys | grep "lus" | grep -v "obligations" | rev | cut -c 5- | rev`
+	
+	# Get list of mutants
+	mutants=`ls $1/$sys/mutants`
+
+    if [ "$config_universal_suite" == "true" ]; then
+        echo -e "$header Running the universal suite on $sys"
+        mkdir $2/traces/$sysRoot/$sys/univ 2> /dev/null
+        suite="$base.obc_tests.csv"
+        mkdir $2/traces/$sysRoot/$sys/$suite 2> /dev/null
+        # For each mutant
+        for mutant in $mutants; do
+            # Generate trace
+            echo -e "\t$mutant"
+            # Generate trace
+            java -Xmx${config_jvm_memory} -jar lustre.jar -no_cse -simulate complete \
+                $1/$sys/mutants/$mutant \
+                $2/suites/$sysRoot/$sys/$suite \
+                $1/$sys/$base".maximum_oracle.csv" > /dev/null
+            mv $1/$sys/mutants/$base".trace.csv" $2/traces/$sysRoot/$sys/$suite/$mutant"_trace.csv"
+        done
+        continue
+    fi
+
+    # Only when "$config_universal_suite" is "false"
+    # For each test suite
+    for suite in $suites; do
+        echo -e "$header Running $suite on $sys"
+        mkdir $2/traces/$sysRoot/$sys/$suite 2> /dev/null
+        # For each mutant
+        for mutant in $mutants; do
+            # Generate trace
+            echo -e "\t$mutant"
+            # Generate trace
+            java -Xmx${config_jvm_memory} -jar lustre.jar -no_cse -simulate complete \
+                $1/$sys/mutants/$mutant \
+                $2/suites/$sysRoot/$sys/$suite \
+                $1/$sys/$base".maximum_oracle.csv" > /dev/null
+            mv $1/$sys/mutants/$base".trace.csv" $2/traces/$sysRoot/$sys/$suite/$mutant"_trace.csv"
+        done
+    done
+done
+
